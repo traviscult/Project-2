@@ -19,3 +19,7 @@ const buildNPSURL = () => {
 
 
 // Eddie's code goes here 
+
+//does api support cors may have to move data to node 
+
+//start here then move to node .js if node use axios 
