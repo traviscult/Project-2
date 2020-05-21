@@ -2,6 +2,8 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+
+
 module.exports = (app) => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -52,6 +54,7 @@ module.exports = (app) => {
   });
 
   // create NPS Api routes here 
+ app.get(`${locationURL}/api`)
 
-  
+
 };
