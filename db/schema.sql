@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS project2;
 
-CREAT TABLE project2;
+CREATE DATABASE passport_demo;
 
-USE project2;
+USE passport_demo;
+
