@@ -1,5 +1,9 @@
 const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
 const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
+
+// EXS Added in NWS API URL 22nd May 2020
+const nwsAPIURL = "https://api.weather.gov/";
+
 let stateCode = " ";
 
 const buildNPSURL = () => {
@@ -15,6 +19,8 @@ const buildNPSURL = () => {
         console.log(response)
     });
 }
+
+
 
 
 
