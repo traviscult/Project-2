@@ -1,4 +1,64 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  color: #333;
+  background: url("./../images/park-1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.mainWrapper {
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.contentWrapper {
+  background-color: rgba(205, 223, 43, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.headerCol {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+header h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e4e7b8;
+}
+
+.formCol {
+  margin: 0 auto;
+  padding: 2rem 5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7af8a4;
+  text-decoration: none;
+}
+
+.footerCol {
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.boottomImg {
+  margin: .5rem;
+  margin-top: 0;
 }
