@@ -1,5 +1,6 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const db = require("../models");
 
