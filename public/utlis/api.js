@@ -1,3 +1,5 @@
+
+
 const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
 const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
 
@@ -5,7 +7,7 @@ let stateCode = " ";
 
 const buildNPSURL = () => {
 
-    let npsURL = (`${locationURL} ${stateCode} ${apiKey}`)
+    let npsURL = (`${locationURL}${stateCode}${apiKey}`)
 
     console.log(npsURL)
     //AJAX call
@@ -13,11 +15,14 @@ const buildNPSURL = () => {
         url: npsURL,
         method: "GET",
     }).then((response) => {
-        console.log(response)
+        console.log(response.data)
     });
-}
+};
+
+buildNPSURL();
 
 
+module.exports = npsapi;
 
 
 
