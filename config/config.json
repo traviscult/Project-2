@@ -1,5 +1,9 @@
 {
   "development": {
+<<<<<<< HEAD
+=======
+    "username": "common",
+>>>>>>> master
     "username": "root",
     "password": "password",
     "database": "passport_demo",
