@@ -8,14 +8,14 @@ module.exports = {
     dialect: "mysql"
   },
   test: {
-    username: "root",
+    username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: "jrbmf1rjnumqqbix",
     host: process.env.DB_HOST,
     dialect: "mysql"
   },
   production: {
-    username: "root",
+    username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: "jrbmf1rjnumqqbix",
     host: process.env.DB_HOST,
