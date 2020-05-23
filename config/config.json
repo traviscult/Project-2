@@ -1,10 +1,7 @@
 {
   "development": {
-<<<<<<< HEAD
     "username": "common",
-=======
     "username": "root",
->>>>>>> master
     "password": "password",
     "database": "passport_demo",
     "host": "127.0.0.1",
