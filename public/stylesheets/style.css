@@ -8,18 +8,19 @@ body {
   color: #333;
   background: url("./../images/park-image-1.png") no-repeat center center fixed;
   background-size: cover;
-  color: white;
-}
+ }
 
 .mainWrapper {
   height: 100vh;
   margin: 0 auto;
+  position: relative;
 }
 
 .contentWrapper {
   background-color: rgba(205, 223, 43, 0.2);
   border-radius: 10px;
   padding: 1.5rem;
+  color: #fff;
 }
 
 .headerCol {
@@ -58,7 +59,251 @@ a:hover {
   border-bottom-right-radius: 1em;
 }
 
-.boottomImg {
-  margin: 0.5rem;
-  margin-top: 0;
+.bottomImg {
+  margin: 0 .5rem 1rem .5rem;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.6);
+  border: 1px solid #999;
+  border-radius: 5px;
+ 
+}
+
+/* ##### Modal section ##### */
+#myBtn {
+  z-index: 2;
+  outline: none !important;
+  border: 2px solid #33b8a2;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  margin: 10px 15px 0 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.circleIconTop {
+  outline: none !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: 2px 4px 0 0;
+  top: 0;
+  right: 0;
+  color: purple;
+  font-size: 44px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  box-shadow: 3px 3px 8px 3px #000000;
+}
+
+#circleIconModal {
+  outline: none !important;
+  border: 2px solid #33b8a2;
+  border-radius: 50%;
+  width: 76px;
+  height: 76px;
+  color: purple;
+  position: absolute;
+  top: 5;
+  right: 38%;
+  font-size: 72px;
+  text-align: center;
+}
+
+.close {
+  color: #aaaaaa;
+  float: none;
+  font-size: 40px;
+  font-weight: bold;
+  width: 30px;
+  margin-right: 0;
+  position: absolute;
+  top: 0;
+  right: 3%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalUserName {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  display: block;
+  top: 150px;
+  margin-top: 100px;
+  font-size: 1.2rem;
+}
+
+#modalDashboardBtn {
+  border: 1px solid #aaaaaa;
+  border-radius: 30px;
+  padding: 0.5rem;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.modalHistoryBox {
+  margin-top: 1.2rem;
+  border-top: 1px solid #e6e4e4;
+  border-bottom: 1px solid #e6e4e4;
+  color: #666;
+  padding-top: 0.5rem;
+}
+
+#modalSignOut {
+  border: 1px solid #e6e4e4;
+  border-radius: 7px;
+  padding: 0.4rem;
+  width: 80%;
+  margin: 0.6rem auto 1rem auto;
+  cursor: pointer;
+}
+
+#modalTerms {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+#modalDashboardBtn:hover,
+#modalSignOut:hover,
+#modalTerms:hover {
+  background-color: #ececec;
+}
+
+/* ##### members.html page specific ##### */
+#removeBgImage {
+  background: none;
+}
+.mainWrapperMembers {
+  padding: 0;
+  color: #333;
+}
+
+.headerColMembers h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e4e7b8;
+  font-size: 2rem;
+}
+
+.headerColMembers p {
+  font-size: 0.95rem;
+}
+
+.logoutBtnMembers {
+  float: right;
+}
+
+
+#greetingMembers {
+  color: #2caabe;
+  font-weight: bold
+}
+
+#greeting {
+ color: #a11e50;
+}
+
+.blogTitleMembers {
+  padding: 1rem;
+  background-color: #f6f9fa;
+}
+
+.blogTitleHeader {
+  text-transform: uppercase;
+  color: #2caabe;
+  font-weight: bold;
+}
+
+#blogTitleUl {
+  background-color: #e8f0ee;
+   padding: 1rem;
+}
+
+#blogTitleUl:hover {
+  background-color: #ffffff;
+  }
+
+#blogTitleUl a {
+color: #333;
+}
+
+
+#blogTitleUl a:hover {
+  color: #a11e50;
+  text-transform: uppercase;
+   }
+
+.penIcon {
+  padding-left: 1rem;
+}
+
+.blogTitleLi {
+  padding: 0 1em 0 1em;
+}
+
+.blogDisplayHeader{
+  color: #ffc925;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-top: .5rem;
+}
+
+.blogDisplayTitle {
+  color: #2caabe;
+  font-weight: bold;
+}
+
+.blogContentMembers {
+  padding: 2.5rem;
+  padding-top: .5rem;
+  border: 1px solid rgb(223, 223, 223);
+  background-color: #f6f9fa;
+}
+
+.blogContentMembers:hover {
+  background-color: #fff;
+  
+}
+
+.galleryPara{
+  color: #a11e50;
+}
+
+.imageGalleryInfo {
+ 
+  color: #ffc925;
 }

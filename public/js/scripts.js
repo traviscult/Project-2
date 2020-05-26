@@ -1,4 +1,5 @@
-// This is a custom javascript file
+// IMAGES SECTION
+
 $(document).ready(() => {
   let addImageDivEl = document.getElementById("addImageDiv");
   addImageDivEl.addEventListener("click", displayImage);
@@ -25,3 +26,20 @@ $(document).ready(() => {
   displayImage();
 
 });
+
+
+// MODAL SECTION
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("myBtn");
+let span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+  modal.style.display = "block";
+}
+span.onclick = function () {
+  modal.style.display = "none";
+}
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
