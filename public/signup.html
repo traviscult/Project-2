@@ -8,13 +8,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/15bf670575.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="custom-assets/styles/custom-reset-bootstrap.css">
-  <link rel="stylesheet" href="custom-assets/styles/custom-main-bootstrap.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <div class="container mainWrapper text-center d-flex justify-content-center align-items-center">
+  <!-- ===================================================== -->
+  <!-- MODAL SECTION -->
+  <button id="myBtn" type="button" class="btn"><i class="fas fa-user-circle circleIconTop"></i></button>
+  <div id="myModal" class="modal text-center">
+    <div class="modal-content">
+      <i class="fas fa-user-circle" id="circleIconModal"></i>
+      <span class="close">&times;</span>
+      <p class="text-dark" id="modalUserName">Mike Davis</p>
+      <p class="text-dark" id="modalUserEmail">mikedavis@mikedavis.com</p>
+      <p class="text-dark" id="modalDashboardBtn">Go to your dashboard</p>
+      <div class="modalHistoryBox">
+        <p id="modalSignOut"> Clear your visit history </p>
+      </div>
+      <p id="modalTerms"> Rules to follow &nbsp;&bull;&nbsp;We care your privacy</p>
+    </div>
+
+  </div>
+  <!-- ===================================================== -->
+
+  <div class="container mainWrapper text-center d-flex justify-content-center align-items-center" id="addImageDiv">
     <div class="row contentWrapper">
       <div class="col-12 bg-dark pt-4 headerCol">
         <header class="text-center text-white pt-4">
@@ -23,6 +41,7 @@
           <p class="pb-4"> National Park & Recreation Services &bull; Information Finder App</p>
         </header>
       </div>
+
       <div class="col-12 formCol">
         <h5>Please sign up for NPS information</h5>
         <p>or <a href="/login"> &nbsp; Click here </a> &nbsp; to log in to your existing account </p>
@@ -54,17 +73,16 @@
   <div class="row text-center d-flex justify-content-center align-items-center">
     <div class="col-12 bottomSection">
 
-      <img src="https://via.placeholder.com/300x150" class="boottomImg">
-      <img src="https://via.placeholder.com/300x150" class="boottomImg">
-      <img src="https://via.placeholder.com/300x150" class="boottomImg">
+      <a href="https://www.nps.gov/subjects/npscelebrates/find-your-virtual-park.htm" target="_blank"><img src="./images/gallery-1.png" class="bottomImg" alt="People at a park"> </a>
+        <a href="https://www.nps.gov/articles/drivingsafety.htm" target="_blank"><img src="./images/gallery-3.png" class="bottomImg" alt="A deer jumping a fence"> </a>
+          <a href="https://www.nps.gov/subjects/pirates/index.htm" target="_blank"><img src="./images/gallery-6.png" class="bottomImg" alt="A boat at a lake bank"> </a>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="bootstrap-assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
-
+  <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>
