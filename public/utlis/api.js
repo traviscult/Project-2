@@ -22,7 +22,7 @@ const buildNPSURL = () => {
 buildNPSURL();
 
 
-module.exports = npsapi;
+// module.exports = npsapi;
 
 
 
