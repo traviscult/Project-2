@@ -1,4 +1,4 @@
-
+drop database if exists passport_demo;
 CREATE DATABASE passport_demo;
 
 USE passport_demo;
@@ -9,8 +9,8 @@ site_name VARCHAR(255) NOT NULL,
 site_code VARCHAR(255) NOT NULL,
 nps_url TEXT NOT NULL,
 nws_url TEXT NOT NULL,
-FOREIGN KEY (to user email id),
-PRIMARY KEY (id)
+PRIMARY KEY (id),
+CONSTRAINT fk_emailid FOREIGN KEY (id) REFERENCES Users (email)
 );
 
 CREATE TABLE blog (
@@ -27,30 +27,7 @@ id INT AUTO_INCREMENT NOT NULL,
 username VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
 location VARCHAR(50) NOT NULL,
-image ????
-FOREIGN KEY (to user email id),
-PRIMARY KEY (id)
+PRIMARY KEY (id),
+CONSTRAINT fk_userid FOREIGN KEY (id) REFERENCES Users (email)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

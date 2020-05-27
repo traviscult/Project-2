@@ -1,13 +1,13 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form.signup");
-  const emailInput = $("input#email-input");
-  const passwordInput = $("input#password-input");
+  var signUpForm = $("form.signup");
+  var emailInput = $("input#email-input");
+  var passwordInput = $("input#password-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", (event) => {
+  signUpForm.on("submit", function(event) {
     event.preventDefault();
-    const userData = {
+    var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
@@ -23,7 +23,7 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  const signUpUser = (email, password) => {
+  function signUpUser(email, password) {
     $.post("/api/signup", {
       email: email,
       password: password
@@ -35,9 +35,9 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   }
 
-  const handleLoginErr = (err) => {
-    console.log("I am being CALLED!!!!", err)
-    $("#alert .msg").text(err.responseJSON)
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
 });
