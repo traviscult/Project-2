@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   // Getting references to our form and input
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
@@ -36,7 +36,8 @@ $(document).ready(function() {
   }
 
   const handleLoginErr = (err) => {
-    $("#alert .msg").text(err.responseJSON);
+    console.log("I am being CALLED!!!!", err)
+    $("#alert .msg").text(err.responseJSON)
     $("#alert").fadeIn(500);
   }
 });
