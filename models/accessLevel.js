@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const accessLevel = sequelize.define("accessLevel", {
+    let AccessLevel = sequelize.define("AccessLevel", {
         Admin: {
             type: DataTypes.STRING,
             allowNull: true
@@ -13,5 +13,5 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true
         }
     });
-    return accessLevel;
-}
+    return AccessLevel;
+};
