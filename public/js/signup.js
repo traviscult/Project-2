@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
@@ -34,6 +34,7 @@ $(document).ready(function() {
       })
       .catch(handleLoginErr);
   }
+
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
