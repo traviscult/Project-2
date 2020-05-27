@@ -3,7 +3,7 @@
 const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
 const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
 
-let stateCode = " ";
+let stateCode = "nc";
 
 const buildNPSURL = () => {
 
@@ -40,11 +40,11 @@ let ourLong = "77.0369"
 
 const ourNWSCall = () => {
     let ourNWSURL = (`${nwsAPIURL} ${ourLat},${ourLong}`);
-    console.log ourNWSURL;
+    console.log (ourNWSURL);
     $.ajax ({
         url: ourNWSURL,
         method: "GET"
-    }).then ((response)) => {
+    }).then ((response) => {
         console.log (response)
     });
 }
