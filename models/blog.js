@@ -7,11 +7,15 @@ module.exports = (sequelize, DataTypes) => {
                 len: [1]
             }
         },
-        body: {
+        review: {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
-        }
+        },
+        // score: {
+        //     type: DataTypes.INT,
+        //     allowNull: false
+        // }
     });
     return Blog;
 };
