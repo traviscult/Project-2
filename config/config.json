@@ -1,6 +1,5 @@
 {
   "development": {
-    "username": "common",
     "username": "root",
     "password": "password",
     "database": "passport_demo",
@@ -8,16 +7,16 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "common",
+    "username": "root",
     "password": "password",
-    "database": "database_test",
+    "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "common",
+    "username": "root",
     "password": "password",
-    "database": "database_production",
+    "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

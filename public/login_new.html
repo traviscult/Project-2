@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Passport Authentication</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/15bf670575.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mainWrapper text-center d-flex justify-content-center align-items-center" id="addImageDiv">
+        <div class="row contentWrapper">
+            <div class="col-12 bg-dark pt-4 headerCol">
+                <header class="text-center text-white pt-4">
+                    <i class="fas fa-umbrella-beach fa-4x text-warning pt-4 d-inline"></i> &nbsp; &nbsp;
+                    <h1 class="pt-4 d-inline"> NPS Visitor Guide</h1>
+                    <p class="pb-4"> National Park & Recreation Services &bull; Information Finder App</p>
+                </header>
+            </div>
+            <div class="col-12 formCol">
+                <p>Please log in to your account or sign up for NPS information.</p>
+                <form class="login">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address:</label>
+                        <input type="email" class="form-control" id="email-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password:</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password">
+                    </div>
+                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> <span class="msg"></span>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-info loginBtn"><i class="fas fa-sign-in-alt"></i> &nbsp; Login:</button> <button type="submit" class="btn btn-default btn-info signUpBtn">Sign Up &nbsp; <i class="fas fa-user-plus"></i></button>
+                </form>
+                <br>
+            </div>
+            <div class="col-12 bg-dark footerCol">
+                <footer class="p-4 text-muted w-100">
+                    <p> Project contributors: Eddie, Richard, Travis, Yalmar, Shiva &bull; 2020</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- .mainWrapper ends -->
+    <div class="row text-center d-flex justify-content-center align-items-center">
+        <div class="col-12 bottomSection">
+
+            <a href="https://www.nps.gov/subjects/npscelebrates/find-your-virtual-park.htm" target="_blank"><img src="./images/gallery-1.png" class="bottomImg" alt="People at a park"> </a>
+            <a href="https://www.nps.gov/articles/drivingsafety.htm" target="_blank"><img src="./images/gallery-3.png" class="bottomImg" alt="A deer jumping a fence"> </a>
+            <a href="https://www.nps.gov/subjects/pirates/index.htm" target="_blank"><img src="./images/gallery-6.png" class="bottomImg" alt="A boat at a lake bank"> </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="/js/signup.js"></script>
+    <script type="text/javascript" src="/js/members.js"></script>
+
+</body>
+
+</html>
