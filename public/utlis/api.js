@@ -35,17 +35,23 @@ module.exports = npsapi;
 
 const nwsAPIURL = "https://api.weather.gov/points/";
 
-let ourLat = "38.9072"
-let ourLong = "77.0369"
+let ourTestLat = "38.9072"
+let ourTestLong = "-77.0369"
 
 const ourNWSCall = () => {
-    let ourNWSURL = (`${nwsAPIURL} ${ourLat},${ourLong}`);
+    let ourNWSURL = (`${nwsAPIURL} ${ourTestLat},${ourTestLong}`);
     console.log (ourNWSURL);
     $.ajax ({
         url: ourNWSURL,
         method: "GET"
     }).then ((response) => {
         console.log (response)
+        // These two responses hold the current forecast and hourly forecast
+        console.log (response.properties.forecast);
+        console.log (response.properties.forecastHourly); 
+        // Examples URLS
+        // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
+        // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
     });
 }
 

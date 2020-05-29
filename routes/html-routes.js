@@ -31,4 +31,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+
+  // out html routes go here
+  
 };
