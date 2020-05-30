@@ -14,10 +14,12 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-AccessLevel.associate = (models) => {
+// AccessLevel.associate = (models) => {
 
-    AccessLevel.belongsTo(models.User)
-}
+//     AccessLevel.hasMany(models.User, {
+//         foreignKey: 'id'
+//     });
+// }
 
     return AccessLevel;
 };

@@ -20,7 +20,7 @@ module.exports = (app) => {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup",function(req, res) {
-    console.log ("Signup Req Info:", req);
+    console.log ("Signup Req Info:", req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -58,7 +58,7 @@ module.exports = (app) => {
 
   app.get("/api/getUser", async (req, res) => {
    const Users = await db.User.findAll({
-    include: [{ model: db.AccessLevel, as: 'accesslevel' }]    
+    include: [{ model: db.AccessLevel }]    
   });
   res.json(Users);
   })
