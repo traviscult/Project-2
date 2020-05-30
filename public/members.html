@@ -51,7 +51,8 @@
 
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-3">
-        <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs below or create a new one and save.</h5>
+        <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs
+          below or create a new one and save.</h5>
       </div>
 
     </div>
@@ -60,13 +61,14 @@
     <div class="row contentRowMembers d-flex justify-content-center my-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
 
-<div class="card-img-top"> 
-  <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> 
-</div>
+        <div class="card-img-top">
+          <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
+        </div>
 
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
-         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span class="ourTemp"></span></li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span
+              class="ourTemp"></span></li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 1 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 2 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 3 Weather</li>
@@ -100,6 +102,70 @@
         </ul>
       </div>
 
+
+      <div class="col-sm-12 col-md-7 stateSearch mx-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Alabama</option>
+            <option value="2">Alaska</option>
+            <option value="3">Arizona</option>
+            <option value="4">Arkansas</option>
+            <option value="5">California</option>
+            <option value="6">Colorado</option>
+            <option value="7">Connecticut</option>
+            <option value="8">Delaware</option>
+            <option value="51">District of Columbia</option>
+            <option value="9">Florida</option>
+            <option value="10">Georgia</option>
+            <option value="11">Hawaii</option>
+            <option value="12">Idaho</option>
+            <option value="13">Illinois</option>
+            <option value="14">Indiana</option>
+            <option value="15">Iowa</option>
+            <option value="16">Kansas</option>
+            <option value="17">Kentucky</option>
+            <option value="18">Louisiana</option>
+            <option value="19">Maine</option>
+            <option value="20">Maryland</option>
+            <option value="21">Massachusetts</option>
+            <option value="22">Michigan</option>
+            <option value="23">Minnesota</option>
+            <option value="24">Mississippi</option>
+            <option value="25">Missouri</option>
+            <option value="26">Montana</option>
+            <option value="27">Nebraska</option>
+            <option value="28">Nevada</option>
+            <option value="29">New Hampshire</option>
+            <option value="30">New Jersey</option>
+            <option value="31">New Mexico</option>
+            <option value="32">New York</option>
+            <option value="33">North Carolina</option>
+            <option value="34">North Dakota</option>
+            <option value="35">Ohio</option>
+            <option value="36">Oklahoma</option>
+            <option value="37">Oregon</option>
+            <option value="38">Pennsylvania</option>
+            <option value="39">Rhode Island</option>
+            <option value="40">South Carolina</option>
+            <option value="41">South Dakota</option>
+            <option value="42">Tennessee</option>
+            <option value="43">Texas</option>
+            <option value="44">Utah</option>
+            <option value="45">Vermont</option>
+            <option value="46">Virginia</option>
+            <option value="47">Washington</option>
+            <option value="48">West Virginia</option>
+            <option value="49">Wisconsin</option>
+            <option value="50">Wyoming</option>
+          </select>
+        </div>
+      </div>
+
+
       <div class="col-sm-12 col-md-7 blogContentMembers mx-3">
         <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
         <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
@@ -118,18 +184,18 @@
     <!-- Blog creating section -->
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-4">
-        <p class="sidebarTitle pt-4"> Create a new blog: </p> 
+        <p class="sidebarTitle pt-4"> Create a new blog: </p>
         <form>
           <div class="form-group">
             <label for="blogCreateInput">Blog Title:</label>
             <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
           </div>
-         
+
           <div class="form-group">
             <label for="blogCreateField">Blog Content:</label>
             <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
           </div>
-        </form> 
+        </form>
       </div>
     </div>
 
@@ -166,8 +232,8 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
 
