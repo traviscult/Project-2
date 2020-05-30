@@ -28,9 +28,9 @@ require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(() => {
-  AccessLevel.create({ Admin: 0, Moderator: 0, Noob: 1});
-  AccessLevel.create({ Admin: 0, Moderator: 1, Noob: 0});
-  AccessLevel.create({ Admin: 1, Moderator: 0, Noob: 0});
+  db.AccessLevel.create({ Admin: 0, Moderator: 0, Noob: 1});
+  db.AccessLevel.create({ Admin: 0, Moderator: 1, Noob: 0});
+  db.AccessLevel.create({ Admin: 1, Moderator: 0, Noob: 0});
   app.listen(PORT, () => {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
