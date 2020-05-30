@@ -227,7 +227,6 @@ a:hover {
   float: right;
 }
 
-
 #greetingMembers {
   color: #2caabe;
   font-weight: bold
@@ -237,12 +236,23 @@ a:hover {
  color: #a11e50;
 }
 
+/* weather image */
+.card-img-top {
+  text-align: center;
+  margin: 0 auto;
+  }
+
+.card-img-top img {
+  width: 6rem;
+  border-radius: 10px;
+}
+
 .blogTitleMembers {
   padding: 1rem;
   background-color: #f6f9fa;
 }
 
-.blogTitleHeader {
+.sidebarTitle {
   text-transform: uppercase;
   color: #2caabe;
   font-weight: bold;
@@ -267,8 +277,14 @@ color: #333;
   text-transform: uppercase;
    }
 
+   .weatherIcon {
+     padding-right: 1rem;
+     color: #ff8725;
+   }
+
 .penIcon {
   padding-left: 1rem;
+  color: #a11e50;
 }
 
 .blogTitleLi {
@@ -276,7 +292,7 @@ color: #333;
 }
 
 .blogDisplayHeader{
-  color: #ffc925;
+  color: #a11e50;
   font-weight: bold;
   margin-bottom: 2rem;
   padding-top: .5rem;
@@ -296,8 +312,11 @@ color: #333;
 
 .blogContentMembers:hover {
   background-color: #fff;
-  
-}
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
 
 .galleryPara{
   color: #a11e50;
@@ -307,3 +326,5 @@ color: #333;
  
   color: #ffc925;
 }
+
+

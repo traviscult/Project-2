@@ -58,7 +58,7 @@ module.exports = (app) => {
 
   app.get("/api/getUser", async (req, res) => {
    const Users = await db.User.findAll({
-    include: [{ model: db.AccessLevel, as: 'accesslevel' }]    
+    include: [{ model: db.AccessLevel }]    
   });
   res.json(Users);
   })
