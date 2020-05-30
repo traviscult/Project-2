@@ -31,7 +31,7 @@ $(document).ready(function () {
       url: ourNWSURL,
       method: "GET",
     }).then((response) => {
-      console.log(response)
+      console.log(response);
     });
     console.log(ourNWSURL);
   }
