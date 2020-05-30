@@ -3,7 +3,7 @@
 const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
 const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
 
-let stateCode = "nc";
+let stateCode = " ";
 
 const buildNPSURL = () => {
 
