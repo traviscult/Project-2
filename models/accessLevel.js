@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
 
 AccessLevel.associate = (models) => {
 
-    AccessLevel.belongsTo(models.User)
+    AccessLevel.belongsTo(models.User, {
+        foreignKey: 'id'
+    });
 }
 
     return AccessLevel;
