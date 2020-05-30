@@ -1,6 +1,8 @@
-$(document).ready(function() {
+// EXS 30th May 2020 - This file maybe deprecated
+
+$(document).ready(() => {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
+  var signUpForm = $("form.login");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
@@ -23,10 +25,14 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
+  // Added a 1 here as a default user level
   function signUpUser(email, password) {
+    console.log ("Signing Up User");
     $.post("/api/signup", {
       email: email,
-      password: password
+      password: password,
+      accessLevel: 1
+
     })
       .then(function(data) {
         window.location.replace("/members");
@@ -34,6 +40,7 @@ $(document).ready(function() {
       })
       .catch(handleLoginErr);
   }
+
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);

@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/15bf670575.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
@@ -36,7 +37,9 @@
       <header class="text-left text-white pt-4 pl-4">
         <i class="fas fa-umbrella-beach fa-4x text-warning pt-4 d-inline"></i> &nbsp; &nbsp;
         <h1 class="pt-3 d-inline-block"> NPS Visitor Guide</h1>
-        <p class="pb-4 d-block"> National Park & Recreation Services &bull; Information Finder App <span class="logoutBtnMembers"> <a href="/logout"> Logout &nbsp;<i class="fas fa-sign-out-alt fa-lg"></i></a> </span> </p>
+        <p class="pb-4 d-block"> National Park & Recreation Services &bull; Information Finder App <span
+            class="logoutBtnMembers"> <a href="/logout"> Logout &nbsp;<i class="fas fa-sign-out-alt fa-lg"></i></a>
+          </span> </p>
       </header>
     </div>
     <div class="text-center" id="greetingMembers">
@@ -45,6 +48,7 @@
     </div>
     <hr>
     <!-- Main Content Section -->
+
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-3">
         <h5 class="col mt-4"> Here you can find your past blogs or create a new one and save.</h5>
@@ -54,25 +58,60 @@
 
     <div class="row contentRowMembers d-flex justify-content-center align-items-center my-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
-        <p class="blogTitleHeader"> Your Blogs: <br> </p>  <hr>
+        <p class="blogTitleHeader"> Your Blogs: <br> </p>
+        <hr>
         <ul id="blogTitleUl">
-          <a href="#"> <i class="fas fa-edit penIcon"></i><li class="blogTitleLi d-inline-block"> First Blog Title </li> </a>
+          <a href="#"> <i class="fas fa-edit penIcon"></i>
+            <li class="blogTitleLi d-inline-block"> First Blog Title </li>
+          </a>
           <hr>
-          <a href="#"> <i class="fas fa-edit penIcon"></i><li class="blogTitleLi d-inline-block"> Second Blog Title </li> </a>
+          <a href="#"> <i class="fas fa-edit penIcon"></i>
+            <li class="blogTitleLi d-inline-block"> Second Blog Title </li>
+          </a>
           <hr>
-          <a href="#"> <i class="fas fa-edit penIcon"></i><li class="blogTitleLi d-inline-block"> Third Blog Title </li> </a>
+          <a href="#"> <i class="fas fa-edit penIcon"></i>
+            <li class="blogTitleLi d-inline-block"> Third Blog Title </li>
+          </a>
           <hr>
-          <a href="#"> <i class="fas fa-edit penIcon"></i><li class="blogTitleLi d-inline-block"> Fourth Blog Title </li> </a>
+          <a href="#"> <i class="fas fa-edit penIcon"></i>
+            <li class="blogTitleLi d-inline-block"> Fourth Blog Title </li>
+          </a>
           <hr>
-          <a href="#"> <i class="fas fa-edit penIcon"></i><li class="blogTitleLi d-inline-block"> Fifth Blog Title </li> </a>
+          <a href="#"> <i class="fas fa-edit penIcon"></i>
+            <li class="blogTitleLi d-inline-block"> Fifth Blog Title </li>
+          </a>
           <hr>
         </ul>
       </div>
+      <!-- Create our base card for displaying our weather infomation -->
+      <!-- EXS Weather as a list... This may need changing to match the style of the blog list-->
+      <div class="card">
+        <img class="card-img-top" src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
+        <div class="card-body">
+          <h5 class="card-title">Weather</h5>
+          <p class="card-text">Current and Future Weather Conditions</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Current Weather: <span class="ourTemp"></span></li>
+          <li class="list-group-item">Day 1 Weather</li>
+          <li class="list-group-item">Day 2 Weather</li>
+          <li class="list-group-item">Day 3 Weather</li>
+          <li class="list-group-item">Day 4 Weather</li>
+          <li class="list-group-item">Day 5 Weather</li>
+        </ul>
+      </div>
+
       <div class="col-sm-12 col-md-7 blogContentMembers mx-3">
         <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed:</h6>
-        <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp;  Blog title will be Displayed here</h4>
-        <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
-        <p class=""> Ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
+        <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
+        <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
+          animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo,
+          rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam
+          animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
+        <p class=""> Ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate animi sequi quo
+          nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias
+          quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab
+          architecto, sequi atque hic odit molestiae. </p>
       </div>
     </div>
     <hr>
@@ -89,14 +128,18 @@
     <!-- Before-Footer Section -->
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-4">
-        <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc. <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
+        <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc.
+          <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
       </div>
     </div>
     <div class="row text-center d-flex justify-content-center align-items-center">
       <div class="col-12 bottomSection">
-        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
-        <a href="https://www.nps.gov/subjects/healthandsafety/index.htm"  target="_blank"> <img src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
-        <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
+        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png"
+            class="bottomImg" alt="People at a park"> </a>
+        <a href="https://www.nps.gov/subjects/healthandsafety/index.htm" target="_blank"> <img
+            src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
+        <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img
+            src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
 
       </div>
     </div>
@@ -110,8 +153,12 @@
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- EXS 30th May 2020 - Adding in full jquery minified -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
 
