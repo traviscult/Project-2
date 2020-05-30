@@ -1,39 +1,87 @@
+// EXS 29th May 2020 - Combine both the login and signup scripts into one
+// Version 1.0 - Right now the script does not write or respond to the local database
+// removing all code to confirm button click functionality is working
+
 $(document).ready(() => {
   // Getting references to our form and inputs
-  var loginForm = $("form.login");
-  var emailInput = $("input#email-input");
-  var passwordInput = $("input#password-input");
+  const loginForm = $("form.login");
+  let emailInput = $("input#email-input");
+  let passwordInput = $("input#password-input");
 
-  // When the form is submitted, we validate there's an email and password entered
-  loginForm.on("submit", function(event) {
+  // EXS check to see if the login button has been clicked
+  // Validate our fields have data, if not, then return out of the function
+  $(':button').click(function (event) {
     event.preventDefault();
-    var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+    if (this.id === "loginBtn") {
+      let userData = {
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
+      }
+      // If we have null data return out
+      if (!userData.email || !userData.password) {
+        return;
+      }
+      loginUser(userData.email, userData.password);
+      emailInput.val("");
+      passwordInput.val("");
+      console.log("Our UserData:", userData);
+      console.log("Login Button Pressed");
+    } else if (this.id === "signUpBtn") {
+      let userData = {
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
+      }
+      // If we have null data return out
+      if (!userData.email || !userData.password) {
+        return;
+      }
+      signUpUser(userData.email, userData.password);
+      emailInput.val("");
+      passwordInput.val("");
+      console.log("Our UserData:", userData);
+      console.log("Signup Button Pressed")
     };
-
-    if (!userData.email || !userData.password) {
-      return;
-    }
-
-    // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
+    console.log (email,password);
+    console.log("Executing Login User");
     $.post("/api/login", {
       email: email,
       password: password
     })
-      .then(function() {
+      .then(function () {
         window.location.replace("/members");
         // If there's an error, log the error
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log(err);
       });
+  }
+
+  // EXS 30th May 2020 - signUpUser function, pass over user created details, then
+  // grant them accessLevel 1, which I believe is Noob...
+  // If the creation is good, then proceed to the members page
+
+  function signUpUser(email, password) {
+    console.log("Signing Up User");
+    // console.log (email,password);
+    $.post("/api/signup", {
+      email: email,
+      password: password,
+      accessLevel: 1
+    }).then(function (data) {
+      console.log ("login.js signup after data: ", data);
+        window.location.replace("/members");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
+  }
+
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
 });

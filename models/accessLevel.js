@@ -1,17 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
-    const accessLevel = sequelize.define("accessLevel", {
+    let AccessLevel = sequelize.define("AccessLevel", {
         Admin: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: true
         },
         Moderator: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: true
         },
         Noob: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: true
         }
     });
-    return accessLevel;
+
+AccessLevel.associate = (models) => {
+
+    AccessLevel.belongsTo(models.User)
 }
+
+    return AccessLevel;
+};
