@@ -1,3 +1,5 @@
+// EXS 30th May 2020 - This file maybe deprecated
+
 $(document).ready(() => {
   // Getting references to our form and input
   var signUpForm = $("form.login");

@@ -60,6 +60,10 @@ $(document).ready(() => {
       });
   }
 
+  // EXS 30th May 2020 - signUpUser function, pass over user created details, then
+  // grant them accessLevel 1, which I believe is Noob...
+  // If the creation is good, then proceed to the members page
+
   function signUpUser(email, password) {
     console.log("Signing Up User");
     // console.log (email,password);
@@ -67,8 +71,8 @@ $(document).ready(() => {
       email: email,
       password: password,
       accessLevel: 1
-    })
-      .then(function (data) {
+    }).then(function (data) {
+      console.log ("login.js signup after data: ", data);
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })

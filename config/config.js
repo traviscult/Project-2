@@ -12,7 +12,7 @@ module.exports = {
     password: process.env.DB_PASS,
     database: "passport_demo",
     host: process.env.DB_HOST,
-    dialect: "mysql"
+    dialect: "mysql2"
   },
   production: {
     "use_env_variable": "JAWSDB_URL",
