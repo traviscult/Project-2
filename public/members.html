@@ -51,14 +51,30 @@
 
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-3">
-        <h5 class="col mt-4"> Here you can find your past blogs or create a new one and save.</h5>
+        <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs below or create a new one and save.</h5>
       </div>
 
     </div>
+    <hr>
 
-    <div class="row contentRowMembers d-flex justify-content-center align-items-center my-4">
+    <div class="row contentRowMembers d-flex justify-content-center my-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
-        <p class="blogTitleHeader"> Your Blogs: <br> </p>
+
+<div class="card-img-top"> 
+  <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> 
+</div>
+
+        <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
+         <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span class="ourTemp"></span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 1 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 2 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 3 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 4 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 5 Weather</li>
+        </ul>
+
+        <p class="sidebarTitle pt-4"> Your Blogs: <br> </p>
         <hr>
         <ul id="blogTitleUl">
           <a href="#"> <i class="fas fa-edit penIcon"></i>
@@ -82,27 +98,11 @@
           </a>
           <hr>
         </ul>
-      </div>
-      <!-- Create our base card for displaying our weather infomation -->
-      <!-- EXS Weather as a list... This may need changing to match the style of the blog list-->
-      <div class="card">
-        <img class="card-img-top" src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
-        <div class="card-body">
-          <h5 class="card-title">Weather</h5>
-          <p class="card-text">Current and Future Weather Conditions</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Current Weather: <span class="ourTemp"></span></li>
-          <li class="list-group-item">Day 1 Weather</li>
-          <li class="list-group-item">Day 2 Weather</li>
-          <li class="list-group-item">Day 3 Weather</li>
-          <li class="list-group-item">Day 4 Weather</li>
-          <li class="list-group-item">Day 5 Weather</li>
-        </ul>
+
       </div>
 
       <div class="col-sm-12 col-md-7 blogContentMembers mx-3">
-        <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed:</h6>
+        <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
         <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
         <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
           animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo,
@@ -116,12 +116,22 @@
     </div>
     <hr>
 
-    <!-- Before-Footer Section -->
+    <!-- Blog creating section -->
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-4">
-        <h5 class="mt-2"> Create a new blog: </h5>
+        <p class="sidebarTitle pt-4"> Create a new blog: </p> 
+        <form>
+          <div class="form-group">
+            <label for="blogCreateInput">Blog Title:</label>
+            <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
+          </div>
+         
+          <div class="form-group">
+            <label for="blogCreateField">Blog Content:</label>
+            <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
+          </div>
+        </form> 
       </div>
-
     </div>
 
     <hr>
