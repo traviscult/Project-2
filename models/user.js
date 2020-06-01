@@ -25,6 +25,18 @@ module.exports = function(sequelize, DataTypes) {
     accessLevel: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    geoLat: {
+      type: DataTypes.DECIMAL(10, 4),
+      allowNull: false
+    },
+    geoLong: {
+      type: DataTypes.DECIMAL(10, 4),
+      allowNull: false
     }
   });
 
