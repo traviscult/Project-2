@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             len: [1]
         },
         // score: {
-        //     type: DataTypes.INT,
+        //     type: DataTypes.INTEGER,
         //     allowNull: false
         // }
     });
