@@ -16,6 +16,7 @@
 <body id="removeBgImage">
 
   <!-- Modal Section -->
+  <!-- EXS 1st June 2020 - When this page is displayed modelUserName and modelUserEmail is updated -->
   <button id="myBtn" type="button" class="btn"><i class="fas fa-user-circle circleIconTop"></i></button>
   <div id="myModal" class="modal text-center">
     <div class="modal-content">
@@ -44,7 +45,8 @@
     </div>
     <div class="text-center" id="greetingMembers">
       <!-- ##### USE the span id below or div id above to reference NAME VARIABLE in JS -->
-      <p> Hey, <span id="greeting"> Mike! </span> Welcome to your personalized NPS dashboard!</p>
+      <!-- EXS 1st June 2020 - Added in id of modalUserName so we only need to change one line of code -->
+      <p> Hey, <span id="greeting">TestName</span> Welcome to your personalized NPS dashboard!</p>
     </div>
     <hr>
     <!-- Main Content Section -->
@@ -102,67 +104,75 @@
         </ul>
       </div>
 
-
       <div class="col-sm-12 col-md-7 stateSearch mx-3">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="state-selected">
             <option selected>Choose...</option>
-            <option value="1">Alabama</option>
-            <option value="2">Alaska</option>
-            <option value="3">Arizona</option>
-            <option value="4">Arkansas</option>
-            <option value="5">California</option>
-            <option value="6">Colorado</option>
-            <option value="7">Connecticut</option>
-            <option value="8">Delaware</option>
-            <option value="51">District of Columbia</option>
-            <option value="9">Florida</option>
-            <option value="10">Georgia</option>
-            <option value="11">Hawaii</option>
-            <option value="12">Idaho</option>
-            <option value="13">Illinois</option>
-            <option value="14">Indiana</option>
-            <option value="15">Iowa</option>
-            <option value="16">Kansas</option>
-            <option value="17">Kentucky</option>
-            <option value="18">Louisiana</option>
-            <option value="19">Maine</option>
-            <option value="20">Maryland</option>
-            <option value="21">Massachusetts</option>
-            <option value="22">Michigan</option>
-            <option value="23">Minnesota</option>
-            <option value="24">Mississippi</option>
-            <option value="25">Missouri</option>
-            <option value="26">Montana</option>
-            <option value="27">Nebraska</option>
-            <option value="28">Nevada</option>
-            <option value="29">New Hampshire</option>
-            <option value="30">New Jersey</option>
-            <option value="31">New Mexico</option>
-            <option value="32">New York</option>
-            <option value="33">North Carolina</option>
-            <option value="34">North Dakota</option>
-            <option value="35">Ohio</option>
-            <option value="36">Oklahoma</option>
-            <option value="37">Oregon</option>
-            <option value="38">Pennsylvania</option>
-            <option value="39">Rhode Island</option>
-            <option value="40">South Carolina</option>
-            <option value="41">South Dakota</option>
-            <option value="42">Tennessee</option>
-            <option value="43">Texas</option>
-            <option value="44">Utah</option>
-            <option value="45">Vermont</option>
-            <option value="46">Virginia</option>
-            <option value="47">Washington</option>
-            <option value="48">West Virginia</option>
-            <option value="49">Wisconsin</option>
-            <option value="50">Wyoming</option>
+            <option id="1" value="al">Alabama</option>
+            <option id="2" value="ak">Alaska</option>
+            <option id="3" value="as">American Samoa</option>
+            <option id="4" value="az">Arizona</option>
+            <option id="5" value="ak">Arkansas</option>
+            <option id="6" value="ca">California</option>
+            <option id="7" value="co">Colorado</option>
+            <option id="8" value="ct">Connecticut</option>
+            <option id="9" value="de">Delaware</option>
+            <option id="10" value="dc">District of Columbia</option>
+            <option id="11" value="fl">Florida</option>
+            <option id="12" value="ga">Georgia</option>
+            <option id="13" value="gu">Guam</option>
+            <option id="14" value="hi">Hawaii</option>
+            <option id="15" value="id">Idaho</option>
+            <option id="16" value="il">Illinois</option>
+            <option id="17" value="in">Indiana</option>
+            <option id="18" value="ia">Iowa</option>
+            <option id="19" value="ks">Kansas</option>
+            <option id="20" value="ky">Kentucky</option>
+            <option id="21" value="la">Louisiana</option>
+            <option id="22" value="me">Maine</option>
+            <option id="23" value="mh">Marshall Islands</option>
+            <option id="24" value="md">Maryland</option>
+            <option id="25" value="ma">Massachusetts</option>
+            <option id="26" value="mi">Michigan</option>
+            <option id="27" value="mn">Minnesota</option>
+            <option id="28" value="ms">Mississippi</option>
+            <option id="29" value="mo">Missouri</option>
+            <option id="30" value="mt">Montana</option>
+            <option id="31" value="ne">Nebraska</option>
+            <option id="32" value="nv">Nevada</option>
+            <option id="33" value="nh">New Hampshire</option>
+            <option id="34" value="nj">New Jersey</option>
+            <option id="35" value="nm">New Mexico</option>
+            <option id="36" value="ny">New York</option>
+            <option id="37" value="nc">North Carolina</option>
+            <option id="38" value="nd">North Dakota</option>
+            <option id="39" value="np">Northern Mariana Islands</option>
+            <option id="40" value="oh">Ohio</option>
+            <option id="41" value="ok">Oklahoma</option>
+            <option id="42" value="or">Oregon</option>
+            <option id="43" value="pa">Pennsylvania</option>
+            <option id="44" value="pr">Puerto Rico</option>
+            <option id="45" value="ri">Rhode Island</option>
+            <option id="46" value="sc">South Carolina</option>
+            <option id="47" value="sd">South Dakota</option>
+            <option id="48" value="tn">Tennessee</option>
+            <option id="49" value="tx">Texas</option>
+            <option id="50" value="ut">Utah</option>
+            <option id="51" value="vt">Vermont</option>
+            <option id="52" value="vi">Virgin Islands</option>
+            <option id="53" value="va">Virginia</option>
+            <option id="54" value="wa">Washington</option>
+            <option id="55" value="wv">West Virginia</option>
+            <option id="56" value="wi">Wisconsin</option>
+            <option id="57" value="wy">Wyoming</option>
           </select>
+          <button class="btn btn-primary" id="state-selection" type="submit" name="action">Search
+          </button>
         </div>
+        <div class = "col 12 m6 l6" id = "parks"></div>
       </div>
 
 
@@ -222,21 +232,23 @@
     <!-- Footer Section -->
     <div class="col-12 bg-dark footerColMembers text-center">
       <footer class="p-4 text-muted w-100">
-        <p> Project contributors: Eddie, Richard, Travis, Yalmar, Shiva &bull; 2020</p>
+        <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
       </footer>
     </div>
 
   </div>
 
   <!-- EXS 30th May 2020 - Adding in full jquery minified -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="utlis/api.js"></script>
 
+  
+  
 </body>
 
 </html>
