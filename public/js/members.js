@@ -28,24 +28,33 @@ $(document).ready(function () {
     const ourLong = position.coords.longitude;
     // EXS 30th May 2020 - Create our NWS calls, this is test data so we're cheating a little
     // to make sure everything is being returned as expected
+  }
 
-    // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
-    // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
-    // Lat/Long Info https://api.weather.gov/points/lat,long
+  // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
+  // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
+  // Lat/Long Info https://api.weather.gov/points/lat,long
 
+  const loadWeather = () => {
+    const ourTestNWSURL = "https://api.weather.gov/gridpoints/RAH/78,52/forecast"
     const nwsAPIURL = "https://api.weather.gov/points/";
     const ourNWSURL = (`${nwsAPIURL}${ourLat},${ourLong}`);
     $.ajax({
-      url: ourNWSURL,
+      url: ourTestNWSURL,
       method: "GET",
     }).then((response) => {
-      console.log(response);
+      console.log(response.properties.periods[0]);
+      const ourWeatherIcon = response.properties.periods[0].icon;
+      const ourWeatherTemp = response.properties.periods[0].temperature;
+      console.log(ourWeatherIcon, ourWeatherTemp);
     });
-    console.log(ourNWSURL);
+
+    //$("#ourTemp").text("Test");
+    //$("#ourWeatherIcon").text("Testing");
   }
 
   getLocation();
-
+  $("#ourTemp").text("Test");
+  $("#ourWeatherIcon").text("Testing");
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function (data) {
