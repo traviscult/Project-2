@@ -52,7 +52,10 @@ $(document).ready(() => {
       password: password
     })
       .then(function () {
+        // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
+        // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
         window.location.replace("/members");
+
         // If there's an error, log the error
       })
       .catch(function (err) {
