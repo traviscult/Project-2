@@ -33,7 +33,6 @@ $(document).ready(() => {
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
-// EXS 29th May 2020 - Removed these 2 clicks as they're not terribly important to the actual login/signup process
 
 btn.onclick = function () {
   modal.style.display = "block";
