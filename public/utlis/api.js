@@ -57,6 +57,30 @@ const ourNWSCall = () => {
 
 module.exports = ourNWSCall;
 
+const ourBlogPost = () => {
+    // EXS 1st June 2020 - All our user to create a blog post
+
+}
+
+const editBlogPost = () => {
+    // EXS 1st June 2020 - Edit existing blog post
+    // Only original poster and Moderator+ can edit an existing post
+    // After a post is modified it needs to have a line that states
+    // this post was modified by xxxxxx on date/time
+}
+
+const deleteBlogPost = () => {
+    // EXS 1st June 2020 - Delete an existing blog post
+    // Only original poster and moderators+ can delete a blog post
+}
+
+const grantModeratorRights = () => {
+    // EXS 1st June 2020 - Grant a user moderator rights
+    // this can onjly be performed by a user with admin permissions
+}
+
+
+
 //does api support cors may have to move data to node 
 
 //start here then move to node .js if node use axios 
