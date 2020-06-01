@@ -29,6 +29,7 @@ $(document).ready(() => {
 
 
 // MODAL SECTION
+// EXS 1st June 2020 - This needs to be JQuery for consistency.
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];

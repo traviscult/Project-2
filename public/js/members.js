@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+  // EXS 1st June 2020 - Added in some test data for modal ond greeting message
+  // In  prod this needs to be changed to the values stored in the database.
+  const ourTestName = "Fred"
+  const ourTestEmail = "Fred@fred.com"
+  $("#modalUserName").text(ourTestName);
+  $("#modalUserEmail").text(ourTestEmail);
+  $("#greeting").text(ourTestName);
+
   // EXS 29th May 2020 - saunders.eddie@outlook.com
   // Quick and dirty function to get Users position, this will prompt the user to allow location
   //  This can be tidied up for the final build
