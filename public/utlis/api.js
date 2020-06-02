@@ -33,7 +33,7 @@ $(document).ready(() => {
             console.log("statepark", statepark)
             const placeHolderImg = "https://www.nps.gov/articles/images/yose-main.jpg";
             let picture = statepark.images[0].url.includes(".jpg") ? statepark.images[0].url : placeHolderImg;
-            let parkPicture = `<img src=${picture}>`
+            let parkPicture = ` <a target="_blank" href="${statepark.url}"><img src=${picture}></a>`
             let card = $("<div>").addClass("card parkCard");
             let cardImg = $("<div>").addClass("card-image").append(parkPicture);
             let parkNameEl = $("<h1>").addClass("card-title").text(statepark.title);

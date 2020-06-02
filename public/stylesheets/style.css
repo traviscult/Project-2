@@ -240,6 +240,11 @@ a:hover {
  color: #a11e50;
 }
 
+/* state park images */
+.card-image{
+  width: 3rem;
+}
+
 /* weather image */
 .card-img-top {
   text-align: center;
