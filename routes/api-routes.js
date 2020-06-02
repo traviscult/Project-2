@@ -23,7 +23,10 @@ module.exports = (app) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      accessLevel: req.body.accessLevel
+      accessLevel: req.body.accessLevel,
+      geoLat: req.body.geoLat,
+      geoLong: req.body.geoLong
+
     })
       .then( function () {
         console.log ("Now trying to login...");
@@ -63,6 +66,7 @@ module.exports = (app) => {
   });
 
   // Our api routes go here
+<<<<<<< HEAD
   app.get('/api/history', async (req,res) => {
     const History = await db.History.findAll({
       include: [{ model: db.User }]
@@ -94,3 +98,6 @@ module.exports = (app) => {
     });
   
 };
+=======
+};
+>>>>>>> master
