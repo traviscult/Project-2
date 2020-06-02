@@ -53,7 +53,7 @@ $(document).ready(function () {
     //$("#ourWeatherIcon").text("Testing");
   }
 
-  getLocation();
+  //getLocation();
   $("#ourTemp").text("Test");
   $("#ourWeatherIcon").text("Testing");
   // This file just does a GET request to figure out which user is logged in
