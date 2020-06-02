@@ -57,7 +57,6 @@ $(document).ready(() => {
         // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
         // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
         window.location.replace("/members");
-
         // If there's an error, log the error
       })
       .catch(function (err) {
@@ -70,15 +69,12 @@ $(document).ready(() => {
   // If the creation is good, then proceed to the members page
   // EXS Added in test data for name and lat/long
   function signUpUser(email, password) {
-
-    // EXS 2nd June 2020 - If we have 0 in both ourLAt and ourLong, then default to Washington DC
+    // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
     if (newUser.ourLat == 0 && newUser.ourLong == 0) {
-      console.log ("We are at 0,0");
+      console.log("We are at 0,0");
       newUser.ourLat = 38.9072;
       newUser.ourLong = -77.0369;
     }
-    console.log("Signing Up User: ", newUser.ourLat, newUser.ourLong);
-    // console.log (email,password);
     $.post("/api/signup", {
       name: 'eddie',
       email: email,
@@ -87,7 +83,6 @@ $(document).ready(() => {
       geoLat: newUser.ourLat,
       geoLong: newUser.ourLong
     }).then(function (data) {
-      console.log("login.js signup after data: ", data);
       window.location.replace("/members");
       // If there's an error, handle it by throwing up a bootstrap alert
     })
@@ -104,7 +99,6 @@ $(document).ready(() => {
   const getLocation = (position) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-      console.log("Our Location Call Returned:");
     } else {
       console.log("GeoLocation not supported");
     }
@@ -112,11 +106,9 @@ $(document).ready(() => {
 
   const showPosition = (position) => {
     // EXS 30th May 2020 - Copy our geoLocation into newUser lat and long
-    // let ourTestLat = "38.9072"
-    // let ourTestLong = "-77.0369"
     newUser.ourLat = position.coords.latitude;
     newUser.ourLong = position.coords.longitude;
-    console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
+    // console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
   }
 
   getLocation();
