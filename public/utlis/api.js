@@ -28,21 +28,32 @@ $(document).ready(() => {
 
         $("#parks").empty();
 
-        let parkPicture = "<img src=" + result.data[0].images[0].url + ">"
-        let card = $("<div>").addClass("card parkCard");
-        let cardImg = $("<div>").addClass("card-image").append(parkPicture);
-        // let parkNameEl = $("<h1>").addClass("card-title").text(result.fullName);
-        let row = $("<div>").addClass("row");
-        let columnOne = $("<div>").addClass("col s6");
-        let columnTwo = $("<div>").addClass("col s6");
 
-        // append all lets to the page
-        row.append(columnOne, columnTwo);
-        columnOne.append(parkPicture);
-        columnTwo.append(parkPicture);
-        // cardBody.append(parkNameEl);
-        card.append(cardImg);
-        $("#parks").append(card);
+        result.data.map(statepark => {
+            console.log("statepark", statepark)
+            const placeHolderImg = "https://www.nps.gov/articles/images/yose-main.jpg";
+            let picture = statepark.images[0].url.includes(".jpg") ? statepark.images[0].url : placeHolderImg;
+            let parkPicture = ` <a target="_blank" href="${statepark.url}"><img src=${picture}></a>`
+            let card = $("<div>").addClass("card parkCard");
+            let cardImg = $("<div>").addClass("card-image").append(parkPicture);
+            let parkNameEl = $("<h1>").addClass("card-title").text(statepark.title);
+            console.log(parkNameEl)
+            let cardBody = $("<div>").addClass("card-content");
+            let row = $("<div>").addClass("row");
+            let columnOne = $("<div>").addClass("col s6");
+            let columnTwo = $("<div>").addClass("col s6");
+
+            // append all lets to the page
+            row.append(columnOne, columnTwo);
+            columnOne.append(parkPicture);
+            columnTwo.append(parkPicture);
+            cardBody.append(parkNameEl);
+            card.append(cardImg);
+            card.append(cardBody);
+
+
+            $("#parks").append(card);
+        })
 
     };
 

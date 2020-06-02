@@ -240,6 +240,11 @@ a:hover {
  color: #a11e50;
 }
 
+/* state park images */
+.card-image{
+  width: 3rem;
+}
+
 /* weather image */
 .card-img-top {
   text-align: center;
@@ -332,3 +337,13 @@ color: #333;
 }
 
 
+.parksDisplay {
+  background-color: #f3f2eb;
+  border: 1px solid rgb(204, 203, 203);
+  padding: 2rem;
+  height: 300px;
+}
+
+.blogBtn {
+  text-align: right;
+}
