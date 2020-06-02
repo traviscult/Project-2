@@ -6,7 +6,6 @@ $(document).ready(() => {
   // Getting references to our form and inputs
   let newUser = { firstName: "", lastName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
 
-
   const loginForm = $("form.login");
   let emailInput = $("input#email-input");
   let passwordInput = $("input#password-input");
