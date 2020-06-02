@@ -70,6 +70,13 @@ $(document).ready(() => {
   // If the creation is good, then proceed to the members page
   // EXS Added in test data for name and lat/long
   function signUpUser(email, password) {
+
+    // EXS 2nd June 2020 - If we have 0 in both ourLAt and ourLong, then default to Washington DC
+    if (newUser.ourLat == 0 && newUser.ourLong == 0) {
+      console.log ("We are at 0,0");
+      newUser.ourLat = 38.9072;
+      newUser.ourLong = -77.0369;
+    }
     console.log("Signing Up User: ", newUser.ourLat, newUser.ourLong);
     // console.log (email,password);
     $.post("/api/signup", {
@@ -97,7 +104,7 @@ $(document).ready(() => {
   const getLocation = (position) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-      console.log("Our Location Call Returned: ");
+      console.log("Our Location Call Returned:");
     } else {
       console.log("GeoLocation not supported");
     }
@@ -105,11 +112,12 @@ $(document).ready(() => {
 
   const showPosition = (position) => {
     // EXS 30th May 2020 - Copy our geoLocation into newUser lat and long
+    // let ourTestLat = "38.9072"
+    // let ourTestLong = "-77.0369"
     newUser.ourLat = position.coords.latitude;
     newUser.ourLong = position.coords.longitude;
-    console.log(newUser);
+    console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
   }
 
   getLocation();
-
 });
