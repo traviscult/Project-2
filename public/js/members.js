@@ -1,27 +1,35 @@
 $(document).ready(function () {
 
 
-    // This file just does a GET request to figure out which user is logged in
+  // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+  // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
   $.get("/api/user_data").then(function (data) {
     // $(".member-name").text(data.email);
     console.log("Our get user_data:", data);
     $("#modalUserName").text(data.name);
     $("#modalUserEmail").text(data.email);
     $("#greeting").text(data.name);
-
+    const ourFirstNWSURL = (`https://api.weather.gov/points/${data.lat},${data.long}`);
+    // EXS 2nd June 2020 - Get our initial weather 
+    $.ajax({
+      url: ourFirstNWSURL,
+      method: "GET"
+    }).then((response) => {
+      //console.log(response.properties.forecast);
+      const ourLongRangeForecast = response.properties.forecast;
+      //console.log (ourLongRangeForecast);
+      $.ajax({
+        url: ourLongRangeForecast,
+        method: "GET"
+      }).then((response) => {
+        console.log(response.properties.periods[0].temperature);
+        $("#ourTemp").text(response.properties.periods[0].temperature);
+      })
+    });
   });
 
 
-
-  // EXS 1st June 2020 - Added in some test data for modal ond greeting message
-  // In  prod this needs to be changed to the values stored in the database.
-  // const ourTestName = "Fred"
-  //const ourTestName = user.name;
-  // const ourTestEmail = "Fred@fred.com"
-  //$("#modalUserName").text(ourTestName);
-  // $("#modalUserEmail").text(ourTestEmail);
-  // $("#greeting").text(ourTestName);
 
 
   // EXS 2nd June 2020 - When user first logs in then we get the local weather on the members
@@ -49,7 +57,7 @@ $(document).ready(function () {
   $("#ourTemp").text("Test");
   $("#ourWeatherIcon").text("Testing");
 
-  
+
 
 
 
