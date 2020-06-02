@@ -20,9 +20,13 @@ module.exports = (app) => {
   app.post("/api/signup",function(req, res) {
     console.log ("Signup Req Info:", req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      accessLevel: req.body.accessLevel
+      accessLevel: req.body.accessLevel,
+      geoLat: req.body.geoLat,
+      geoLong: req.body.geoLong
+
     })
       .then( function () {
         console.log ("Now trying to login...");
@@ -62,5 +66,4 @@ module.exports = (app) => {
   })
 
   // Our api routes go here
-
 };

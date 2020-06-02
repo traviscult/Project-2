@@ -66,14 +66,19 @@ $(document).ready(() => {
   // EXS 30th May 2020 - signUpUser function, pass over user created details, then
   // grant them accessLevel 1, which I believe is Noob...
   // If the creation is good, then proceed to the members page
-
+  // EXS Added in test data for name and lat/long
   function signUpUser(email, password) {
+   // let myLocation = getLocation();
+   // console.log ("Our Location: ", myLocation);
     console.log("Signing Up User");
     // console.log (email,password);
     $.post("/api/signup", {
+      name: 'eddie',
       email: email,
       password: password,
-      accessLevel: 1
+      accessLevel: 1,
+      geoLat: 38.9072,
+      geoLong: -77.0369
     }).then(function (data) {
       console.log ("login.js signup after data: ", data);
         window.location.replace("/members");
@@ -88,3 +93,30 @@ $(document).ready(() => {
     $("#alert").fadeIn(500);
   }
 });
+
+// EXS 1st June 2020 Get our geolocation here and return the value to the signup user function
+// This is done here so we dont have to keep looking when the user is on the members page
+
+
+const getLocation = (position) => {
+  if (navigator.geolocation) {
+    let {ourTestLat, ourTestLong} = navigator.geolocation.getCurrentPosition(showPosition);
+    console.log ("Our Location Call Returned: ", ourTestLat, ourTestLong);
+    //return (ourTestLoc);
+  } else {
+    console.log("GeoLocation not supported");
+  }
+}
+
+const showPosition = (position) => {
+  // EXS 30th May 2020 - Testing to display our NWS data
+  //console.log("Our Lat:", position.coords.latitude);
+  //console.log("Our Long: ", position.coords.longitude);
+  // EXS 30th May 2020 - create API call to NWS to get current conditions
+  let ourLat = position.coords.latitude;
+  let ourLong = position.coords.longitude;
+  console.log ("Inside Show Position: ",ourLat,ourLong);
+  return {ourLat, ourLong};
+  // EXS 30th May 2020 - Create our NWS calls, this is test data so we're cheating a little
+  // to make sure everything is being returned as expected
+}
