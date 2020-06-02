@@ -20,6 +20,7 @@ module.exports = (app) => {
   app.post("/api/signup",function(req, res) {
     console.log ("Signup Req Info:", req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       accessLevel: req.body.accessLevel
@@ -56,11 +57,40 @@ module.exports = (app) => {
 
   app.get("/api/getUser", async (req, res) => {
    const Users = await db.User.findAll({
-    include: [{ model: db.AccessLevel }]    
+    include: [{ model: db.AccessLevel, model: db.Blog }]    
   });
   res.json(Users);
-  })
+  });
 
   // Our api routes go here
+  app.get('/api/history', async (req,res) => {
+    const History = await db.History.findAll({
+      include: [{ model: db.User }]
+    });
+    res.json(History);
+  });
 
+  app.post('/api/blogs', async (req, res) => {
+    console.log('Blog post:', req.body);
+    const Blog = await db.Blog.create({
+      title: req.body.title,
+      review: req.body.review,
+      score: req.body.score
+    })
+    res.json(Blog);
+    });
+
+    app.put('/api/blogs/:id', async (req,res) => {
+      const blog = await db.Blog.update({
+        score: req.body.score
+      },
+        {
+          where: {
+            id: req.params.id
+          }
+        }
+      )
+      res.json(blog);
+    });
+  
 };
