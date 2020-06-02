@@ -60,7 +60,7 @@
     </div>
     <hr>
 
-    <div class="row contentRowMembers d-flex justify-content-center my-4">
+    <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
 
         <div class="card-img-top">
@@ -104,8 +104,8 @@
         </ul>
       </div>
 
-      <div class="col-sm-12 col-md-7 stateSearch mx-3">
-        <div class="input-group mb-3">
+      <div class="col state-blog-wrapper">
+        <div class="input-group mb-3 mt-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
           </div>
@@ -172,11 +172,8 @@
           <button class="btn btn-primary" id="state-selection" type="submit" name="action">Search
           </button>
         </div>
-        <div class = "col 12 m6 l6" id = "parks"></div>
-      </div>
-
-
-      <div class="col-sm-12 col-md-7 blogContentMembers mx-3">
+        <div class="col mb-3 parksDisplay" id="parks"> This is placeholder text to figure out the dynamically updated content preview. May need to remove height property from this div after code completion.</div>
+      <div class="col blogContentMembers">
         <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
         <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
         <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
@@ -187,7 +184,11 @@
           nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias
           quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab
           architecto, sequi atque hic odit molestiae. </p>
-      </div>
+      </div> 
+    </div>
+
+
+     
     </div>
     <hr>
 
@@ -197,7 +198,7 @@
         <p class="sidebarTitle pt-4"> Create a new blog: </p>
         <form>
           <div class="form-group">
-            <label for="blogCreateInput">Blog Title:</label>
+            <label for="blogCreateInput">Blog Title:</label> 
             <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
           </div>
 
@@ -206,7 +207,9 @@
             <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
           </div>
         </form>
-      </div>
+            <button class="btn btn-primary blogBtn" id="state-selection" type="submit" name="action">Create blog
+      </button>
+    </div>
     </div>
 
     <hr>
