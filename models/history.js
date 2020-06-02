@@ -17,5 +17,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true
         }
     });
+
+    History.associate = models => {
+        History.belongsTo(models.User, {
+            foreignKey: 'id'
+        });
+    }
+
     return History;
 };
