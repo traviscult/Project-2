@@ -1,13 +1,27 @@
 $(document).ready(function () {
 
+
+    // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+  $.get("/api/user_data").then(function (data) {
+    // $(".member-name").text(data.email);
+    console.log("Our get user_data:", data);
+    $("#modalUserName").text(data.name);
+    $("#modalUserEmail").text(data.email);
+    $("#greeting").text(data.name);
+
+  });
+
+
+
   // EXS 1st June 2020 - Added in some test data for modal ond greeting message
   // In  prod this needs to be changed to the values stored in the database.
   // const ourTestName = "Fred"
-  const ourTestName = user.name;
-  const ourTestEmail = "Fred@fred.com"
-  $("#modalUserName").text(ourTestName);
-  $("#modalUserEmail").text(ourTestEmail);
-  $("#greeting").text(ourTestName);
+  //const ourTestName = user.name;
+  // const ourTestEmail = "Fred@fred.com"
+  //$("#modalUserName").text(ourTestName);
+  // $("#modalUserEmail").text(ourTestEmail);
+  // $("#greeting").text(ourTestName);
 
 
   // EXS 2nd June 2020 - When user first logs in then we get the local weather on the members
@@ -30,19 +44,14 @@ $(document).ready(function () {
       const ourWeatherTemp = response.properties.periods[0].temperature;
       console.log(ourWeatherIcon, ourWeatherTemp);
     });
-  }
+  };
 
-;
   $("#ourTemp").text("Test");
   $("#ourWeatherIcon").text("Testing");
 
+  
 
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(function (data) {
-    // $(".member-name").text(data.email);
-    console.log("Our get user_data:", data);
-  });
+
 
 
 });
