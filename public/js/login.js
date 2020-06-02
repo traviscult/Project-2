@@ -4,6 +4,9 @@
 
 $(document).ready(() => {
   // Getting references to our form and inputs
+  let newUser = { firstName: "", lastName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
+
+
   const loginForm = $("form.login");
   let emailInput = $("input#email-input");
   let passwordInput = $("input#password-input");
@@ -45,7 +48,7 @@ $(document).ready(() => {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
-    console.log (email,password);
+    console.log(email, password);
     console.log("Executing Login User");
     $.post("/api/login", {
       email: email,
@@ -68,55 +71,46 @@ $(document).ready(() => {
   // If the creation is good, then proceed to the members page
   // EXS Added in test data for name and lat/long
   function signUpUser(email, password) {
-   // let myLocation = getLocation();
-   // console.log ("Our Location: ", myLocation);
-    console.log("Signing Up User");
+    console.log("Signing Up User: ", newUser.ourLat, newUser.ourLong);
     // console.log (email,password);
     $.post("/api/signup", {
       name: 'eddie',
       email: email,
       password: password,
       accessLevel: 1,
-      geoLat: 38.9072,
-      geoLong: -77.0369
+      geoLat: newUser.ourLat,
+      geoLong: newUser.ourLong
     }).then(function (data) {
-      console.log ("login.js signup after data: ", data);
-        window.location.replace("/members");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
+      console.log("login.js signup after data: ", data);
+      window.location.replace("/members");
+      // If there's an error, handle it by throwing up a bootstrap alert
+    })
       .catch(handleLoginErr);
   }
-
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
-});
 
-// EXS 1st June 2020 Get our geolocation here and return the value to the signup user function
-// This is done here so we dont have to keep looking when the user is on the members page
-
-
-const getLocation = (position) => {
-  if (navigator.geolocation) {
-    let {ourTestLat, ourTestLong} = navigator.geolocation.getCurrentPosition(showPosition);
-    console.log ("Our Location Call Returned: ", ourTestLat, ourTestLong);
-    //return (ourTestLoc);
-  } else {
-    console.log("GeoLocation not supported");
+  // EXS 1st June 2020 Get our geolocation here and return the value to the signup user function
+  // This is done here so we dont have to keep looking when the user is on the members page
+  const getLocation = (position) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      console.log("Our Location Call Returned: ");
+    } else {
+      console.log("GeoLocation not supported");
+    }
   }
-}
 
-const showPosition = (position) => {
-  // EXS 30th May 2020 - Testing to display our NWS data
-  //console.log("Our Lat:", position.coords.latitude);
-  //console.log("Our Long: ", position.coords.longitude);
-  // EXS 30th May 2020 - create API call to NWS to get current conditions
-  let ourLat = position.coords.latitude;
-  let ourLong = position.coords.longitude;
-  console.log ("Inside Show Position: ",ourLat,ourLong);
-  return {ourLat, ourLong};
-  // EXS 30th May 2020 - Create our NWS calls, this is test data so we're cheating a little
-  // to make sure everything is being returned as expected
-}
+  const showPosition = (position) => {
+    // EXS 30th May 2020 - Copy our geoLocation into newUser lat and long
+    newUser.ourLat = position.coords.latitude;
+    newUser.ourLong = position.coords.longitude;
+    console.log(newUser);
+  }
+
+  getLocation();
+
+});
