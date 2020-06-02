@@ -1,16 +1,14 @@
 $(document).ready(() => {
 
+    
     const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
     const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
-    // let selectedState;
-
-    // let stateCode = "ca";
-
+    // on click of state selection calls api url function 
     $("#state-selection").click(() => {
         console.log("I have been clicked!!!")
         let stateSelected = $("#state-selected option:selected").val();
         console.log(typeof stateSelected, stateSelected)
-        // $("#state-selected option:selected").val("");
+        
         buildNPSURL(stateSelected)
     });
 
@@ -28,7 +26,7 @@ $(document).ready(() => {
 
         $("#parks").empty();
 
-
+        // Create a picture array insert a place holder when the img url is null
         result.data.map(statepark => {
             console.log("statepark", statepark)
             const placeHolderImg = "https://www.nps.gov/articles/images/yose-main.jpg";
