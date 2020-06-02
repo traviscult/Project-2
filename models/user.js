@@ -28,11 +28,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     geoLat: {
       type: DataTypes.DECIMAL(10, 4),
-      allowNull: false
+      allowNull: true
     },
     geoLong: {
       type: DataTypes.DECIMAL(10, 4),
-      allowNull: false
+      allowNull: true
     }
   });
 
@@ -40,6 +40,12 @@ module.exports = function(sequelize, DataTypes) {
 
     User.belongsTo(models.AccessLevel, {
       foreignKey: 'accessLevel'
+    });
+    User.hasMany(models.History, {
+      foreignKey: 'id'
+    });
+    User.hasMany(models.Blog, {
+      foreignKey: 'id'
     });
   }
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database

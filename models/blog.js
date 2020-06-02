@@ -12,10 +12,21 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             len: [1]
         },
-        // score: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // }
+        score: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 5
+            }
+        }
     });
+
+    Blog.associate = models => {
+        Blog.belongsTo(models.User, {
+            foreignKey: 'id'
+        });
+    }
+
     return Blog;
 };

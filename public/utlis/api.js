@@ -60,10 +60,6 @@ $(document).ready(() => {
     // buildNPSURL();
 
 
-
-
-
-
     // Eddie's code goes here 
     // EXS 22nd May 2020 - Added in API code and some test data, we will need to 
     // be pulling the lat/long from the NPS location for relevant data

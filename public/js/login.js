@@ -4,6 +4,8 @@
 
 $(document).ready(() => {
   // Getting references to our form and inputs
+  let newUser = { firstName: "", lastName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
+
   const loginForm = $("form.login");
   let emailInput = $("input#email-input");
   let passwordInput = $("input#password-input");
@@ -45,14 +47,17 @@ $(document).ready(() => {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
-    console.log (email,password);
+    console.log(email, password);
     console.log("Executing Login User");
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(function () {
+        // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
+        // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
         window.location.replace("/members");
+
         // If there's an error, log the error
       })
       .catch(function (err) {
@@ -63,25 +68,56 @@ $(document).ready(() => {
   // EXS 30th May 2020 - signUpUser function, pass over user created details, then
   // grant them accessLevel 1, which I believe is Noob...
   // If the creation is good, then proceed to the members page
-
+  // EXS Added in test data for name and lat/long
   function signUpUser(email, password) {
-    console.log("Signing Up User");
+
+    // EXS 2nd June 2020 - If we have 0 in both ourLAt and ourLong, then default to Washington DC
+    if (newUser.ourLat == 0 && newUser.ourLong == 0) {
+      console.log ("We are at 0,0");
+      newUser.ourLat = 38.9072;
+      newUser.ourLong = -77.0369;
+    }
+    console.log("Signing Up User: ", newUser.ourLat, newUser.ourLong);
     // console.log (email,password);
     $.post("/api/signup", {
+      name: 'eddie',
       email: email,
       password: password,
-      accessLevel: 1
+      accessLevel: 1,
+      geoLat: newUser.ourLat,
+      geoLong: newUser.ourLong
     }).then(function (data) {
-      console.log ("login.js signup after data: ", data);
-        window.location.replace("/members");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
+      console.log("login.js signup after data: ", data);
+      window.location.replace("/members");
+      // If there's an error, handle it by throwing up a bootstrap alert
+    })
       .catch(handleLoginErr);
   }
-
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  // EXS 1st June 2020 Get our geolocation here and return the value to the signup user function
+  // This is done here so we dont have to keep looking when the user is on the members page
+  const getLocation = (position) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      console.log("Our Location Call Returned:");
+    } else {
+      console.log("GeoLocation not supported");
+    }
+  }
+
+  const showPosition = (position) => {
+    // EXS 30th May 2020 - Copy our geoLocation into newUser lat and long
+    // let ourTestLat = "38.9072"
+    // let ourTestLong = "-77.0369"
+    newUser.ourLat = position.coords.latitude;
+    newUser.ourLong = position.coords.longitude;
+    console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
+  }
+
+  getLocation();
 });
