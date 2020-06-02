@@ -8,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-        nps_url: {
+        npsUrl: {
             type: DataTypes.TEXT,
             allowNull: true
         },
-        nws_url: {
+        nwsUrl: {
             type: DataTypes.TEXT,
             allowNull: true
         }
