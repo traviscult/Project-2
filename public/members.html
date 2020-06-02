@@ -16,6 +16,7 @@
 <body id="removeBgImage">
 
   <!-- Modal Section -->
+  <!-- EXS 1st June 2020 - When this page is displayed modelUserName and modelUserEmail is updated -->
   <button id="myBtn" type="button" class="btn"><i class="fas fa-user-circle circleIconTop"></i></button>
   <div id="myModal" class="modal text-center">
     <div class="modal-content">
@@ -44,29 +45,32 @@
     </div>
     <div class="text-center" id="greetingMembers">
       <!-- ##### USE the span id below or div id above to reference NAME VARIABLE in JS -->
-      <p> Hey, <span id="greeting"> Mike! </span> Welcome to your personalized NPS dashboard!</p>
+      <!-- EXS 1st June 2020 - Added in id of modalUserName so we only need to change one line of code -->
+      <p> Hey, <span id="greeting">TestName</span> Welcome to your personalized NPS dashboard!</p>
     </div>
     <hr>
     <!-- Main Content Section -->
 
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-3">
-        <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs below or create a new one and save.</h5>
+        <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs
+          below or create a new one and save.</h5>
       </div>
 
     </div>
     <hr>
 
-    <div class="row contentRowMembers d-flex justify-content-center my-4">
+    <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
 
-<div class="card-img-top"> 
-  <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> 
-</div>
+        <div class="card-img-top">
+          <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
+        </div>
 
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
-         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span class="ourTemp"></span></li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span
+              class="ourTemp"></span></li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 1 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 2 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Day 3 Weather</li>
@@ -100,7 +104,76 @@
         </ul>
       </div>
 
-      <div class="col-sm-12 col-md-7 blogContentMembers mx-3">
+      <div class="col state-blog-wrapper">
+        <div class="input-group mb-3 mt-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
+          </div>
+          <select class="custom-select" id="state-selected">
+            <option selected>Choose...</option>
+            <option id="1" value="al">Alabama</option>
+            <option id="2" value="ak">Alaska</option>
+            <option id="3" value="as">American Samoa</option>
+            <option id="4" value="az">Arizona</option>
+            <option id="5" value="ak">Arkansas</option>
+            <option id="6" value="ca">California</option>
+            <option id="7" value="co">Colorado</option>
+            <option id="8" value="ct">Connecticut</option>
+            <option id="9" value="de">Delaware</option>
+            <option id="10" value="dc">District of Columbia</option>
+            <option id="11" value="fl">Florida</option>
+            <option id="12" value="ga">Georgia</option>
+            <option id="13" value="gu">Guam</option>
+            <option id="14" value="hi">Hawaii</option>
+            <option id="15" value="id">Idaho</option>
+            <option id="16" value="il">Illinois</option>
+            <option id="17" value="in">Indiana</option>
+            <option id="18" value="ia">Iowa</option>
+            <option id="19" value="ks">Kansas</option>
+            <option id="20" value="ky">Kentucky</option>
+            <option id="21" value="la">Louisiana</option>
+            <option id="22" value="me">Maine</option>
+            <option id="23" value="mh">Marshall Islands</option>
+            <option id="24" value="md">Maryland</option>
+            <option id="25" value="ma">Massachusetts</option>
+            <option id="26" value="mi">Michigan</option>
+            <option id="27" value="mn">Minnesota</option>
+            <option id="28" value="ms">Mississippi</option>
+            <option id="29" value="mo">Missouri</option>
+            <option id="30" value="mt">Montana</option>
+            <option id="31" value="ne">Nebraska</option>
+            <option id="32" value="nv">Nevada</option>
+            <option id="33" value="nh">New Hampshire</option>
+            <option id="34" value="nj">New Jersey</option>
+            <option id="35" value="nm">New Mexico</option>
+            <option id="36" value="ny">New York</option>
+            <option id="37" value="nc">North Carolina</option>
+            <option id="38" value="nd">North Dakota</option>
+            <option id="39" value="np">Northern Mariana Islands</option>
+            <option id="40" value="oh">Ohio</option>
+            <option id="41" value="ok">Oklahoma</option>
+            <option id="42" value="or">Oregon</option>
+            <option id="43" value="pa">Pennsylvania</option>
+            <option id="44" value="pr">Puerto Rico</option>
+            <option id="45" value="ri">Rhode Island</option>
+            <option id="46" value="sc">South Carolina</option>
+            <option id="47" value="sd">South Dakota</option>
+            <option id="48" value="tn">Tennessee</option>
+            <option id="49" value="tx">Texas</option>
+            <option id="50" value="ut">Utah</option>
+            <option id="51" value="vt">Vermont</option>
+            <option id="52" value="vi">Virgin Islands</option>
+            <option id="53" value="va">Virginia</option>
+            <option id="54" value="wa">Washington</option>
+            <option id="55" value="wv">West Virginia</option>
+            <option id="56" value="wi">Wisconsin</option>
+            <option id="57" value="wy">Wyoming</option>
+          </select>
+          <button class="btn btn-primary" id="state-selection" type="submit" name="action">Search
+          </button>
+        </div>
+        <div class="col mb-3 parksDisplay" id="parks"> This is placeholder text to figure out the dynamically updated content preview. May need to remove height property from this div after code completion.</div>
+      <div class="col blogContentMembers">
         <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
         <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
         <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
@@ -111,26 +184,32 @@
           nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias
           quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab
           architecto, sequi atque hic odit molestiae. </p>
-      </div>
+      </div> 
+    </div>
+
+
+     
     </div>
     <hr>
 
     <!-- Blog creating section -->
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-4">
-        <p class="sidebarTitle pt-4"> Create a new blog: </p> 
+        <p class="sidebarTitle pt-4"> Create a new blog: </p>
         <form>
           <div class="form-group">
-            <label for="blogCreateInput">Blog Title:</label>
+            <label for="blogCreateInput">Blog Title:</label> 
             <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
           </div>
-         
+
           <div class="form-group">
             <label for="blogCreateField">Blog Content:</label>
             <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
           </div>
-        </form> 
-      </div>
+        </form>
+            <button class="btn btn-primary blogBtn" id="state-selection" type="submit" name="action">Create blog
+      </button>
+    </div>
     </div>
 
     <hr>
@@ -156,21 +235,23 @@
     <!-- Footer Section -->
     <div class="col-12 bg-dark footerColMembers text-center">
       <footer class="p-4 text-muted w-100">
-        <p> Project contributors: Eddie, Richard, Travis, Yalmar, Shiva &bull; 2020</p>
+        <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
       </footer>
     </div>
 
   </div>
 
   <!-- EXS 30th May 2020 - Adding in full jquery minified -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="utlis/api.js"></script>
 
+  
+  
 </body>
 
 </html>

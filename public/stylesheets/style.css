@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.btn {
+  margin-left: 10px;
+}
+
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -328,3 +332,13 @@ color: #333;
 }
 
 
+.parksDisplay {
+  background-color: #f3f2eb;
+  border: 1px solid rgb(204, 203, 203);
+  padding: 2rem;
+  height: 300px;
+}
+
+.blogBtn {
+  text-align: right;
+}
