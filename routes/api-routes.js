@@ -57,20 +57,14 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/api/getUser", async (req, res) => {
+  app.get("/api/users", async (req, res) => {
    const Users = await db.User.findAll({
-    include: [{ model: db.AccessLevel, model: db.Blog }]    
+    include: [{ model: db.AccessLevel, model: db.Blog, model: db.History }]    
   });
   res.json(Users);
   });
 
   // Our api routes go here
-  app.get('/api/history', async (req,res) => {
-    const History = await db.History.findAll({
-      include: [{ model: db.User }]
-    });
-    res.json(History);
-  });
 
   app.post('/api/blogs', async (req, res) => {
     console.log('Blog post:', req.body);
@@ -88,12 +82,11 @@ module.exports = (app) => {
         review: req.body.review,
         score: req.body.score
       },
-        {
-          where: {
-            id: req.params.id
-          }
+      {
+         where: {
+          id: req.params.id
         }
-      )
+      })
       res.json(blog);
     });
 
@@ -106,4 +99,45 @@ module.exports = (app) => {
       res.json(blog)
     });
   
+    app.get('/api/history', async (req,res) => {
+      const History = await db.History.findAll({
+        include: [{ model: db.User }]
+      });
+      res.json(History);
+    });
+
+    app.post('/api/history', async (req,res) => {
+      console.log('Hitsory', req.body);
+      const History = await db.History.create({
+        name: req.body.name,
+        code: req.body.code,
+        npsUrl: req.body.npsUrl,
+        nwsUrl: req.body.nwsUrl
+      })
+      res.json(History);
+    });
+
+    app.put('/api/history/:id', async (req,res) => {
+      const histroy = await db.History.update({
+        name: req.body.name,
+        code: req.body.code,
+        npsUrl: req.body.npsUrl,
+        nwsUrl: req.body.nwsUrl
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      })
+      res.json(histroy);
+    });
+
+    app.delete('/api/history/:id', async (req,res) => {
+      const histroy = await db.History.delete({
+        where: {
+          id: req.params.id
+        }
+      });
+      res.json(histroy);
+    });
 };

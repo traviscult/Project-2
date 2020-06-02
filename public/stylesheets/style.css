@@ -240,22 +240,55 @@ a:hover {
  color: #a11e50;
 }
 
-/* state park images */
-.card-image{
-  width: 3rem;
-}
-
-/* weather image */
-.card-img-top {
+/* weather icon */
+.weatherIcon {
   text-align: center;
   margin: 0 auto;
   }
 
-.card-img-top img {
+.weatherIcon img {
   width: 6rem;
   border-radius: 10px;
 }
 
+/* State park Images */
+.parksDisplay {
+  background-color: #f3f2eb;
+  border: 1px solid rgb(204, 203, 203);
+  padding: 0;
+  height: 400px;
+  overflow: scroll;
+  margin: 0 auto;
+ width: 100%;
+}
+
+ .card-image {
+  width: auto;
+  
+}
+
+.parkCard {
+padding: 1rem;
+margin-right: 1rem;
+max-width: 430px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 1rem auto;
+
+}
+
+ .parkCard img {
+  max-width: 400px;
+  border: 1px solid rgb(204, 203, 203); 
+ }
+
+ .card-title {
+   font-size: 1rem;
+ }
+
+
+/* Blog display section */
 .blogTitleMembers {
   padding: 1rem;
   background-color: #f6f9fa;
@@ -334,14 +367,6 @@ color: #333;
 .imageGalleryInfo {
  
   color: #ffc925;
-}
-
-
-.parksDisplay {
-  background-color: #f3f2eb;
-  border: 1px solid rgb(204, 203, 203);
-  padding: 2rem;
-  height: 300px;
 }
 
 .blogBtn {
