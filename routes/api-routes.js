@@ -26,7 +26,6 @@ module.exports = (app) => {
       accessLevel: req.body.accessLevel,
       geoLat: req.body.geoLat,
       geoLong: req.body.geoLong
-
     })
       .then( function () {
         console.log ("Now trying to login...");
@@ -66,7 +65,6 @@ module.exports = (app) => {
   });
 
   // Our api routes go here
-<<<<<<< HEAD
   app.get('/api/history', async (req,res) => {
     const History = await db.History.findAll({
       include: [{ model: db.User }]
@@ -86,6 +84,8 @@ module.exports = (app) => {
 
     app.put('/api/blogs/:id', async (req,res) => {
       const blog = await db.Blog.update({
+        title: req.body.title,
+        review: req.body.review,
         score: req.body.score
       },
         {
@@ -96,8 +96,14 @@ module.exports = (app) => {
       )
       res.json(blog);
     });
+
+    app.delete('/api/blogs/:id', async (req,res) => {
+      const blog = await db.Blog.delete({
+        where: {
+          id: req.params.id
+        }
+      });
+      res.json(blog)
+    });
   
 };
-=======
-};
->>>>>>> master
