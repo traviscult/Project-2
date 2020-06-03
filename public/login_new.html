@@ -16,16 +16,22 @@
 
     <!-- ============================================================= -->
     <!-- MODAL SECTION - Modal populates when clicking "Signup" button-->
-      <div id="myModal-2" class="modal text-center">
+    <div id="myModal-2" class="modal text-center">
         <div class="modal-content-2">
-            <p class="pt-3 mb-0 pb-0 text-info"> Your signup is successful </p> 
-             <p class="d-inline" id="modalUserName">Mike Davis</p><span class="d-inline userNameSpan">!</span>
+            <p class="pt-3 mb-0 pb-0 text-info"> Your signup event is in process... </p> 
+            <p> 
+             <!-- <p class="d-inline" id="modalUserName">Mike Davis</p><span class="d-inline userNameSpan">!</span> -->
              <hr class="modalHr">
-             <p class="modalPara"> You are now a member of <br> our NPS community. </p>
-             <button id="successfulBtn" class="btn close-2 bg-info"> OK </button>
-           
-        </div>
 
+  <form>
+             <label for="firstName"> Enter your first name:</label>
+             <input type="text" id="firstName" name="firstName" placeholder="your first name" required />
+            <!-- <p class="modalPara"> Please enter your FIRST NAME and click "OK" to continue.</p>          <p class="modalPara"> You are now a member of <br> our NPS community. </p> -->
+            <button class="btn btn-info close-2" id="finalSignUp" type="submit">Submit
+            </button> 
+        </form>
+            
+           </div>
     </div>
     <!-- =============================================================== -->
     <div class="container mainWrapper text-center d-flex justify-content-center align-items-center" id="addImageDiv">
