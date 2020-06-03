@@ -171,8 +171,16 @@
             <option id="56" value="wi">Wisconsin</option>
             <option id="57" value="wy">Wyoming</option>
           </select>
-          <button class="btn btn-primary" id="state-selection" type="submit" name="action">Search
-          </button> </div>
+
+          <button class="btn btn-primary search" id="state-selection" type="submit" name="action">Search
+          </button> 
+
+          <button class="btn btn-primary loading" type="button" disabled>
+            <span class="spinner-border spinner-border-sm "  role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+        
+        </div>
           <p class="text-center text-info">Select a state from the drop down menu above to view historical places information in that state. <br>
             Your search result will be displayed below. </p> 
         
