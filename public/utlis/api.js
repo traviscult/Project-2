@@ -1,16 +1,17 @@
 $(document).ready(() => {
-
+    $(".loading").hide();
+    
     const apiKey = "&api_key=dpjVnZgcztgiyaTCVctE31HiudiZW5TLxgP4rQj7";
     const locationURL = "https://developer.nps.gov/api/v1/places?statecode=";
-    // let selectedState;
-
-    // let stateCode = "ca";
-
+    // on click of state selection calls api url function 
     $("#state-selection").click(() => {
         console.log("I have been clicked!!!")
         let stateSelected = $("#state-selected option:selected").val();
         console.log(typeof stateSelected, stateSelected)
-        // $("#state-selected option:selected").val("");
+        $(".search").hide();
+        $(".loading").show();
+
+        
         buildNPSURL(stateSelected)
     });
 
@@ -27,6 +28,9 @@ $(document).ready(() => {
         console.log("response is being called!!!", result)
 
         $("#parks").empty();
+        $(".loading").hide();
+        $(".search").show();
+
 
         result.data.map(statepark => {
             console.log("statepark", statepark)
