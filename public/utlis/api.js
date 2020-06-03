@@ -31,7 +31,7 @@ $(document).ready(() => {
         $(".loading").hide();
         $(".search").show();
 
-        // Create a picture array insert a place holder when the img url is null
+
         result.data.map(statepark => {
             console.log("statepark", statepark)
             const placeHolderImg = "https://www.nps.gov/articles/images/yose-main.jpg";
@@ -54,72 +54,20 @@ $(document).ready(() => {
             card.append(cardImg);
             card.append(cardBody);
 
-
             $("#parks").append(card);
         })
-
     };
 
-    // buildNPSURL();
-
-
+    
     // Eddie's code goes here 
     // EXS 22nd May 2020 - Added in API code and some test data, we will need to 
     // be pulling the lat/long from the NPS location for relevant data
     // Test Data 38.9072° N, 77.0369° W - DC
     // https://api.weather.gov/points/{latitude},{longitude}
     // API Key is not always required for some data
+    // EXS 2nd June 2020 - Initial page loading we need an API to pull in the 
+    // the weather data and the credentials of the logged in user.
 
-    // const nwsAPIURL = "https://api.weather.gov/points/";
 
-    // let ourTestLat = "38.9072"
-    // let ourTestLong = "-77.0369"
 
-    // const ourNWSCall = () => {
-    //     let ourNWSURL = (`${nwsAPIURL} ${ourTestLat},${ourTestLong}`);
-    //     console.log(ourNWSURL);
-    //     $.ajax({
-    //         url: ourNWSURL,
-    //         method: "GET"
-    //     }).then((response) => {
-    //         console.log(response)
-    // These two responses hold the current forecast and hourly forecast
-    // console.log(response.properties.forecast);
-    // console.log(response.properties.forecastHourly);
-    // Examples URLS
-    // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
-    // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
-    //         });
-    //     }
 });
-// module.exports = npsapi;
-// module.exports = ourNWSCall;
-
-
-const ourBlogPost = () => {
-    // EXS 1st June 2020 - All our user to create a blog post
-
-}
-
-const editBlogPost = () => {
-    // EXS 1st June 2020 - Edit existing blog post
-    // Only original poster and Moderator+ can edit an existing post
-    // After a post is modified it needs to have a line that states
-    // this post was modified by xxxxxx on date/time
-}
-
-const deleteBlogPost = () => {
-    // EXS 1st June 2020 - Delete an existing blog post
-    // Only original poster and moderators+ can delete a blog post
-}
-
-const grantModeratorRights = () => {
-    // EXS 1st June 2020 - Grant a user moderator rights
-    // this can onjly be performed by a user with admin permissions
-}
-
-
-
-//does api support cors may have to move data to node 
-
-//start here then move to node .js if node use axios

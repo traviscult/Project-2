@@ -7,14 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/15bf670575.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
 
 <body id="removeBgImage">
-
   <!-- Modal Section -->
   <!-- EXS 1st June 2020 - When this page is displayed modalUserName and modalUserEmail is updated -->
   <button id="myBtn" type="button" class="btn myBtn"><i class="fas fa-user-circle circleIconTop"></i></button>
@@ -31,15 +29,13 @@
       <p id="modalTerms"> Rules to follow &nbsp;&bull;&nbsp;We care your privacy</p>
     </div>
   </div>
-
   <div class="container-fluid mainWrapperMembers">
     <!-- Header Section -->
     <div class="col-12 bg-dark pt-2 headerColMembers">
       <header class="text-left text-white pt-4 pl-4">
         <i class="fas fa-umbrella-beach fa-4x text-warning pt-4 d-inline"></i> &nbsp; &nbsp;
         <h1 class="pt-3 d-inline-block"> NPS Visitor Guide</h1>
-        <p class="pb-4 d-block"> National Park & Recreation Services &bull; Information Finder App <span
-            class="logoutBtnMembers"> <a href="/logout"> Logout &nbsp;<i class="fas fa-sign-out-alt fa-lg"></i></a>
+        <p class="pb-4 d-block"> National Park & Recreation Services &bull; Information Finder App <span class="logoutBtnMembers"> <a href="/logout"> Logout &nbsp;<i class="fas fa-sign-out-alt fa-lg"></i></a>
           </span> </p>
       </header>
     </div>
@@ -50,36 +46,29 @@
     </div>
     <hr>
     <!-- Main Content Section -->
-
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-3">
         <h5 class="col mt-4"> Here you can find current and 5-days weather forecast. Also, you can view your past blogs
           below or create a new one and save.</h5>
       </div>
-
     </div>
     <hr>
-
     <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
-
-
         <div class="weatherIcon">
           <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
-
         </div>
-
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fas fa-sun weatherIcon"></i> Current Weather <span
-              class="ourTemp"></span></li>
+
+
+          <li class="list-group-item"><i class="fas fa-sun ourTemp"></i> Current Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i> Day 1 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i> Day 2 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay3"></i> Day 3 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay4"></i> Day 4 Weather</li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay5"></i> Day 5 Weather</li>
         </ul>
-
         <p class="sidebarTitle pt-4"> Your Blogs: <br> </p>
         <hr>
         <ul id="blogTitleUl">
@@ -105,7 +94,6 @@
           <hr>
         </ul>
       </div>
-
       <div class="col state-blog-wrapper">
         <div class="input-group mb-3 mt-3">
           <div class="input-group-prepend">
@@ -172,6 +160,7 @@
             <option id="57" value="wy">Wyoming</option>
           </select>
 
+
           <button class="btn btn-primary search" id="state-selection" type="submit" name="action">Search
           </button> 
 
@@ -186,46 +175,41 @@
         
         <div class="col mb-3 parksDisplay p-4" id="parks"> 
           <p class="text-center text-secondary mt-5 pt-5">Historical places information will display here. </p> 
+
+        <div class="col blogContentMembers">
+          <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
+          <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
+          <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
+            animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo,
+            rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam
+            animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
+          <p class=""> Ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate animi sequi quo
+            nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias
+            quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab
+            architecto, sequi atque hic odit molestiae. </p>
+        </div>
+
       </div>
-      <div class="col blogContentMembers">
-        <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6>
-        <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
-        <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
-          animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo,
-          rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam
-          animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
-        <p class=""> Ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate animi sequi quo
-          nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo, rem commodi alias
-          quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam animi. Beatae ab
-          architecto, sequi atque hic odit molestiae. </p>
-      </div> 
-    </div>
-
-
-     
     </div>
     <hr>
-
     <!-- Blog creating section -->
     <div class="row infoRowMembers mx-4">
       <div class="col-12 leftColMembers mx-4">
         <p class="sidebarTitle pt-4"> Create a new blog: </p>
         <form>
           <div class="form-group">
-            <label for="blogCreateInput">Blog Title:</label> 
+            <label for="blogCreateInput">Blog Title:</label>
             <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
           </div>
-
           <div class="form-group">
             <label for="blogCreateField">Blog Content:</label>
             <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
           </div>
         </form>
-            <button class="btn btn-primary blogBtn" id="state-selection" type="submit" name="action">Create blog
-      </button>
+        <button class="btn btn-primary blogBtn" id="state-selection" type="submit" name="action">Create blog
+        </button>
+      </div>
     </div>
-    </div>
-
     <hr>
     <!-- Before-Footer Section -->
     <div class="row infoRowMembers mx-4">
@@ -236,13 +220,9 @@
     </div>
     <div class="row text-center d-flex justify-content-center align-items-center">
       <div class="col-12 bottomSection">
-        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png"
-            class="bottomImg" alt="People at a park"> </a>
-        <a href="https://www.nps.gov/subjects/healthandsafety/index.htm" target="_blank"> <img
-            src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
-        <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img
-            src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
-
+        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
+        <a href="https://www.nps.gov/subjects/healthandsafety/index.htm" target="_blank"> <img src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
+        <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
       </div>
     </div>
 
@@ -252,20 +232,16 @@
         <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
       </footer>
     </div>
-
   </div>
 
   <!-- EXS 30th May 2020 - Adding in full jquery minified -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/members_modal.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="utlis/api.js"></script>
 
-  
-  
 </body>
 
 </html>

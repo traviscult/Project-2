@@ -1,5 +1,5 @@
+// IMAGES AND MODAL SECTION for login_new.html page
 // IMAGES SECTION
-
 $(document).ready(() => {
   let addImageDivEl = document.getElementById("addImageDiv");
   addImageDivEl.addEventListener("click", displayImage);
@@ -27,12 +27,11 @@ $(document).ready(() => {
 
 });
 
-
-// MODAL SECTION
+// MODAL SECTION FOR login_new.html PAGE ONLY! 
 // EXS 1st June 2020 - This needs to be JQuery for consistency.
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("myBtn");
-let span = document.getElementsByClassName("close")[0];
+let modal = document.getElementById("myModal-2");
+let btn = document.getElementById("signUpBtn");
+let span = document.getElementsByClassName("close-2")[0];
 
 btn.onclick = function () {
   modal.style.display = "block";
