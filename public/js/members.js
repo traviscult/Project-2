@@ -1,36 +1,40 @@
 $(document).ready(function () {
 
-  // EXS 1st June 2020 - Added in some test data for modal ond greeting message
-  // In  prod this needs to be changed to the values stored in the database.
-  const ourTestName = "Fred"
-  const ourTestEmail = "Fred@fred.com"
-  $("#modalUserName").text(ourTestName);
-  $("#modalUserEmail").text(ourTestEmail);
-  $("#greeting").text(ourTestName);
 
-  // EXS 29th May 2020 - saunders.eddie@outlook.com
-  // Quick and dirty function to get Users position, this will prompt the user to allow location
-  //  This can be tidied up for the final build
-  // EXS 1st June 2020 - We dont need this code here, relocating getting the geolocation to the login.js
-  // const getLocation = () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.watchPosition(showPosition);
-  //   } else {
-  //     console.log("GeoLocation not supported");
-  //   }
-  // }
+  // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+  // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
+  $.get("/api/user_data").then(function (data) {
+    // $(".member-name").text(data.email);
+    console.log("Our get user_data:", data);
+    $("#modalUserName").text(data.name);
+    $("#modalUserEmail").text(data.email);
+    $("#greeting").text(data.name);
+    const ourFirstNWSURL = (`https://api.weather.gov/points/${data.lat},${data.long}`);
+    // EXS 2nd June 2020 - Get our initial weather 
+    $.ajax({
+      url: ourFirstNWSURL,
+      method: "GET"
+    }).then((response) => {
+      //console.log(response.properties.forecast);
+      const ourLongRangeForecast = response.properties.forecast;
+      //console.log (ourLongRangeForecast);
+      $.ajax({
+        url: ourLongRangeForecast,
+        method: "GET"
+      }).then((response) => {
+        console.log(response.properties.periods[0].temperature);
+        $("#ourTemp").text(response.properties.periods[0].temperature);
+      })
+    });
+  });
 
-  // const showPosition = (position) => {
-  //   // EXS 30th May 2020 - Testing to display our NWS data
-  //   console.log(position.coords.latitude);
-  //   console.log(position.coords.longitude);
-  //   // EXS 30th May 2020 - create API call to NWS to get current conditions
-  //   const ourLat = position.coords.latitude;
-  //   const ourLong = position.coords.longitude;
-  //   // EXS 30th May 2020 - Create our NWS calls, this is test data so we're cheating a little
-  //   // to make sure everything is being returned as expected
-  // }
 
+
+
+  // EXS 2nd June 2020 - When user first logs in then we get the local weather on the members
+  // page
+  // API's we have available
   // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
   // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
   // Lat/Long Info https://api.weather.gov/points/lat,long
@@ -48,19 +52,14 @@ $(document).ready(function () {
       const ourWeatherTemp = response.properties.periods[0].temperature;
       console.log(ourWeatherIcon, ourWeatherTemp);
     });
+  };
 
-    //$("#ourTemp").text("Test");
-    //$("#ourWeatherIcon").text("Testing");
-  }
-
-  //getLocation();
   $("#ourTemp").text("Test");
   $("#ourWeatherIcon").text("Testing");
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(function (data) {
-    $(".member-name").text(data.email);
-  });
+
+
+
+
 
 
 });
