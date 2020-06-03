@@ -56,18 +56,19 @@
     <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
         <div class="weatherIcon">
-          <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
+          <span id="ourWeatherIcon"></span>
+          <!-- <img class="ourWeatherIcon" src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> -->
         </div>
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
         <ul class="list-group list-group-flush">
 
 
-          <li class="list-group-item"><i class="fas fa-sun ourTemp"></i> Current Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i> Day 1 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i> Day 2 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay3"></i> Day 3 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay4"></i> Day 4 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay5"></i> Day 5 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun ourTemp"></i><span id="currentWeather"> Current Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i><span id="wd1"> Day 1 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i><span id="wd2"> Day 2 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay3"></i><span id="wd3"> Day 3 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay4"></i><span id="wd4"> Day 4 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay5"></i><span id="wd5"> Day 5 Weather</span></li>
         </ul>
         <p class="sidebarTitle pt-4"> Your Blogs: <br> </p>
         <hr>
