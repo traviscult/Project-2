@@ -73,8 +73,8 @@ module.exports = (app) => {
     console.log('Blog post:', req.body);
     const Blog = await db.Blog.create({
       title: req.body.title,
-      review: req.body.review,
-      score: req.body.score
+      review: req.body.review
+      // score: req.body.score
     })
     res.json(Blog);
     });

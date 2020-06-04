@@ -13,6 +13,31 @@ $(document).ready(function () {
     getOurWeather(data.lat, data.long);
   });
 
+  
+
+  $(".blogBtn").click(() => {
+    console.log("I am being clicked to create a BLOGGGGGG")
+
+    // const blogCreateInput = "here is my blog creat input";
+    // const blogCreatefield = "blog field";
+    
+    let title = $("#blogCreateInput").val();
+    let review = $("#blogCreateField").val();
+
+    $.post("/api/blogs", {title, review,}).then(function (res) {
+
+      const { title, review} = res;
+      console.log(title, review)
+
+      $.ajax({
+        type: "POST",
+        url: url,
+      });
+
+    });
+  });
+   
+
   function getOurWeather(lat, long) {
     const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
     console.log ("Our First NWS URL: ", ourFirstNWSURL);
