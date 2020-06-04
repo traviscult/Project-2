@@ -27,39 +27,70 @@ $(document).ready(function () {
         $("#ourTemp").text(response.properties.periods[0].temperature);
       })
     });
-  });
 
 
 
 
-  // EXS 2nd June 2020 - When user first logs in then we get the local weather on the members
-  // page
-  // API's we have available
-  // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
-  // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
-  // Lat/Long Info https://api.weather.gov/points/lat,long
 
-  const loadWeather = () => {
-    const ourTestNWSURL = "https://api.weather.gov/gridpoints/RAH/78,52/forecast"
-    const nwsAPIURL = "https://api.weather.gov/points/";
-    const ourNWSURL = (`${nwsAPIURL}${ourLat},${ourLong}`);
-    $.ajax({
-      url: ourTestNWSURL,
-      method: "GET",
-    }).then((response) => {
-      console.log(response.properties.periods[0]);
-      const ourWeatherIcon = response.properties.periods[0].icon;
-      const ourWeatherTemp = response.properties.periods[0].temperature;
-      console.log(ourWeatherIcon, ourWeatherTemp);
+
+    // EXS 2nd June 2020 - When user first logs in then we get the local weather on the members
+    // page
+    // API's we have available
+    // Forecast https://api.weather.gov/gridpoints/LWX/95,71/forecast
+    // Forecast Hourly https://api.weather.gov/gridpoints/LWX/95,71/forecast
+    // Lat/Long Info https://api.weather.gov/points/lat,long
+
+    const loadWeather = () => {
+      const ourTestNWSURL = "https://api.weather.gov/gridpoints/RAH/78,52/forecast"
+      const nwsAPIURL = "https://api.weather.gov/points/";
+      const ourNWSURL = (`${nwsAPIURL}${ourLat},${ourLong}`);
+      $.ajax({
+        url: ourTestNWSURL,
+        method: "GET",
+      }).then((response) => {
+        console.log(response.properties.periods[0]);
+        const ourWeatherIcon = response.properties.periods[0].icon;
+        const ourWeatherTemp = response.properties.periods[0].temperature;
+        console.log(ourWeatherIcon, ourWeatherTemp);
+      });
+    };
+
+    $("#ourTemp").text("Test");
+    $("#ourWeatherIcon").text("Testing");
+
+
+
+
+
+
+  })
+
+
+  $(".blogBtn").click(() => {
+    console.log("I am being clicked to create a BLOGGGGGG")
+
+    // const blogCreateInput = "here is my blog creat input";
+    // const blogCreatefield = "blog field";
+    
+    let title = $("#blogCreateInput").val();
+    let review = $("#blogCreateField").val();
+
+    $.post("/api/blogs", {title, review,}).then(function (res) {
+
+      const { title, review} = res;
+      console.log(title, review)
+
+      $.ajax({
+        type: "POST",
+        url: url,
+      });
+
+      // #blogCreateInput the name field
+      // #blogCreateField the blog text field
+
+      // let newBlog = req.body
+      // console.log(newBlog)
+
     });
-  };
-
-  $("#ourTemp").text("Test");
-  $("#ourWeatherIcon").text("Testing");
-
-
-
-
-
-
+  });
 });

@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
-        },
-        score: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                min: 1,
-                max: 5
-            }
         }
+        // score: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     validate: {
+        //         min: 1,
+        //         max: 5
+        //     }
+        // }
     });
 
     Blog.associate = models => {
