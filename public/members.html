@@ -56,18 +56,19 @@
     <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
       <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
         <div class="weatherIcon">
-          <img src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small">
+          <span id="ourWeatherIcon"></span>
+          <!-- <img class="ourWeatherIcon" src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> -->
         </div>
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
         <ul class="list-group list-group-flush">
 
 
-          <li class="list-group-item"><i class="fas fa-sun ourTemp"></i> Current Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i> Day 1 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i> Day 2 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay3"></i> Day 3 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay4"></i> Day 4 Weather</li>
-          <li class="list-group-item"><i class="fas fa-sun weatherDay5"></i> Day 5 Weather</li>
+          <li class="list-group-item"><i class="fas fa-sun ourTemp"></i><span id="currentWeather"> Current Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i><span id="wd1"> Day 1 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i><span id="wd2"> Day 2 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay3"></i><span id="wd3"> Day 3 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay4"></i><span id="wd4"> Day 4 Weather</span></li>
+          <li class="list-group-item"><i class="fas fa-sun weatherDay5"></i><span id="wd5"> Day 5 Weather</span></li>
         </ul>
         <p class="sidebarTitle pt-4"> Your Blogs: <br> </p>
         <hr>
@@ -103,7 +104,7 @@
             <option selected>Choose...</option>
             <option id="1" value="al">Alabama</option>
             <option id="2" value="ak">Alaska</option>
-            <option id="3" value="as">American Samoa</option>
+            <!-- <option id="3" value="as">American Samoa</option> -->
             <option id="4" value="az">Arizona</option>
             <option id="5" value="ak">Arkansas</option>
             <option id="6" value="ca">California</option>
@@ -123,7 +124,7 @@
             <option id="20" value="ky">Kentucky</option>
             <option id="21" value="la">Louisiana</option>
             <option id="22" value="me">Maine</option>
-            <option id="23" value="mh">Marshall Islands</option>
+            <!-- <option id="23" value="mh">Marshall Islands</option> -->
             <option id="24" value="md">Maryland</option>
             <option id="25" value="ma">Massachusetts</option>
             <option id="26" value="mi">Michigan</option>
@@ -139,7 +140,7 @@
             <option id="36" value="ny">New York</option>
             <option id="37" value="nc">North Carolina</option>
             <option id="38" value="nd">North Dakota</option>
-            <option id="39" value="np">Northern Mariana Islands</option>
+            <!-- <option id="39" value="np">Northern Mariana Islands</option> -->
             <option id="40" value="oh">Ohio</option>
             <option id="41" value="ok">Oklahoma</option>
             <option id="42" value="or">Oregon</option>
