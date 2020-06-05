@@ -149,7 +149,7 @@ $(document).ready(() => {
         // Here we should parse oour object data and send it to user creation
         // Do some data logging first
         newUser.password = passwordInput.val().trim();
-        console.log(newUser)
+        // console.log(newUser)
         signUpUser(newUser.name, newUser.email, userData.password, newUser.accessLevel, newUser.ourLat, newUser.ourLong);
 
         // updateUserName(userData.name);
