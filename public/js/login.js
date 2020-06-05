@@ -4,11 +4,12 @@
 
 $(document).ready(() => {
   // Getting references to our form and inputs
-  let newUser = { firstName: "", lastName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
+  let newUser = { firstName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
 
   const loginForm = $("form.login");
   let emailInput = $("input#email-input");
   let passwordInput = $("input#password-input");
+  let nameInput = $("input#firstName")
 
   // EXS check to see if the login button has been clicked
   // Validate our fields have data, if not, then return out of the function
@@ -45,11 +46,27 @@ $(document).ready(() => {
     };
   });
 
+  $(".close-2").on ("click", ()=>{
+    console.log("name submit is being clicked")
+    let userData = {
+      name: nameInput.val().trim()
+    }
+
+    if(!userData.name){
+      return;
+    }
+    signUpUser(userData.name);
+    nameInput.va;("")
+    console.log("username is being passed", userData )
+
+  })
+
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
-    console.log(email, password);
+  function loginUser(name, email, password) {
+    console.log(name, email, password);
     console.log("Executing Login User");
     $.post("/api/login", {
+      name: name,
       email: email,
       password: password
     })
@@ -75,8 +92,9 @@ $(document).ready(() => {
       newUser.ourLat = 38.9072;
       newUser.ourLong = -77.0369;
     }
+
     $.post("/api/signup", {
-      name: newUser.firstName,
+      name: name,
       email: email,
       password: password,
       accessLevel: 1,
@@ -113,4 +131,6 @@ $(document).ready(() => {
   }
 
   getLocation();
+
+  
 });

@@ -25,8 +25,6 @@ $(document).ready(() => {
   };
   displayImage();
 
-
-
   // MODAL SECTION FOR login_new.html PAGE ONLY! 
   // EXS 1st June 2020 - This needs to be JQuery for consistency.
   let modal = document.getElementById("myModal-2");
@@ -38,17 +36,32 @@ $(document).ready(() => {
   }
   span.onclick = function () {
     modal.style.display = "none";
-  // }
-  // window.onclick = function (event) {
-  //   event.preventDefault();
-  //   console.log("I am being clicked!!!", this.onClick)
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
+    // }
+    // window.onclick = function (event) {
+    //   event.preventDefault();
+    //   console.log("I am being clicked!!!", this.onClick)
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
   }
-  $("#finalSignUp").on("click", () => {
-    console.log("was clicked")
-    window.location.replace("/members");
-})
+  $(".close-2").on("click", () => {
+    // console.log("Submit name was clicked")
 
+    // let name = $("input#firstName").val();
+
+    // $.post("/api/user_data", {name,}).then(function (res) {
+
+    //   const {name} = res;
+    //   console.log("Member name is being called",name)
+
+    //   $.ajax({
+    //     type: "POST",
+    //     url: url,
+    //   });
+      
+    // })
+    window.location.replace("/members");
+
+  });
 });
+

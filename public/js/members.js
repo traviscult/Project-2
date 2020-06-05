@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     $.post("/api/blogs", {title, review,}).then(function (res) {
 
-      const { title, review} = res;
+      const {title, review} = res;
       console.log(title, review)
 
       $.ajax({
