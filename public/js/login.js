@@ -4,11 +4,17 @@
 
 $(document).ready(() => {
   // Getting references to our form and inputs
-  let newUser = { firstName: "", lastName: "", email: "", ourLat: 0.0, ourLong: 0.0 };
+  let newUser = {
+    name: "",
+    email: "",
+    ourLat: 0.0,
+    ourLong: 0.0
+  };
 
   const loginForm = $("form.login");
   let emailInput = $("input#email-input");
   let passwordInput = $("input#password-input");
+  let nameInput = $("input#firstName");
 
   // EXS check to see if the login button has been clicked
   // Validate our fields have data, if not, then return out of the function
@@ -33,6 +39,8 @@ $(document).ready(() => {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim()
       }
+      // added this line 
+      newUser.email = userData.email
       // If we have null data return out
       if (!userData.email || !userData.password) {
         return;
@@ -40,19 +48,55 @@ $(document).ready(() => {
       signUpUser(userData.email, userData.password);
       emailInput.val("");
       passwordInput.val("");
-      console.log("Our UserData:", userData);
+      // console.log("Our UserData:", userData);
       console.log("Signup Button Pressed")
     };
   });
 
+  // $(".close-2").on("click", () => {
+
+  //   console.log("name submit is being clicked")
+  //   let userData = {
+  //     name: nameInput.val().trim()
+  //   }
+  //   if (!userData.name) {
+  //     return;
+  //   }
+  //   userName(userData.name);
+  //   nameInput.val("");
+    // console.log("username is being passed", userData)
+    // $.post("/api/user_data", {
+    //   name
+    // }).then(function (res) {
+
+    //   const {
+    //     name
+    //   } = res;
+    //   console.log(name)
+
+    //   $.ajax({
+    //     type: "POST",
+    //     url: url,
+    //   });
+    // });
+
+  // })
+
+  // function userName(name) {
+  //   console.log(typeof name, name)
+  //   $.post("/api/signup", {
+  //     name: name
+  //   })
+  // }
+
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
-    console.log(email, password);
+  function loginUser( email, password) {
+    console.log(name, email, password);
     console.log("Executing Login User");
     $.post("/api/login", {
-      email: email,
-      password: password
-    })
+        email: email,
+        password: password
+      })
       .then(function () {
         // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
         // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
@@ -62,6 +106,7 @@ $(document).ready(() => {
       .catch(function (err) {
         console.log(err);
       });
+
   }
 
   // EXS 30th May 2020 - signUpUser function, pass over user created details, then
@@ -75,18 +120,19 @@ $(document).ready(() => {
       newUser.ourLat = 38.9072;
       newUser.ourLong = -77.0369;
     }
+
     $.post("/api/signup", {
-      name: newUser.firstName,
-      email: email,
-      password: password,
-      accessLevel: 1,
-      geoLat: newUser.ourLat,
-      geoLong: newUser.ourLong
-    }).then(function (data) {
-      
-      // window.location.replace("/members");
-      // If there's an error, handle it by throwing up a bootstrap alert
-    })
+        name: name,
+        email: email,
+        password: password,
+        accessLevel: 1,
+        geoLat: newUser.ourLat,
+        geoLong: newUser.ourLong
+      }).then(function (data) {
+
+        // window.location.replace("/members");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
       .catch(handleLoginErr);
   }
 
@@ -113,4 +159,58 @@ $(document).ready(() => {
   }
 
   getLocation();
+
+  let modal = document.getElementById("myModal-2");
+  let btn = document.getElementById("signUpBtn");
+  let span = document.getElementsByClassName("close-2")[0];
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  }
+  span.onclick = function () {
+    modal.style.display = "none";
+    // }
+    // window.onclick = function (event) {
+    //   event.preventDefault();
+    //   console.log("I am being clicked!!!", this.onClick)
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
+  }
+  $(".close-2").on("click", () => {
+    console.log("name submit is being clicked", newUser)
+    let userData = {
+      name: nameInput.val().trim()
+    }
+    newUser.name = nameInput.val().trim();
+    console.log("requesting new user info", newUser)
+    if (!userData.name) {
+      return;
+    }
+    updateUserName(userData.name);
+    console.log("user name ", userData.name)
+    nameInput.val("");
+
+    window.location.replace("/members");
+
+  });
+
+  function updateUserName(name) {
+    console.log(typeof name, name)
+    console.log("name submit is being clicked")
+
+    $.post("/api/signup,", {name}).then(function (res){
+
+      const {name} = res;
+      console.log(name)
+
+      $.ajax({
+        type: "PUT",
+        url: url,
+        data: name
+      })
+    })
+  }
+
+
 });
