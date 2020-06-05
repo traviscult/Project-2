@@ -18,7 +18,7 @@ module.exports = (app) => {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup",function(req, res) {
-    console.log ("Signup Req Info:", req.body);
+    // console.log ("Signup Req Info:", req.body);
     db.User.create({
       name: req.body.name,
       email: req.body.email,
@@ -28,7 +28,7 @@ module.exports = (app) => {
       geoLong: req.body.geoLong
     })
       .then( function () {
-        console.log ("Now trying to login...");
+        // console.log ("Now trying to login...");
         res.redirect(307, "/api/login");
       })
       .catch(function(err){
@@ -70,7 +70,7 @@ module.exports = (app) => {
   // Our api routes go here
 
   app.post('/api/blogs', async (req, res) => {
-    console.log('Blog post:', req.body);
+    // console.log('Blog post:', req.body);
     const Blog = await db.Blog.create({
       title: req.body.title,
       review: req.body.review

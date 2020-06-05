@@ -47,7 +47,7 @@ $(document).ready(() => {
   //   }
   }
   $("#finalSignUp").on("click", () => {
-    console.log("was clicked")
+    // console.log("was clicked")
     window.location.replace("/members");
 })
 

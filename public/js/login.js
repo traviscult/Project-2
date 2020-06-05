@@ -26,8 +26,8 @@ $(document).ready(() => {
       loginUser(userData.email, userData.password);
       emailInput.val("");
       passwordInput.val("");
-      console.log("Our UserData:", userData);
-      console.log("Login Button Pressed");
+      // console.log("Our UserData:", userData);
+      // console.log("Login Button Pressed");
     } else if (this.id === "signUpBtn") {
       let userData = {
         email: emailInput.val().trim(),
@@ -40,15 +40,15 @@ $(document).ready(() => {
       signUpUser(userData.email, userData.password);
       emailInput.val("");
       passwordInput.val("");
-      console.log("Our UserData:", userData);
-      console.log("Signup Button Pressed")
+      // console.log("Our UserData:", userData);
+      // console.log("Signup Button Pressed")
     };
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
-    console.log(email, password);
-    console.log("Executing Login User");
+    // console.log(email, password);
+    // console.log("Executing Login User");
     $.post("/api/login", {
       email: email,
       password: password
@@ -71,7 +71,7 @@ $(document).ready(() => {
   function signUpUser(email, password) {
     // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
     if (newUser.ourLat == 0 && newUser.ourLong == 0) {
-      console.log("We are at 0,0");
+      // console.log("We are at 0,0");
       newUser.ourLat = 38.9072;
       newUser.ourLong = -77.0369;
     }
