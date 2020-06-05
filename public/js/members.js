@@ -1,3 +1,4 @@
+// const db = require("../../models");
 $(document).ready(function() {
 
 
@@ -14,33 +15,47 @@ $(document).ready(function() {
         getOurWeather(data.lat, data.long);
     });
 
-    // EXS 5th june 2020 - commenting out to test members script as it errors
-    // $(".blogBtn").click(() => {
-    //     console.log("I am being clicked to create a BLOGGGGGG")
-    //     let title = $("#blogCreateInput").val();
-    //     let review = $("#blogCreateField").val();
+    $(".blogBtn").click(() => {
+        console.log("I am being clicked to create a BLOGGGGGG")
+        let title = $("#blogCreateInput").val();
+        let review = $("#blogCreateField").val();
 
-    //     $.post("/api/blogs", {
-    //         title,
-    //         review,
-    //     }).then(function(res) {
+        $.post("/api/blogs", {
+            title,
+            review,
+        })
+        // .then(function(res) {
 
-    //         const {
-    //             title,
-    //             review
-    //         } = res;
-    //         console.log(title, review)
+        //     const {
+        //         title,
+        //         review
+        //     } = res;
+        //     console.log(title, review)
 
-    //         const { title, review } = res;
-    //         console.log(title, review)
+        //     $.ajax({
+        //         type: "POST",
+        //         url: url,
+        //     });
+        // });
+        getBlogPost()
+    });
 
-    //         $.ajax({
-    //             type: "POST",
-    //             url: url,
-    //         });
+    function getBlogPost () {
 
-    //     });
-    // });
+      $.get("/api/blogs", (req, res) =>{
+        console.log(req)
+        console.log(res)
+        // $("#blogOne").text(req.body.title);
+        // $("#BlogTwo").text(" " + req.body.title);
+        // $("#BlogThree").text(" " + req.body.title);
+        // $("#BlogFour").text(" " + req.body.title);
+        // $("#BlogFive").text(" " + req.body.title);
+      
+
+      })
+
+
+    }
 
 
     function getOurWeather(lat, long) {
