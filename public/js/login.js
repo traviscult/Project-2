@@ -46,10 +46,6 @@ $(document).ready(() => {
             if (!userData.email || !userData.password) {
                 return;
             }
-            //   signUpUser(userData.email, userData.password);
-            //   emailInput.val("");
-            // passwordInput.val("");
-            // console.log("Our UserData:", userData);
             console.log("Signup Button Pressed")
         };
     });
@@ -73,10 +69,8 @@ $(document).ready(() => {
             });
 
     }
-
     // EXS 30th May 2020 - signUpUser function, pass over user created details, then
-    // grant them accessLevel 1, which I believe is Noob...
-    // If the creation is good, then proceed to the members page
+    // grant them accessLevel 1, If the creation is good, then proceed to the members page
     // EXS Added in test data for name and lat/long
     function signUpUser(email, password) {
         // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
@@ -122,7 +116,7 @@ $(document).ready(() => {
         // console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
     }
 
-    getLocation();
+    // getLocation();
 
     let modal = document.getElementById("myModal-2");
     let btn = document.getElementById("signUpBtn");
@@ -137,6 +131,7 @@ $(document).ready(() => {
 
 
     $(".close-2").on("click", () => {
+        getLocation();
         console.log("name submit is being clicked", newUser)
         let userData = {
             name: nameInput.val().trim()
@@ -151,31 +146,24 @@ $(document).ready(() => {
         newUser.password = passwordInput.val().trim();
         // console.log(newUser)
         signUpUser(newUser.name, newUser.email, userData.password, newUser.accessLevel, newUser.ourLat, newUser.ourLong);
-
-        // updateUserName(userData.name);
-        // console.log("user name ", userData.name)
-        // nameInput.val("");
-
-        // window.location.replace("/members");
-
     });
 
-    function updateUserName(name) {
-        console.log(typeof name, name)
-        console.log("name submit is being clicked")
+    // function updateUserName(name) {
+    //     console.log(typeof name, name)
+    //     console.log("name submit is being clicked")
 
-        $.post("/api/signup,", { name }).then(function(res) {
+    //     $.post("/api/signup,", { name }).then(function(res) {
 
-            const { name } = res;
-            console.log(name)
+    //         const { name } = res;
+    //         console.log(name)
 
-            $.ajax({
-                type: "PUT",
-                url: url,
-                data: name
-            })
-        })
-    }
+    //         $.ajax({
+    //             type: "PUT",
+    //             url: url,
+    //             data: name
+    //         })
+    //     })
+}
 
 
 });

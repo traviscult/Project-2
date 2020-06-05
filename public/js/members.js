@@ -14,35 +14,6 @@ $(document).ready(function() {
         getOurWeather(data.lat, data.long);
     });
 
-    // EXS 5th june 2020 - commenting out to test members script as it errors
-    // $(".blogBtn").click(() => {
-    //     console.log("I am being clicked to create a BLOGGGGGG")
-    //     let title = $("#blogCreateInput").val();
-    //     let review = $("#blogCreateField").val();
-
-    //     $.post("/api/blogs", {
-    //         title,
-    //         review,
-    //     }).then(function(res) {
-
-    //         const {
-    //             title,
-    //             review
-    //         } = res;
-    //         console.log(title, review)
-
-    //         const { title, review } = res;
-    //         console.log(title, review)
-
-    //         $.ajax({
-    //             type: "POST",
-    //             url: url,
-    //         });
-
-    //     });
-    // });
-
-
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
         console.log("Our First NWS URL: ", ourFirstNWSURL);
