@@ -1,10 +1,8 @@
 $(document).ready(function() {
-
-
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
-    console.log("Calling members.js");
+    //  console.log("Calling members.js");
     $.get("/api/user_data").then(function(data) {
         // $(".member-name").text(data.email);
         console.log("Our get user_data:", data);
@@ -14,19 +12,21 @@ $(document).ready(function() {
         getOurWeather(data.lat, data.long);
     });
 
+
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
         console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
-            console.log("Response: ", response);
-            console.log("Status: ", status);
+            //  console.log("Response: ", response);
+            //  console.log("Status: ", status);
+            console.log("Our City Returned value?: ", response);
             const ourLongRangeForecast = response.properties.forecast;
             console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-                console.log(response.properties);
+                console.log("Members Page Weather Reponse: ", response.properties);
                 const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                console.log("Our Weather Icon value: ", currentWeatherIcon);
+                //    console.log("Our Weather Icon value: ", currentWeatherIcon);
                 $('#ourWeatherIcon').html(currentWeatherIcon);
                 $("#wd1").text(" " + response.properties.periods[0].temperature);
                 $("#wd2").text(" " + response.properties.periods[1].temperature);
@@ -36,5 +36,4 @@ $(document).ready(function() {
             });
         });
     }
-
 });

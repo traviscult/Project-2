@@ -141,29 +141,10 @@ $(document).ready(() => {
         if (!userData.name) {
             return;
         }
-        // Here we should parse oour object data and send it to user creation
+        // Here we should parse our object data and send it to user creation
         // Do some data logging first
         newUser.password = passwordInput.val().trim();
         // console.log(newUser)
         signUpUser(newUser.name, newUser.email, userData.password, newUser.accessLevel, newUser.ourLat, newUser.ourLong);
     });
-
-    // function updateUserName(name) {
-    //     console.log(typeof name, name)
-    //     console.log("name submit is being clicked")
-
-    //     $.post("/api/signup,", { name }).then(function(res) {
-
-    //         const { name } = res;
-    //         console.log(name)
-
-    //         $.ajax({
-    //             type: "PUT",
-    //             url: url,
-    //             data: name
-    //         })
-    //     })
 });
-
-
-// });
