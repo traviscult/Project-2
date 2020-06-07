@@ -74,11 +74,11 @@ $(document).ready(() => {
     // EXS Added in test data for name and lat/long
     function signUpUser(email, password) {
         // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
-        if (newUser.ourLat == 0 && newUser.ourLong == 0) {
-            console.log("We are at 0,0");
-            newUser.ourLat = 38.9072;
-            newUser.ourLong = -77.0369;
-        }
+        // if (newUser.ourLat == 0 && newUser.ourLong == 0) {
+        //     console.log("We are at 0,0");
+        //     newUser.ourLat = 38.9072;
+        //     newUser.ourLong = -77.0369;
+        // }
 
         $.post("/api/signup", {
                 name: newUser.name,
