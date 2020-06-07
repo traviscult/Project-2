@@ -32,7 +32,7 @@ $(document).ready(() => {
 
 
         result.data.map(statepark => {
-            console.log("statepark", statepark)
+            // console.log("statepark", statepark)
             const placeHolderImg = "https://www.nps.gov/articles/images/yose-main.jpg";
             let picture = statepark.images[0].url.includes(".jpg") ? statepark.images[0].url : placeHolderImg;
             let parkPicture = ` <a target="_blank" href="${statepark.url}"><img src=${picture}></a>`
@@ -74,15 +74,15 @@ $(document).ready(() => {
 
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
-        console.log("Our First NWS URL: ", ourFirstNWSURL);
+        // console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
-            console.log("Response: ", response);
-            console.log("Status: ", status);
+            // console.log("Response: ", response);
+            // console.log("Status: ", status);
             const ourLongRangeForecast = response.properties.forecast;
-            console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
+            // console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-                console.log("Our ark Weather: ", response.properties);
+                // console.log("Our ark Weather: ", response.properties);
                 // const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
                 // console.log("Our Weather Icon value: ", currentWeatherIcon);
                 // $('#ourWeatherIcon').html(currentWeatherIcon);
