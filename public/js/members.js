@@ -1,3 +1,5 @@
+// import { DataTypes } from "sequelize/types";
+
 // const db = require("../../models");
 $(document).ready(function() {
     //const userEmailAddress = ""
@@ -14,7 +16,16 @@ $(document).ready(function() {
         $("#greeting").text(data.name);
         //userEmailAddress = data.email;
         //console.log("userEmailAddress: ", userEmailAddress);
-        getOurWeather(data.lat, data.long);
+        //  EXS puilling weather api call
+
+        // if (data.ourLat === 0 && data.ourLong === 0) {
+        //     let ourLat = 38.9072;
+        //     let ourLong = -77.0369;
+        //     getOurWeather(ourLat, ourLong);
+        // } else {
+        //     getOurWeather(data.ourLat, data.ourLong);
+        // }
+        console.log("Getting User Data: ", data.ourLat, data.ourLong);
     });
 
     $(".blogBtn").click(() => {
