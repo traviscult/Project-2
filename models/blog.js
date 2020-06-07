@@ -22,11 +22,13 @@ module.exports = (sequelize, DataTypes) => {
         // }
     });
 
-    Blog.associate = models => {
-        Blog.belongsTo(models.User, {
-            foreignKey: 'id'
-        });
-    }
+    // Blog.associate = function(models) {
+    //     Blog.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // }
 
     return Blog;
 };

@@ -73,7 +73,8 @@ module.exports = (app) => {
     // console.log('Blog post:', req.body);
     const Blog = await db.Blog.create({
       title: req.body.title,
-      review: req.body.review
+      review: req.body.review,
+      UserId: req.params.UserId
       // score: req.body.score
     })
     res.json(Blog);
@@ -83,7 +84,7 @@ module.exports = (app) => {
       const blog = await db.Blog.update({
         title: req.body.title,
         review: req.body.review,
-        score: req.body.score
+        // score: req.body.score
       },
       {
          where: {
