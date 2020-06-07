@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
         // }
     });
 
-    Blog.associate = models => {
-        Blog.belongsTo(models.User, {
-            foreignKey: 'id'
-        });
-    }
+    // Blog.associate = models => {
+    //     Blog.belongsTo(models.User, {
+    //         foreignKey: 'id'
+    //     });
+    // }
 
     return Blog;
 };
