@@ -33,8 +33,8 @@ $(document).ready(() => {
             loginUser(userData.email, userData.password);
             emailInput.val("");
             passwordInput.val("");
-            console.log("Our UserData:", userData);
-            console.log("Login Button Pressed");
+            // console.log("Our UserData:", userData);
+            // console.log("Login Button Pressed");
         } else if (this.id === "signUpBtn") {
             let userData = {
                     email: emailInput.val().trim(),
@@ -46,14 +46,14 @@ $(document).ready(() => {
             if (!userData.email || !userData.password) {
                 return;
             }
-            console.log("Signup Button Pressed")
+            // console.log("Signup Button Pressed")
         };
     });
 
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
     function loginUser(email, password) {
-        console.log(name, email, password);
-        console.log("Executing Login User");
+        // console.log(name, email, password);
+        // console.log("Executing Login User");
         $.post("/api/login", {
                 email: email,
                 password: password
@@ -132,12 +132,12 @@ $(document).ready(() => {
 
     $(".close-2").on("click", () => {
         getLocation();
-        console.log("name submit is being clicked", newUser)
+        // console.log("name submit is being clicked", newUser)
         let userData = {
             name: nameInput.val().trim()
         }
         newUser.name = nameInput.val().trim();
-        console.log("requesting new user info", newUser)
+        // console.log("requesting new user info", newUser)
         if (!userData.name) {
             return;
         }
