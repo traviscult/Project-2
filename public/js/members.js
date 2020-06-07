@@ -39,15 +39,15 @@ $(document).ready(function() {
         //             review,
         //             email
         //         })
-        //         //getBlogPost()
+        getBlogPost(title, review)
     });
 
-    function getBlogPost() {
+    function getBlogPost(title, review) {
 
-        $.get("/api/blogs", (req, res) => {
+        $.get("/api/blogs", (res) => {
             // console.log(req)
             // console.log(res)
-            // $("#blogOne").text(req.body.title);
+            $("#blogOne").text(res.body.title);
             // $("#BlogTwo").text(" " + req.body.title);
             // $("#BlogThree").text(" " + req.body.title);
             // $("#BlogFour").text(" " + req.body.title);
