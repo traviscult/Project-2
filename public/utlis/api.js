@@ -49,7 +49,7 @@ $(document).ready(() => {
             console.log("Longitude: ", statepark.longitude);
             let ourParkLat = statepark.latitude;
             let ourParkLong = statepark.longitude;
-            getOurWeather(ourParkLat, ourParkLong);
+            // getOurWeather(ourParkLat, ourParkLong); EXS Temp removal for testing
             // append all lets to the page
             row.append(columnOne, columnTwo);
             columnOne.append(parkPicture);
