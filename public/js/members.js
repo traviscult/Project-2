@@ -1,10 +1,9 @@
+// const db = require("../../models");
 $(document).ready(function() {
-
-
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
-    console.log("Calling members.js");
+    //  console.log("Calling members.js");
     $.get("/api/user_data").then(function(data) {
         // $(".member-name").text(data.email);
         console.log("Our get user_data:", data);
@@ -14,33 +13,49 @@ $(document).ready(function() {
         getOurWeather(data.lat, data.long);
     });
 
-    // EXS 5th june 2020 - commenting out to test members script as it errors
-    // $(".blogBtn").click(() => {
-    //     console.log("I am being clicked to create a BLOGGGGGG")
-    //     let title = $("#blogCreateInput").val();
-    //     let review = $("#blogCreateField").val();
 
-    //     $.post("/api/blogs", {
-    //         title,
-    //         review,
-    //     }).then(function(res) {
+    $(".blogBtn").click(() => {
+        console.log("I am being clicked to create a BLOGGGGGG")
+        let title = $("#blogCreateInput").val();
+        let review = $("#blogCreateField").val();
 
-    //         const {
-    //             title,
-    //             review
-    //         } = res;
-    //         console.log(title, review)
+        $.post("/api/blogs", {
+            title,
+            review,
+        })
+        // .then(function(res) {
 
-    //         const { title, review } = res;
-    //         console.log(title, review)
+        //     const {
+        //         title,
+        //         review
+        //     } = res;
+        //     console.log(title, review)
 
-    //         $.ajax({
-    //             type: "POST",
-    //             url: url,
-    //         });
+        //     $.ajax({
+        //         type: "POST",
+        //         url: url,
+        //     });
+        // });
+        getBlogPost()
+    });
 
-    //     });
-    // });
+    function getBlogPost () {
+
+      $.get("/api/blogs", (req, res) =>{
+        console.log(req)
+        console.log(res)
+        // $("#blogOne").text(req.body.title);
+        // $("#BlogTwo").text(" " + req.body.title);
+        // $("#BlogThree").text(" " + req.body.title);
+        // $("#BlogFour").text(" " + req.body.title);
+        // $("#BlogFive").text(" " + req.body.title);
+      
+
+      })
+
+
+    }
+
 
 
     function getOurWeather(lat, long) {
@@ -48,14 +63,15 @@ $(document).ready(function() {
         console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
-            console.log("Response: ", response);
-            console.log("Status: ", status);
+            //  console.log("Response: ", response);
+            //  console.log("Status: ", status);
+            console.log("Our City Returned value?: ", response);
             const ourLongRangeForecast = response.properties.forecast;
             console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-                console.log(response.properties);
+                console.log("Members Page Weather Reponse: ", response.properties);
                 const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                console.log("Our Weather Icon value: ", currentWeatherIcon);
+                //    console.log("Our Weather Icon value: ", currentWeatherIcon);
                 $('#ourWeatherIcon').html(currentWeatherIcon);
                 $("#wd1").text(" " + response.properties.periods[0].temperature);
                 $("#wd2").text(" " + response.properties.periods[1].temperature);
@@ -65,5 +81,4 @@ $(document).ready(function() {
             });
         });
     }
-
 });

@@ -69,9 +69,17 @@ module.exports = (app) => {
 
   // Our api routes go here
 
-  app.post('/api/blogs', async (req, res) => {
-    // console.log('Blog post:', req.body);
-    const Blog = await db.Blog.create({
+  app.get("/api/blogs", async (req, res) =>{
+  const blogs = await db.Blog.findAll({
+
+  })
+  res.json(blogs)
+  })
+  
+
+  app.post('/api/blogs', (req, res) => {
+    console.log('Blog post:', req.body);
+    const Blog = db.Blog.create({
       title: req.body.title,
       review: req.body.review,
       UserId: req.params.UserId
@@ -102,6 +110,7 @@ module.exports = (app) => {
       });
       res.json(blog)
     });
+
   
     // app.get('/api/history', async (req,res) => {
     //   const History = await db.History.findAll({

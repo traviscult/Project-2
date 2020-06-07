@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
+        },
+        email: {
+            type: DataTypes.TEXT,
+            allowNull: false,
         }
         // score: {
         //     type: DataTypes.INTEGER,
@@ -22,11 +26,9 @@ module.exports = (sequelize, DataTypes) => {
         // }
     });
 
-    // Blog.associate = function(models) {
+    // Blog.associate = models => {
     //     Blog.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
+    //         foreignKey: 'id'
     //     });
     // }
 
