@@ -33,8 +33,8 @@ $(document).ready(() => {
             loginUser(userData.email, userData.password);
             emailInput.val("");
             passwordInput.val("");
-            console.log("Our UserData:", userData);
-            console.log("Login Button Pressed");
+            // console.log("Our UserData:", userData);
+            // console.log("Login Button Pressed");
         } else if (this.id === "signUpBtn") {
             let userData = {
                     email: emailInput.val().trim(),
@@ -46,18 +46,14 @@ $(document).ready(() => {
             if (!userData.email || !userData.password) {
                 return;
             }
-            //   signUpUser(userData.email, userData.password);
-            //   emailInput.val("");
-            // passwordInput.val("");
-            // console.log("Our UserData:", userData);
-            console.log("Signup Button Pressed")
+            // console.log("Signup Button Pressed")
         };
     });
 
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
     function loginUser(email, password) {
-        console.log(name, email, password);
-        console.log("Executing Login User");
+        // console.log(name, email, password);
+        // console.log("Executing Login User");
         $.post("/api/login", {
                 email: email,
                 password: password
@@ -73,10 +69,8 @@ $(document).ready(() => {
             });
 
     }
-
     // EXS 30th May 2020 - signUpUser function, pass over user created details, then
-    // grant them accessLevel 1, which I believe is Noob...
-    // If the creation is good, then proceed to the members page
+    // grant them accessLevel 1, If the creation is good, then proceed to the members page
     // EXS Added in test data for name and lat/long
     function signUpUser(email, password) {
         // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
@@ -122,7 +116,7 @@ $(document).ready(() => {
         // console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
     }
 
-    getLocation();
+    // getLocation();
 
     let modal = document.getElementById("myModal-2");
     let btn = document.getElementById("signUpBtn");
@@ -137,45 +131,20 @@ $(document).ready(() => {
 
 
     $(".close-2").on("click", () => {
-        console.log("name submit is being clicked", newUser)
+        getLocation();
+        // console.log("name submit is being clicked", newUser)
         let userData = {
             name: nameInput.val().trim()
         }
         newUser.name = nameInput.val().trim();
-        console.log("requesting new user info", newUser)
+        // console.log("requesting new user info", newUser)
         if (!userData.name) {
             return;
         }
-        // Here we should parse oour object data and send it to user creation
+        // Here we should parse our object data and send it to user creation
         // Do some data logging first
         newUser.password = passwordInput.val().trim();
         // console.log(newUser)
         signUpUser(newUser.name, newUser.email, userData.password, newUser.accessLevel, newUser.ourLat, newUser.ourLong);
-
-        // updateUserName(userData.name);
-        // console.log("user name ", userData.name)
-        // nameInput.val("");
-
-        // window.location.replace("/members");
-
     });
-
-    function updateUserName(name) {
-        console.log(typeof name, name)
-        console.log("name submit is being clicked")
-
-        $.post("/api/signup,", { name }).then(function(res) {
-
-            const { name } = res;
-            console.log(name)
-
-            $.ajax({
-                type: "PUT",
-                url: url,
-                data: name
-            })
-        })
-    }
-
-
 });
