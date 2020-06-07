@@ -4,8 +4,19 @@
 [![Repo Languages](https://img.shields.io/github/languages/count/RichardKessler/Project-2?color=red&style=plastic)](https://github.com/RichardKessler/Project-2)
 [![License](https://img.shields.io/github/license/richardkessler/Project-2?color=yellow&style=plastic)](https://github.com/RichardKessler/Project-2)
 
+
+A National Parks and Weather application that allows users to post blog reviews.
+
+## Table of Contents
+* [Usage](#Usage)
+* [Description](#Description)
+* [](#)
+* [](#)
+* [](#)
+
 ## User Story
 As a user I WANT to be able to plan a trip to a state and get a recommendation of parks, historical locations, and famous landmarks SO THAT I can have a great time, learn something new, make memories, and tell everyone about it
+
 
 ## Contributors
 Eddie Saunders, Richard Kessler, Shiva Sharma, Travis Cultreri
