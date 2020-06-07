@@ -51,7 +51,6 @@ $(document).ready(function() {
         })
     }
 
-    // EXS 6th June 20202 - We are going to need no pull city name from another API to update 
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
         console.log("Our First NWS URL: ", ourFirstNWSURL);
