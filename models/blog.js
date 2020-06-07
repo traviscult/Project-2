@@ -12,21 +12,17 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             len: [1]
         }
-        // score: {
-        //     type: DataTypes.INTEGER,
+        // email: {
+        //     type: DataTypes.TEXT,
         //     allowNull: false,
-        //     validate: {
-        //         min: 1,
-        //         max: 5
-        //     }
         // }
     });
 
-    // Blog.associate = models => {
-    //     Blog.belongsTo(models.User, {
-    //         foreignKey: 'id'
-    //     });
-    // }
+    Blog.associate = models => {
+        Blog.belongsTo(models.User, {
+            foreignKey: 'id'
+        });
+    }
 
     return Blog;
 };
