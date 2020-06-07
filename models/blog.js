@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             len: [1]
         },
-        email: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        }
+        // email: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false,
+        // }
         // score: {
         //     type: DataTypes.INTEGER,
         //     allowNull: false,
@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
         // }
     });
 
-    Blog.associate = models => {
-        Blog.belongsTo(models.User, {
-            foreignKey: 'id'
-        });
-    }
+    // Blog.associate = models => {
+    //     Blog.belongsTo(models.User, {
+    //         foreignKey: 'id'
+    //     });
+    // }
 
     return Blog;
 };
