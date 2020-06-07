@@ -28,7 +28,8 @@ $(document).ready(function() {
                 email
             })
         });
-        // console.log("I am being clicked to create a BLOGGGGGG") let title = $("#blogCreateInput").val();
+        console.log("I am being clicked to create a BLOGGGGGG") 
+        // let title = $("#blogCreateInput").val();
         //     let review = $("#blogCreateField").val();
         //     //let email = $("#modalUserEmail").val();
         //     //   console.log(data.email, review, title);
@@ -39,19 +40,19 @@ $(document).ready(function() {
         //             review,
         //             email
         //         })
-        getBlogPost(title, review)
+        getBlogPost()
     });
 
-    function getBlogPost(title, review) {
+    function getBlogPost() {
 
-        $.get("/api/blogs", (res) => {
-            // console.log(req)
-            // console.log(res)
-            $("#blogOne").text(res.body.title);
-            // $("#BlogTwo").text(" " + req.body.title);
-            // $("#BlogThree").text(" " + req.body.title);
-            // $("#BlogFour").text(" " + req.body.title);
-            // $("#BlogFive").text(" " + req.body.title);
+        $.get("/api/blogs", (req, res) => {
+            console.log(req)
+            console.log(res)
+            $("#blogOne").text(" " + res.title);
+            $("#BlogTwo").text(" " + res.title);
+            $("#BlogThree").text(" " + res.title);
+            $("#BlogFour").text(" " + res.title);
+            $("#BlogFive").text(" " + res.title);
         })
     }
 
