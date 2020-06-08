@@ -62,3 +62,8 @@ MIT
 * Kevin Collins - Heroku troubleshooting
 
 ## Authors
+
+* Eddie Saunders - https://github.com/SaundersEddie
+* Richard Kessler - https://github.com/RichardKessler
+* Shiva Sharma - https://github.com/ssh1sharma
+* Travis Cultreri - https://github.com/traviscult
