@@ -80,11 +80,11 @@ module.exports = (app) => {
 
     })
 
-    app.post('/api/blogs', (req, res) => {
+    app.post('/api/blogs', async (req, res) => {
         // For some reason postman requires this to be req.query, final code may well need
         // req.body
         console.log('Blog post: ', req.body);
-        const Blog = db.Blog.create({
+        const Blog = await db.Blog.create({
             title: req.body.title,
             review: req.body.review,
             email: req.body.email // EXS save email
