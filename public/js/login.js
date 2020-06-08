@@ -59,8 +59,7 @@ $(document).ready(() => {
             password: password
         })
             .then(function () {
-                // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
-                // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
+                // EXS 1st June 2020, display the members page.
                 window.location.replace("/members");
                 // If there's an error, log the error
             })
@@ -124,7 +123,7 @@ $(document).ready(() => {
     getLocation(); // EXS 8th June 2020 - Seems to be the only place this works. Will investigate later
 
     $(".close-2").on("click", () => {
-        console.log ("Creating our sign up")
+        // console.log ("Creating our sign up")
 
         let userData = {
             name: nameInput.val().trim()
@@ -134,10 +133,10 @@ $(document).ready(() => {
         if (!userData.name) {
             return;
         }
-        console.log ("Our newUserData: ", newUser);
+      //  console.log ("Our newUserData: ", newUser);
 
         if (newUser.ourLat == 0 && newUser.ourLong == 0) {
-            console.log("We are at 0,0");
+         //   console.log("We are at 0,0");
             newUser.ourLat = 38.9072;
             newUser.ourLong = -77.0369;
         }

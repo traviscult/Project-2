@@ -6,13 +6,11 @@ $(document).ready(function () {
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
     //  console.log("Calling members.js");
     $.get("/api/user_data").then(function (data) {
-        // $(".member-name").text(data.email);
-        // console.log("Our get user_data:", data);
         $("#modalUserName").text(data.name);
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
         getOurWeather(data.lat, data.long);
-        getOurPlaceName(data.lat, data.long);
+       // getOurPlaceName(data.lat, data.long);
     });
 
     $(".blogBtn").click(() => {
@@ -74,20 +72,24 @@ $(document).ready(function () {
             const ourLongRangeForecast = response.properties.forecast;
             $.get(ourLongRangeForecast, (response, status) => {
                 displayOurWeather(response);
+                getOurPlaceName(lat, long);
             }).fail(function () {
-                //      console.log ("We have a fail!");
+                console.log ("We have a fail!");
                 // EXS 8th June default to DC if we get a fail result
                 const ourNWSErrorURL = ("https://api.weather.gov/gridpoints/LWX/95,71/forecast");
                 $.get(ourNWSErrorURL, (response, status) => {
                     //       console.log("We have an error response: ",response)
                     displayOurWeather(response);
+                    //newUser.ourLat = 38.9072;
+                    //newUser.ourLong = -77.0369
+                    getOurPlaceName(38.9072,-77.0369);
                 });
             });
         });
     }
     function getOurPlaceName(lat, long) {
         ourURL = (`https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${lat}${long}/nearbyCities?radius=10`)
-        var settings = {
+        let settings = {
             "async": true,
             "crossDomain": true,
             "url": ourURL,
@@ -97,7 +99,7 @@ $(document).ready(function () {
                 "x-rapidapi-key": "8a6cd7a64emsh3dd70caa88d8d20p193484jsn53fd404332c5"
             }
         }
-
+        console.log ("Our place name settings: ", settings)
         $.ajax(settings).done(function (response) {
             $('#currentWeather').text(" " + response.data[0].city);
         });
