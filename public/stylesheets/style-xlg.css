@@ -1,0 +1,269 @@
+/* Media Query for XLG Devices */
+
+@media(min-width: 1920px) {
+  .headerColMembers {
+    padding: 4rem;
+    margin-bottom: 3rem;
+  }
+  .headerColMembers h1 {
+    font-size: 4rem;
+  }
+  .headerColMembers p {
+    font-size: 1.6rem;
+  }
+  #myBtn {
+    width: 80px;
+    height: 80px;
+    top: 30px;
+    right: 80px;
+  }
+  .circleIconTop {
+    width: 70px;
+    height: 70px;
+    top: 0;
+    right: 0;
+    color: purple;
+    font-size: 72px;
+  }
+  .modal-content {
+    width: 400px;
+    height: 500px;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+  ul li, .penIcon {
+    font-size: 1.2rem;
+  }
+  .parksDisplay {
+    height: 700px;
+    margin-top: 3rem;
+  }
+  .blogDisplayHeader {
+    font-size: 1.3rem;
+  }
+  .blogDisplayTitle {
+    font-size: 2.2rem;
+  }
+  .input-group-text {
+    font-size: 1.4rem;
+  }
+  .custom-select {
+    font-size: 1.4rem;
+  }
+  .search {
+    font-size: 1.3rem;
+  }
+  .blogCreateCol {
+    font-size: 1.3rem;
+  }
+  .form-control {
+    font-size: 1.3rem;
+  }
+  #blogCreateField {
+    font-size: 1.4rem;
+    height: 600px;
+  }
+  .blogBtn {
+    font-size: 1.6rem;
+  }
+  .hideShow1920 {
+    display: inline;
+  }
+}
+
+@media(min-width: 2560px) {
+  .headerColMembers {
+    padding: 6rem;
+    margin-bottom: 4rem;
+  }
+  .fa-umbrella-beach {
+    font-size: 6rem;
+  }
+  .headerColMembers h1 {
+    font-size: 6rem;
+  }
+  .headerColMembers p {
+    font-size: 2.3rem;
+  }
+  #myBtn {
+    width: 120px;
+    height: 120px;
+    top: 40px;
+    right: 100px;
+  }
+  .circleIconTop {
+    width: 110px;
+    height: 110px;
+    font-size: 112px;
+  }
+  .modal-content {
+    width: 700px;
+    height: 700px;
+  }
+  #circleIconModal {
+    width: 116px;
+    height: 116px;
+    top: 55px;
+    right: 42%;
+    font-size: 112px;
+  }
+  .close {
+    font-size: 60px;
+    width: 50px;
+    margin-right: 20px;
+    top: 20px;
+  }
+  #modalUserName {
+    margin-top: 200px;
+    font-size: 2.2rem;
+  }
+  #modalTerms {
+    margin: 3rem 0;
+    font-size: 1.6rem;
+  }
+  h5 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+  ul li, .penIcon {
+    font-size: 1.7rem;
+  }
+  .parksDisplay {
+    height: 800px;
+  }
+  .blogDisplayHeader {
+    font-size: 1.5rem;
+  }
+  .blogDisplayTitle {
+    font-size: 2.4rem;
+  }
+  .input-group-text {
+    font-size: 1.6rem;
+  }
+  .custom-select {
+    font-size: 1.6rem;
+  }
+  .search {
+    font-size: 1.6rem;
+  }
+  .blogCreateCol {
+    font-size: 1.5rem;
+  }
+  .form-control {
+    font-size: 1.4rem;
+  }
+  #blogCreateField {
+    font-size: 1.4rem;
+    width: 100%;
+    height: 600px;
+  }
+  .blogBtn {
+    font-size: 1.6rem;
+  }
+  .hideShow2560 {
+    display: inline;
+  }
+}
+
+@media(min-width: 3200px) {
+  .headerColMembers {
+    padding: 8rem;
+    margin-bottom: 6rem;
+  }
+  .fa-umbrella-beach {
+    font-size: 8rem;
+  }
+  .headerColMembers h1 {
+    font-size: 8rem;
+  }
+  .headerColMembers p {
+    font-size: 3.1rem;
+  }
+  #myBtn {
+    width: 120px;
+    height: 120px;
+    top: 80px;
+    right: 150px;
+  }
+  .circleIconTop {
+    width: 110px;
+    height: 110px;
+    font-size: 114px;
+  }
+  .close {
+    font-size: 100px;
+    width: 100px;
+  }
+  .modal-content {
+    width: 900px;
+    height: 900px;
+  }
+  #modalUserName {
+    margin-top: 250px;
+    font-size: 2.8rem;
+  }
+  #modalUserEmail {
+    font-size: 2.5rem;
+  }
+  #modalDashboardBtn {
+    padding: 1rem;
+    margin: 50px auto;
+  }
+  #modalTerms {
+    margin: 3rem 0;
+    font-size: 1.8rem;
+  }
+  .logoutBtnMembers {
+    margin-top: 4rem;
+  }
+  h5 {
+    font-size: 2.3rem;
+  }
+  p {
+    font-size: 2.3rem;
+  }
+  ul li, .penIcon {
+    font-size: 2rem;
+  }
+  .parksDisplay {
+    height: 900px;
+  }
+  .blogDisplayHeader {
+    font-size: 1.8rem;
+  }
+  .blogDisplayTitle {
+    font-size: 2.8rem;
+  }
+  .input-group-text {
+    font-size: 2rem;
+  }
+  .custom-select {
+    font-size: 2rem;
+  }
+  .search {
+    font-size: 2rem;
+  }
+  .blogCreateCol {
+    font-size: 2rem;
+  }
+  .form-control {
+    font-size: 2rem;
+  }
+  #blogCreateField {
+    font-size: 2.5rem;
+    height: 750px;
+  }
+  .blogBtn {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .hideShow3200 {
+    display: inline;
+  }
+}
