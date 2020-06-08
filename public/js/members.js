@@ -16,36 +16,27 @@ $(document).ready(function () {
         // getOurPlaceName(data.lat, data.long);
     });
 
-    $(".blogBtn").click(() => {
-        $.get("/api/user_data", function (data) {
-            console.log("I am calling this", data)
-            let email = data.email
-            let review = $("#blogCreateField").val();
-            let title = $("#blogCreateInput").val();
-            // console.log("email", email)
-            // console.log("title", title)
-            // console.log("review", review)
-            // $.post("/api/blogs", {
-            //         title: title,
-            //         review: review,
-            //         email: email
-            //     },
-            // ) 
-            postData(title, review, email)
-        },
-        );
+    $(".blogBtn").click(async () => {
+        const data = await $.get("/api/user_data")
+        console.log("I am calling this", data)
+        let email = data.email
+        let review = $("#blogCreateField").val();
+        let title = $("#blogCreateInput").val();
 
-        // getBlogPost()
+        postData(title, review, email)
         console.log("I am being clicked to create a BLOG")
     });
+
+
+
+
 
     function postData(title, review, email) {
         $.post("/api/blogs", {
             title: title,
             review: review,
             email: email
-        }
-        ).then(res => {
+        }).then(res => {
             console.log("post data res", res)
             getBlogPost(title, review, email)
         })
@@ -87,10 +78,15 @@ $(document).ready(function () {
             // $("#BlogFour").text(" " + res.title);
             // $("#BlogFive").text(" " + res.title);
         }).then(function (data) {
-            console.log("Our .then data value: ",data);
-            $("#blogOne").text(" " + data[0].title);
-            $("#blogTwo").text(" " + data[1].title);
-            $("#blogThree").text(" " + data[2].title);
+            console.log("Our .then data value: ", data);
+            for(let i = 0; i < data.length; i++){
+                $("#blogOne").text(" " + data[0].title)
+                $("#blogTwo").text(" " + data[i + 1].title)
+                $("#blogThree").text(" " + data[i + 2].title)
+                $("#blogFour").text(" " + data[i + 3].title)
+                $("#blogFive").text(" " + data[i + 4].title)
+            }
+       
         })
     }
 
@@ -130,6 +126,7 @@ $(document).ready(function () {
             });
         });
     }
+
     function getOurPlaceName(lat, long) {
         ourURL = (`https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${lat}${long}/nearbyCities?radius=10`)
         let settings = {
