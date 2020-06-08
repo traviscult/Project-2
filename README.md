@@ -8,14 +8,38 @@
 A National Parks and Weather application that allows users to post blog reviews.
 
 ## Table of Contents
+* [User Story](#User-Story)
 * [Usage](#Usage)
 * [Description](#Description)
-* [](#)
-* [](#)
-* [](#)
+* [Built With](#Built-With)
+* [License](#License)
+* [Contributors](#Contributors)
+* [Authors](#Authors)
 
 ## User Story
+
+```
 As a user I WANT to be able to plan a trip to a state and get a recommendation of parks, historical locations, and famous landmarks SO THAT I can have a great time, learn something new, make memories, and tell everyone about it
+```
+
+## Description
+
+This application allows you to create an account and search through the United States and Washington D.C.  Once you have made a state selection you are presented with a list of historical locations, national parks, and interesting places to visit in that given state.  You can also create blog posts about the things you have seen or done.  When you login you will also get weather forecast for your current location.
+
+## Built With
+
+* HTML5 
+* CSS3
+* JS
+* JQuery
+* Bootstrap
+* GitHub
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [Express](https://www.npmjs.com/package/express)
+* [Passport](https://www.npmjs.com/package/passport)
+* National Park Services API
+* Nations Weather Services API
+* Heroku
 
 
 ## Contributors

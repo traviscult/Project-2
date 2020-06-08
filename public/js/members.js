@@ -1,4 +1,11 @@
-// import { EmptyResultError } from "sequelize/types";
+$(document).ready(function() {
+    //const userEmailAddress = ""
+
+    // This file just does a GET request to figure out which user is logged in
+    // and updates the HTML on the page
+    // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
+    //  console.log("Calling members.js");
+
 
 $(document).ready(function () {
 
@@ -15,7 +22,12 @@ $(document).ready(function () {
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
         getOurWeather(data.lat, data.long);
+
+       // getOurPlaceName(data.lat, data.long);
+
+
         // getOurPlaceName(data.lat, data.long);
+
     });
 
     $(".blogBtn").click(async () => {
@@ -129,9 +141,14 @@ $(document).ready(function () {
 
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
+        // console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
+            //  console.log("Response: ", response);
+            //  console.log("Status: ", status);
+            //console.log("Our City Returned value?: ", response);
             const ourLongRangeForecast = response.properties.forecast;
+            //console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
                 displayOurWeather(response);
                 getOurPlaceName(lat, long);

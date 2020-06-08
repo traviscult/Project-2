@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/15bf670575.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/style-xlg.css" rel="stylesheet">
 
 </head>
 
@@ -54,15 +55,13 @@
     </div>
     <hr>
     <div class="row contentRowMembers d-flex justify-content-center my-4 mx-4">
-      <div class="col-sm-12 col-md-3 blogTitleMembers mx-3">
+      <div class="col-sm-12 col-md-4 col-lg-3 blogTitleMembers mx-0 mb-0 pb-0">
         <div class="weatherIcon">
           <span id="ourWeatherIcon"></span>
           <!-- <img class="ourWeatherIcon" src="https://api.weather.gov/icons/land/day/rain_showers/tsra_sct?size=small"> -->
         </div>
         <p class="sidebarTitle pt-4"> Current and Future Weather Conditions </p>
         <ul class="list-group list-group-flush">
-
-
           <li class="list-group-item"><i class="fas fa-sun ourTemp"></i><span id="currentWeather"> Current Weather</span></li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay1"></i><span id="wd1"> Day 1 Weather</span></li>
           <li class="list-group-item"><i class="fas fa-sun weatherDay2"></i><span id="wd2"> Day 2 Weather</span></li>
@@ -82,20 +81,20 @@
           </a>
           <hr>
           <a href="#"> <i class="fas fa-edit penIcon"></i>
-            <li class="blogTitleLi d-inline-block"  id="blogThree"> Third Blog Title </li>
+            <li class="blogTitleLi d-inline-block" id="blogThree"> Third Blog Title </li>
           </a>
           <hr>
           <a href="#"> <i class="fas fa-edit penIcon"></i>
-            <li class="blogTitleLi d-inline-block"  id="blogFour"> Fourth Blog Title </li>
+            <li class="blogTitleLi d-inline-block" id="blogFour"> Fourth Blog Title </li>
           </a>
           <hr>
           <a href="#"> <i class="fas fa-edit penIcon"></i>
-            <li class="blogTitleLi d-inline-block"  id="blogFive"> Fifth Blog Title </li>
+            <li class="blogTitleLi d-inline-block" id="blogFive"> Fifth Blog Title </li>
           </a>
           <hr>
         </ul>
-      </div>
-      <div class="col state-blog-wrapper">
+      </div> <!-- blogTitleMembers column ends -->
+      <div class="col-sm-12 col-md-7 col-lg-6 state-blog-wrapper mb-0 pb-0">
         <div class="input-group mb-3 mt-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Select a State</label>
@@ -160,17 +159,14 @@
             <option id="56" value="wi">Wisconsin</option>
             <option id="57" value="wy">Wyoming</option>
           </select>
-
-
           <button class="btn btn-primary search" id="state-selection" type="submit" name="action">Search
-          </button> 
-
+          </button>
           <button class="btn btn-primary loading" type="button" disabled>
-            <span class="spinner-border spinner-border-sm "  role="status" aria-hidden="true"></span>
+            <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
             Loading...
           </button>
-        
         </div>
+
           <p class="text-center text-info">Select a state from the drop down menu above to view historical places information in that state. <br>
             Your search result will be displayed below. </p> 
         
@@ -184,60 +180,66 @@
             animi sequi quo nihil hic! Aliquam quasi suscipit maiores! Impedit temporibus esse non atque, debitis illo,
             rem commodi alias quod vitae mollitia quos facere magnam voluptas similique reiciendis tenetur laboriosam
             animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
-        </div>
 
-      </div>
-    </div>
-    <hr>
-    <!-- Blog creating section -->
-    <div class="row infoRowMembers mx-4">
-      <div class="col-12 leftColMembers mx-4">
+        </div>
+      </div> <!-- state-blog-wrapper column ends -->
+     <!-- Blog creating section -->
+     <div class="col-sm-12 col-lg-3 blogCreateCol">
         <p class="sidebarTitle pt-4"> Create a new blog: </p>
-        <form>
-          <div class="form-group">
-            <label for="blogCreateInput">Blog Title:</label>
-            <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
-          </div>
-          <div class="form-group">
-            <label for="blogCreateField">Blog Content:</label>
-            <textarea class="form-control" id="blogCreateField" rows="3"></textarea>
-          </div>
-        </form>
-        <button class="btn btn-primary blogBtn" id="state-selection" type="submit" name="action">Create blog
-        </button>
+          <form>
+            <div class="form-group">
+              <label for="blogCreateInput">Blog Title:</label>
+              <input type="text" class="form-control" id="blogCreateInput" placeholder="type your blog title here">
+            </div>
+            <div class="form-group">
+              <label for="blogCreateField">Blog Content:</label>
+              <textarea class="form-control" id="blogCreateField" rows="3" placeholder="Type or copy paste your blog contents here and click 'Create blog' button below to create your blog."></textarea>
+            </div>
+          </form>
+          <button class="btn btn-primary blogBtn" id="blog-creation" type="submit" name="action">Create blog
+          </button>
+        </div>
+        <hr>
       </div>
-    </div>
-    <hr>
-    <!-- Before-Footer Section -->
-    <div class="row infoRowMembers mx-4">
-      <div class="col-12 leftColMembers mx-4">
-        <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc.
-          <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
+      <hr>
+      <!-- Before-Footer Section -->
+      <div class="row infoRowMembers mx-4">
+        <div class="col-12 leftColMembers mx-4">
+          <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc.
+            <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
+        </div>
       </div>
-    </div>
-    <div class="row text-center d-flex justify-content-center align-items-center">
-      <div class="col-12 bottomSection">
-        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
+      <div class="row text-center d-flex justify-content-center align-items-center">
+        <div class="col-12 bottomSection">
+          <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
         <a href="https://www.nps.gov/subjects/healthandsafety/index.htm" target="_blank"> <img src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
         <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
+        <!-- Added images for LG devices -->
+        <a href="https://www.nps.gov/blri/planyourvisit/popular-destinations.htm" target="_blank"> <img src="./images/gallery-7.png" class="bottomImg hideShow1920" alt="A winding road in the mountain"> </a>
+        <a href="https://www.nps.gov/blri/planyourvisit/popular-destinations.htm" target="_blank"> <img src="./images/gallery-8.png" class="bottomImg hideShow1920" alt="A mill and surroundings"> </a>
+        <a href="https://www.nps.gov/blri/planyourvisit/popular-destinations.htm" target="_blank"> <img src="./images/gallery-9.png" class="bottomImg hideShow2560" alt="A lake with distance view"> </a>
+        <!-- Added images for Ex-LG devices -->
+        <a href="https://www.nps.gov/subjects/npscelebrates/find-your-virtual-park.htm" target="_blank"><img src="./images/gallery-1.png" class="bottomImg hideShow2560" alt="People at a park"> </a>
+        <a href="https://www.nps.gov/articles/drivingsafety.htm" target="_blank"><img src="./images/gallery-3.png" class="bottomImg hideShow3200" alt="A deer jumping a fence"> </a>
+        <a href="https://www.nps.gov/subjects/pirates/index.htm" target="_blank"><img src="./images/gallery-6.png" class="bottomImg hideShow3200" alt="A boat at a lake bank"> </a>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="col-12 bg-dark footerColMembers text-center">
+        <footer class="p-4 text-muted w-100">
+          <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
+        </footer>
       </div>
     </div>
 
-    <!-- Footer Section -->
-    <div class="col-12 bg-dark footerColMembers text-center">
-      <footer class="p-4 text-muted w-100">
-        <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
-      </footer>
-    </div>
-  </div>
-
-  <!-- EXS 30th May 2020 - Adding in full jquery minified -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members_modal.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-  <script type="text/javascript" src="utlis/api.js"></script>
+    <!-- EXS 30th May 2020 - Adding in full jquery minified -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members_modal.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script type="text/javascript" src="utlis/api.js"></script>
 
 </body>
 
