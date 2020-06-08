@@ -6,9 +6,6 @@ $(document).ready(function() {
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
     //  console.log("Calling members.js");
 
-
-$(document).ready(function () {
-
     //const userEmailAddress = ""
     // const getEmail = () => {
     //     $.get("/api/user_data").then(function (data) {
@@ -23,7 +20,7 @@ $(document).ready(function () {
         $("#greeting").text(data.name);
         getOurWeather(data.lat, data.long);
 
-       // getOurPlaceName(data.lat, data.long);
+        // getOurPlaceName(data.lat, data.long);
 
 
         // getOurPlaceName(data.lat, data.long);
@@ -69,14 +66,14 @@ $(document).ready(function () {
             // $("#BlogFive").text(" " + res.title);
         }).then(function (data) {
             console.log("Our .then data value: ", data);
-            for(let i = 0; i < data.length; i++){
+            for (let i = 0; i < data.length; i++) {
                 $("#blogOne").text(" " + data[0].title)
                 $("#blogTwo").text(" " + data[i + 1].title)
                 $("#blogThree").text(" " + data[i + 2].title)
                 $("#blogFour").text(" " + data[i + 3].title)
                 $("#blogFive").text(" " + data[i + 4].title)
             }
-       
+
         })
     }
 
@@ -185,4 +182,4 @@ $(document).ready(function () {
         });
 
     }
-});
+})
