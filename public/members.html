@@ -167,13 +167,13 @@
           </button>
         </div>
 
-          <p class="text-center text-info">Select a state from the drop down menu above to view historical places information in that state. <br>
-            Your search result will be displayed below. </p> 
-        
-        <div class="col mb-3 parksDisplay p-4" id="parks"> 
-          <p class="text-center text-secondary mt-5 pt-5">Historical places information will display here. </p> 
+        <p class="text-center text-info">Select a state from the drop down menu above to view historical places information in that state. <br>
+          Your search result will be displayed below. </p>
 
-        <div class="col blogContentMembers">
+        <div class="col-12 mb-3 parksDisplay p-2" id="parks">
+          <p class="text-center text-secondary">Historical places information will display here. </p>
+        </div> <!-- state-blog-wrapper column ends -->
+        <div class="col blogContentMembers p-3 m-0 ">
           <!-- <h6 class="blogDisplayHeader"> <i class="fas fa-thumbtack"></i> &nbsp; Recently Viewed Blog:</h6> -->
           <h4 class="blogDisplayTitle"> <i class="fas fa-file-alt"></i> &nbsp; Blog title will be Displayed here</h4>
           <p class="blogBody"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestiae cupiditate
@@ -182,10 +182,10 @@
             animi. Beatae ab architecto, sequi atque hic odit molestiae. </p>
 
         </div>
-      </div> <!-- state-blog-wrapper column ends -->
-     <!-- Blog creating section -->
-     <div class="col-sm-12 col-lg-3 blogCreateCol">
-        <p class="sidebarTitle pt-4"> Create a new blog: </p>
+       </div>
+        <!-- Blog creating section -->
+        <hr><div class="col-sm-12 col-lg-3 blogCreateCol">
+          <p class="sidebarTitle pt-4"> Create a new blog: </p>
           <form>
             <div class="form-group">
               <label for="blogCreateInput">Blog Title:</label>
@@ -198,20 +198,20 @@
           </form>
           <button class="btn btn-primary blogBtn" id="blog-creation" type="submit" name="action">Create blog
           </button>
+        
         </div>
         <hr>
+           </div>
+    <!-- Before-Footer Section -->
+    <div class="row infoRowMembers mx-4">
+      <div class="col-12 leftColMembers mx-4">
+        <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc.
+          <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
       </div>
-      <hr>
-      <!-- Before-Footer Section -->
-      <div class="row infoRowMembers mx-4">
-        <div class="col-12 leftColMembers mx-4">
-          <p class="galleryPara"> No mood for blog this time? Browse different section of our website, image gallery, etc.
-            <span class="imageGalleryInfo">Click an image below; it will open a separate tab. </span> </p>
-        </div>
-      </div>
-      <div class="row text-center d-flex justify-content-center align-items-center">
-        <div class="col-12 bottomSection">
-          <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
+    </div>
+    <div class="row text-center d-flex justify-content-center align-items-center">
+      <div class="col-12 bottomSection">
+        <a href="https://www.nps.gov/subjects/urban/index.htm" target="_blank"> <img src="./images/gallery-5.png" class="bottomImg" alt="People at a park"> </a>
         <a href="https://www.nps.gov/subjects/healthandsafety/index.htm" target="_blank"> <img src="./images/gallery-4.png" class="bottomImg" alt="A deer jumping a fence"> </a>
         <a href="https://www.nps.gov/subjects/healthandsafety/water-vessel-safety.htm" target="_blank"> <img src="./images/gallery-2.png" class="bottomImg" alt="A boat at a lake bank"> </a>
         <!-- Added images for LG devices -->
@@ -222,16 +222,16 @@
         <a href="https://www.nps.gov/subjects/npscelebrates/find-your-virtual-park.htm" target="_blank"><img src="./images/gallery-1.png" class="bottomImg hideShow2560" alt="People at a park"> </a>
         <a href="https://www.nps.gov/articles/drivingsafety.htm" target="_blank"><img src="./images/gallery-3.png" class="bottomImg hideShow3200" alt="A deer jumping a fence"> </a>
         <a href="https://www.nps.gov/subjects/pirates/index.htm" target="_blank"><img src="./images/gallery-6.png" class="bottomImg hideShow3200" alt="A boat at a lake bank"> </a>
-        </div>
-      </div>
-
-      <!-- Footer Section -->
-      <div class="col-12 bg-dark footerColMembers text-center">
-        <footer class="p-4 text-muted w-100">
-          <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
-        </footer>
       </div>
     </div>
+
+    <!-- Footer Section -->
+    <div class="col-12 bg-dark footerColMembers text-center">
+      <footer class="p-4 text-muted w-100">
+        <p> Project contributors: Eddie, Richard, Travis, Shiva &bull; 2020</p>
+      </footer>
+    </div>
+
 
     <!-- EXS 30th May 2020 - Adding in full jquery minified -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
