@@ -1,11 +1,14 @@
-// const db = require("../../models");
 $(document).ready(function () {
 
-    // This file just does a GET request to figure out which user is logged in
-    // and updates the HTML on the page
-    // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
-    //  console.log("Calling members.js");
+    //const userEmailAddress = ""
+    // const getEmail = () => {
+    //     $.get("/api/user_data").then(function (data) {
+    //         let email = data.email
+    //         return email;
     $.get("/api/user_data").then(function (data) {
+        // $(".member-name").text(data.email);
+        //  console.log("Our get user_data:", data);
+
         $("#modalUserName").text(data.name);
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
@@ -14,41 +17,75 @@ $(document).ready(function () {
     });
 
     $(".blogBtn").click(() => {
-        $.get("/api/user_data").then(function (data) {
-            let email = data.email
-            let review = $("#blogCreateField").val();
-            let title = $("#blogCreateInput").val();
-            $.post("/api/blogs", {
-                title,
-                review,
-                email
-            })
-        });
-        console.log("I am being clicked to create a BLOGGGGGG") 
-        // let title = $("#blogCreateInput").val();
-        //     let review = $("#blogCreateField").val();
-        //     //let email = $("#modalUserEmail").val();
-        //     //   console.log(data.email, review, title);
-        //     //let email = userEmailAddress;
-        //     console.log("Our passed email: ", email);
-        //     $.post("/api/blogs", {
-        //             title,
-        //             review,
-        //             email
-        //         })
-        getBlogPost()
+        $.get("/api/user_data", function (data) {
+                console.log("I am calling this", data)
+                let email = data.email
+                let review = $("#blogCreateField").val();
+                let title = $("#blogCreateInput").val();
+                // console.log("email", email)
+                // console.log("title", title)
+                // console.log("review", review)
+                // $.post("/api/blogs", {
+                //         title: title,
+                //         review: review,
+                //         email: email
+                //     },
+                // ) 
+                postData(title, review, email)
+            },
+        );
+
+        // getBlogPost()
+        console.log("I am being clicked to create a BLOG")
     });
 
-    function getBlogPost() {
+    function postData(title, review, email) {
+        $.post("/api/blogs", {
+                title: title,
+                review: review,
+                email: email
+            }
+        ).then(res => {
+            console.log("post data res", res)
+            getBlogPost(title, review, email)
+        })  
+    }
 
-        $.get("/api/blogs", (req, res) => {
-            console.log(req)
-            console.log(res)
-            $("#blogOne").text(" " + res.title);
-            $("#BlogTwo").text(" " + res.title);
-            $("#BlogThree").text(" " + res.title);
-            $("#BlogFour").text(" " + res.title);
-            $("#BlogFive").text(" " + res.title);
+    // $(".blogBtn").click(() => {
+    //     // getEmail();
+    //     let review = $("#blogCreateField").val("");
+    //     let title = $("#blogCreateInput").val("");
+    //     // $.ajax({
+    //     //     method: "GET",
+    //     //     url: "/api/user_data"
+    //     // }).then(function (response) {
+    //     //     console.log(response.email)
+    //     //     let email = response.email
+    //     // }).then(function (req, res) {
+    //     $.post("/api/blogs", {
+    //         title: title,
+    //         review: review,
+    //         // email: email
+    //     })
+    //     console.log("I am being clicked to create a BLOGGGGGG")
+    //     getBlogPost()
+    // })
+
+    function getBlogPost(title, review, email) {
+        console.log("in blog post function")
+        console.log("email", email)
+        console.log("title", title)
+        console.log("review", review)
+        $.get("/api/blogs", function (data) {
+            data.length > 0 ? console.log("array", data) : console.log("this didnt work")
+            
+            console.log(data)
+            console.log(data.title)
+            $("#blogOne").text(" " + data.title);
+            // $("#BlogTwo").text(" " + res.title);
+            // $("#BlogThree").text(" " + res.title);
+            // $("#BlogFour").text(" " + res.title);
+            // $("#BlogFive").text(" " + res.title);
         })
     }
 
