@@ -1,36 +1,22 @@
-// import { DataTypes } from "sequelize/types";
-
 // const db = require("../../models");
-$(document).ready(function() {
-    //const userEmailAddress = ""
+$(document).ready(function () {
 
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
     //  console.log("Calling members.js");
-    $.get("/api/user_data").then(function(data) {
+    $.get("/api/user_data").then(function (data) {
         // $(".member-name").text(data.email);
-        console.log("Our get user_data:", data);
+        // console.log("Our get user_data:", data);
         $("#modalUserName").text(data.name);
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
         getOurWeather(data.lat, data.long);
-        //userEmailAddress = data.email;
-        //console.log("userEmailAddress: ", userEmailAddress);
-        //  EXS puilling weather api call
-
-        // if (data.ourLat === 0 && data.ourLong === 0) {
-        //     let ourLat = 38.9072;
-        //     let ourLong = -77.0369;
-        //     getOurWeather(ourLat, ourLong);
-        // } else {
-        //     getOurWeather(data.ourLat, data.ourLong);
-        // }
-        console.log("Getting User Data: ", data.lat, data.long);
+        getOurPlaceName(data.lat, data.long);
     });
 
     $(".blogBtn").click(() => {
-        $.get("/api/user_data").then(function(data) {
+        $.get("/api/user_data").then(function (data) {
             let email = data.email
             let review = $("#blogCreateField").val();
             let title = $("#blogCreateInput").val();
@@ -68,36 +54,53 @@ $(document).ready(function() {
         })
     }
 
+    function displayOurWeather(ourWeatherData) {
+        // console.log("Our Weather Data: ", ourWeatherData);
+        const currentWeatherIcon = '<img src="' + ourWeatherData.properties.periods[0].icon + '">';
+        //  $('#currentWeather').text(" Our Place Name Goes Here");
+        $('#ourWeatherIcon').html(currentWeatherIcon);
+        $("#wd1").text(" " + ourWeatherData.properties.periods[0].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
+        $("#wd2").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
+        $("#wd3").text(" " + ourWeatherData.properties.periods[2].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
+        $("#wd4").text(" " + ourWeatherData.properties.periods[4].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
+        $("#wd5").text(" " + ourWeatherData.properties.periods[6].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
+        return;
+    }
+
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
-        // console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
-            //  console.log("Response: ", response);
-            //  console.log("Status: ", status);
-            //console.log("Our City Returned value?: ", response);
             const ourLongRangeForecast = response.properties.forecast;
-            //console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-               // console.log("Members Page Weather Reponse: ", status);
-                const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                //    console.log("Our Weather Icon value: ", currentWeatherIcon);
-                $('#ourWeatherIcon').html(currentWeatherIcon);
-                $("#wd1").text(" " + response.properties.periods[0].temperature);
-                $("#wd2").text(" " + response.properties.periods[1].temperature);
-                $("#wd3").text(" " + response.properties.periods[3].temperature);
-                $("#wd4").text(" " + response.properties.periods[5].temperature);
-                $("#wd5").text(" " + response.properties.periods[7].temperature);
-            }).fail (function() {
-                console.log ("We have a fail!");
+                displayOurWeather(response);
+            }).fail(function () {
+                //      console.log ("We have a fail!");
                 // EXS 8th June default to DC if we get a fail result
                 const ourNWSErrorURL = ("https://api.weather.gov/gridpoints/LWX/95,71/forecast");
-                $.get(ourLongRangeForecast, (response, status) => {
-                    const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                    $('#ourWeatherIcon').html(currentWeatherIcon);
+                $.get(ourNWSErrorURL, (response, status) => {
+                    //       console.log("We have an error response: ",response)
+                    displayOurWeather(response);
                 });
-
             });
         });
+    }
+    function getOurPlaceName(lat, long) {
+        ourURL = (`https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${lat}${long}/nearbyCities?radius=10`)
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": ourURL,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+                "x-rapidapi-key": "8a6cd7a64emsh3dd70caa88d8d20p193484jsn53fd404332c5"
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            $('#currentWeather').text(" " + response.data[0].city);
+        });
+
     }
 });
