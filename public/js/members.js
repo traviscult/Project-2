@@ -128,11 +128,11 @@ $(document).ready(function() {
         const currentWeatherIcon = '<img src="' + ourWeatherData.properties.periods[0].icon + '">';
         //  $('#currentWeather').text(" Our Place Name Goes Here");
         $('#ourWeatherIcon').html(currentWeatherIcon);
-        $("#wd1").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
-        $("#wd2").text(" " + ourWeatherData.properties.periods[2].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
-        $("#wd3").text(" " + ourWeatherData.properties.periods[4].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
-        $("#wd4").text(" " + ourWeatherData.properties.periods[6].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
-        $("#wd5").text(" " + ourWeatherData.properties.periods[8].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
+        $("#wd1").text(" " + ourWeatherData.properties.periods[0].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
+        $("#wd2").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
+        $("#wd3").text(" " + ourWeatherData.properties.periods[3].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
+        $("#wd4").text(" " + ourWeatherData.properties.periods[5].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
+        $("#wd5").text(" " + ourWeatherData.properties.periods[7].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
         return;
     }
 
