@@ -71,6 +71,7 @@ a:hover {
 }
 
 /* ##### Modal section ##### */
+
 #myBtn {
   z-index: 2;
   outline: none !important;
@@ -84,6 +85,7 @@ a:hover {
   top: 0;
   right: 0;
 }
+
 .circleIconTop {
   outline: none !important;
   border-radius: 50%;
@@ -149,8 +151,7 @@ a:hover {
   right: 3%;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -200,16 +201,16 @@ a:hover {
   cursor: pointer;
 }
 
-#modalDashboardBtn:hover,
-#modalSignOut:hover,
-#modalTerms:hover {
+#modalDashboardBtn:hover, #modalSignOut:hover, #modalTerms:hover {
   background-color: #ececec;
 }
 
 /* ##### members.html page specific ##### */
+
 #removeBgImage {
   background: none;
 }
+
 .mainWrapperMembers {
   padding: 0;
   color: #333;
@@ -240,6 +241,7 @@ a:hover {
 }
 
 /* weather icon */
+
 .weatherIcon {
   text-align: center;
   margin: 0 auto;
@@ -251,11 +253,12 @@ a:hover {
 }
 
 /* State park Images */
+
 .parksDisplay {
   background-color: #f3f2eb;
   border: 1px solid rgb(204, 203, 203);
   padding: 0;
-  height: 400px;
+  height: 600px;
   overflow: scroll;
   margin: 0 auto;
   width: 100%;
@@ -285,6 +288,7 @@ a:hover {
 }
 
 /* Blog display section */
+
 .blogTitleMembers {
   padding: 1rem;
   background-color: #f6f9fa;
@@ -298,7 +302,7 @@ a:hover {
 
 #blogTitleUl {
   background-color: #e8f0ee;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 #blogTitleUl:hover {
@@ -314,13 +318,13 @@ a:hover {
   text-transform: uppercase;
 }
 
-.weatherIcon {
+.fa-sun {
   padding-right: 1rem;
   color: #ff8725;
 }
 
 .penIcon {
-  padding-left: 1rem;
+  padding-left: .6rem;
   color: #a11e50;
 }
 
@@ -355,6 +359,18 @@ input:focus::placeholder {
   color: transparent;
 }
 
+#blogCreateField {
+  font-size: 1rem;
+  height: 300px;
+  line-height: 1.5;
+  background-color: #f6f9fa;
+  padding-top: 20px;
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
 .galleryPara {
   color: #a11e50;
 }
@@ -365,4 +381,10 @@ input:focus::placeholder {
 
 .blogBtn {
   text-align: right;
+}
+
+/* added for xlg styles */
+
+.hideShow1920, .hideShow2560, .hideShow3200 {
+  display: none;
 }
