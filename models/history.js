@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    History.associate = models => {
-        History.belongsTo(models.User, {
-            foreignKey: 'id'
-        });
-    }
+    // History.associate = models => {
+    //     History.belongsTo(models.User, {
+    //         foreignKey: 'id'
+    //     });
+    // }
 
     return History;
 };
