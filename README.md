@@ -9,7 +9,7 @@ A National Parks and Weather application that allows users to post blog reviews.
 
 ## Table of Contents
 * [User Story](#User-Story)
-* [Usage](#Usage)
+* [Deployed Application](#Deployed-Application)
 * [Description](#Description)
 * [Built With](#Built-With)
 * [License](#License)
@@ -21,6 +21,9 @@ A National Parks and Weather application that allows users to post blog reviews.
 ```
 As a user I WANT to be able to plan a trip to a state and get a recommendation of parks, historical locations, and famous landmarks SO THAT I can have a great time, learn something new, make memories, and tell everyone about it
 ```
+
+## Deployed Application
+http://parks-and-weather.herokuapp.com/login_new.html
 
 ## Description
 
@@ -41,9 +44,16 @@ This application allows you to create an account and search through the United S
 * Nations Weather Services API
 * Heroku
 
+## License
+
+MIT
 
 ## Contributors
-Eddie Saunders, Richard Kessler, Shiva Sharma, Travis Cultreri
+
+* Eddie Saunders - Backend NWS API Lead, QA Testing, NWS API Call troubleshooting
+* Richard Kessler - Database Admin, Version Control, Database QA Testing
+* Shiva Sharma - Frontend Design Lead, Style and Layout QA testing, Framework Implementation
+* Travis Cultreri - Backend NPS API Lead, QA Testing, NPS API Call troubleshooting
 
 ## Deployed Application
 http://parks-and-weather.herokuapp.com/login_new.html
