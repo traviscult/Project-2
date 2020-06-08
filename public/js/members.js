@@ -10,10 +10,11 @@ $(document).ready(function() {
     //  console.log("Calling members.js");
     $.get("/api/user_data").then(function(data) {
         // $(".member-name").text(data.email);
-        //  console.log("Our get user_data:", data);
+        console.log("Our get user_data:", data);
         $("#modalUserName").text(data.name);
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
+        getOurWeather(data.lat, data.long);
         //userEmailAddress = data.email;
         //console.log("userEmailAddress: ", userEmailAddress);
         //  EXS puilling weather api call
@@ -25,7 +26,7 @@ $(document).ready(function() {
         // } else {
         //     getOurWeather(data.ourLat, data.ourLong);
         // }
-        console.log("Getting User Data: ", data.ourLat, data.ourLong);
+        console.log("Getting User Data: ", data.lat, data.long);
     });
 
     $(".blogBtn").click(() => {
@@ -77,7 +78,7 @@ $(document).ready(function() {
             const ourLongRangeForecast = response.properties.forecast;
             //console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-                //  console.log("Members Page Weather Reponse: ", response.properties);
+               // console.log("Members Page Weather Reponse: ", status);
                 const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
                 //    console.log("Our Weather Icon value: ", currentWeatherIcon);
                 $('#ourWeatherIcon').html(currentWeatherIcon);
@@ -86,6 +87,15 @@ $(document).ready(function() {
                 $("#wd3").text(" " + response.properties.periods[3].temperature);
                 $("#wd4").text(" " + response.properties.periods[5].temperature);
                 $("#wd5").text(" " + response.properties.periods[7].temperature);
+            }).fail (function() {
+                console.log ("We have a fail!");
+                // EXS 8th June default to DC if we get a fail result
+                const ourNWSErrorURL = ("https://api.weather.gov/gridpoints/LWX/95,71/forecast");
+                $.get(ourLongRangeForecast, (response, status) => {
+                    const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
+                    $('#ourWeatherIcon').html(currentWeatherIcon);
+                });
+
             });
         });
     }
