@@ -1,7 +1,3 @@
-
-// import { DataTypes } from "sequelize/types";
-
-// const db = require("../../models");
 $(document).ready(function() {
     //const userEmailAddress = ""
 
@@ -9,6 +5,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     // EXS 2nd June 2020 - Updated to pull NWS data for the users current Lat/Long
     //  console.log("Calling members.js");
+
 
 $(document).ready(function () {
 
@@ -44,10 +41,6 @@ $(document).ready(function () {
         console.log("I am being clicked to create a BLOG")
     });
 
-
-
-
-
     function postData(title, review, email) {
         $.post("/api/blogs", {
             title: title,
@@ -58,26 +51,6 @@ $(document).ready(function () {
             getBlogPost(title, review, email)
         })
     }
-
-    // $(".blogBtn").click(() => {
-    //     // getEmail();
-    //     let review = $("#blogCreateField").val("");
-    //     let title = $("#blogCreateInput").val("");
-    //     // $.ajax({
-    //     //     method: "GET",
-    //     //     url: "/api/user_data"
-    //     // }).then(function (response) {
-    //     //     console.log(response.email)
-    //     //     let email = response.email
-    //     // }).then(function (req, res) {
-    //     $.post("/api/blogs", {
-    //         title: title,
-    //         review: review,
-    //         // email: email
-    //     })
-    //     console.log("I am being clicked to create a BLOGGGGGG")
-    //     getBlogPost()
-    // })
 
     function getBlogPost(title, review, email) {
         //   console.log("in blog post function")
@@ -107,6 +80,51 @@ $(document).ready(function () {
         })
     }
 
+
+    $("#blogOne").click(() =>{
+        console.log("Title is being clicked")
+        $.get("/api/blogs", function (data) {
+            $(".blogDisplayTitle").text(" " + data[0].title)
+            $(".blogBody").text(" " + data[0].review )
+        })
+
+       
+    });
+
+    $("#blogTwo").click(() =>{
+        console.log("Title is being clicked")
+        // document.getElementsByClassName("blogDisplayTitle").reset();
+        // document.getElementsByClassName("blogBody").reset();
+        
+        $.get("/api/blogs", function (data) {
+            $(".blogDisplayTitle").text(" " + data[0 + 1].title)
+            $(".blogBody").text(" " + data[0 + 1].review )
+        })
+    })
+    $("#blogThree").click(() =>{
+        console.log("Title is being clicked")
+
+        $.get("/api/blogs", function (data) {
+            $(".blogDisplayTitle").text(" " + data[0 + 2].title)
+            $(".blogBody").text(" " + data[0 + 2].review )
+        })
+    })
+    $("#blogFour").click(() =>{
+        console.log("Title is being clicked")
+
+        $.get("/api/blogs", function (data) {
+            $(".blogDisplayTitle").text(" " + data[0 + 3].title)
+            $(".blogBody").text(" " + data[0 + 3].review )
+        })
+    })
+    $("#blogFive").click(() =>{
+        console.log("Title is being clicked")
+
+        $.get("/api/blogs", function (data) {
+            $(".blogDisplayTitle").text(" " + data[0 + 4].title)
+            $(".blogBody").text(" " + data[0 + 4].review )
+        })
+    })
 
     function displayOurWeather(ourWeatherData) {
         // console.log("Our Weather Data: ", ourWeatherData);
