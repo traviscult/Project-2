@@ -1,8 +1,5 @@
-// import { DataTypes } from "sequelize/types";
-
 // const db = require("../../models");
 $(document).ready(function() {
-    //const userEmailAddress = ""
 
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
@@ -67,36 +64,34 @@ $(document).ready(function() {
         })
     }
 
+    function displayOurWeather(ourWeatherData) {
+        console.log ("Our Weather Data: ", ourWeatherData);
+        const currentWeatherIcon = '<img src="' + ourWeatherData.properties.periods[0].icon + '">';
+        $('#ourWeatherIcon').html(currentWeatherIcon);
+        $("#wd1").text(" " + ourWeatherData.properties.periods[0].temperature);
+        $("#wd2").text(" " + ourWeatherData.properties.periods[1].temperature);
+        $("#wd3").text(" " + ourWeatherData.properties.periods[3].temperature);
+        $("#wd4").text(" " + ourWeatherData.properties.periods[5].temperature);
+        $("#wd5").text(" " + ourWeatherData.properties.periods[7].temperature);
+        return;
+    }
+
     function getOurWeather(lat, long) {
         const ourFirstNWSURL = (`https://api.weather.gov/points/${lat},${long}`);
-        // console.log("Our First NWS URL: ", ourFirstNWSURL);
         // EXS 2nd June 2020 - Get our initial weather 
         $.get(ourFirstNWSURL, (response, status) => {
-            //  console.log("Response: ", response);
-            //  console.log("Status: ", status);
-            //console.log("Our City Returned value?: ", response);
             const ourLongRangeForecast = response.properties.forecast;
-            //console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
-               // console.log("Members Page Weather Reponse: ", status);
-                const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                //    console.log("Our Weather Icon value: ", currentWeatherIcon);
-                $('#ourWeatherIcon').html(currentWeatherIcon);
-                $("#wd1").text(" " + response.properties.periods[0].temperature);
-                $("#wd2").text(" " + response.properties.periods[1].temperature);
-                $("#wd3").text(" " + response.properties.periods[3].temperature);
-                $("#wd4").text(" " + response.properties.periods[5].temperature);
-                $("#wd5").text(" " + response.properties.periods[7].temperature);
+               displayOurWeather(response);
             }).fail (function() {
                 console.log ("We have a fail!");
                 // EXS 8th June default to DC if we get a fail result
                 const ourNWSErrorURL = ("https://api.weather.gov/gridpoints/LWX/95,71/forecast");
-                $.get(ourLongRangeForecast, (response, status) => {
-                    const currentWeatherIcon = '<img src="' + response.properties.periods[0].icon + '">';
-                    $('#ourWeatherIcon').html(currentWeatherIcon);
+                $.get(ourNWSErrorURL, (response, status) => {
+                   console.log("We have an error response: ",response)
+                   displayOurWeather(response);
                 });
-
             });
         });
-    }
+    } 
 });
