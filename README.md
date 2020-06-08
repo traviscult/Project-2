@@ -40,6 +40,8 @@ This application allows you to create an account and search through the United S
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [Express](https://www.npmjs.com/package/express)
 * [Passport](https://www.npmjs.com/package/passport)
+* MySQL Workbench
+* Postman
 * National Park Services API
 * Nations Weather Services API
 * Heroku
@@ -54,6 +56,14 @@ MIT
 * Richard Kessler - Database Admin, Version Control, Database QA Testing
 * Shiva Sharma - Frontend Design Lead, Style and Layout QA testing, Framework Implementation
 * Travis Cultreri - Backend NPS API Lead, QA Testing, NPS API Call troubleshooting
+* Noah King - Sequelize troubleshooting and database assitance, Heroku deploy troubleshooting
+* Jessie Sholler - AJAX call troubleshooting 
+* Melissa Burnham - AJAX call troubleshooting
+* Kevin Collins - Heroku troubleshooting
 
-## Deployed Application
-http://parks-and-weather.herokuapp.com/login_new.html
+## Authors
+
+* Eddie Saunders - https://github.com/SaundersEddie
+* Richard Kessler - https://github.com/RichardKessler
+* Shiva Sharma - https://github.com/ssh1sharma
+* Travis Cultreri - https://github.com/traviscult
