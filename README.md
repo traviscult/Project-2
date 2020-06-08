@@ -8,15 +8,19 @@
 A National Parks and Weather application that allows users to post blog reviews.
 
 ## Table of Contents
+* [User Story](#User-Story)
 * [Usage](#Usage)
 * [Description](#Description)
-* [](#)
-* [](#)
-* [](#)
+* [Built With](#Built-With)
+* [License](#License)
+* [Contributors](#Contributors)
+* [Authors](#Authors)
 
 ## User Story
-As a user I WANT to be able to plan a trip to a state and get a recommendation of parks, historical locations, and famous landmarks SO THAT I can have a great time, learn something new, make memories, and tell everyone about it
 
+```
+As a user I WANT to be able to plan a trip to a state and get a recommendation of parks, historical locations, and famous landmarks SO THAT I can have a great time, learn something new, make memories, and tell everyone about it
+```
 
 ## Contributors
 Eddie Saunders, Richard Kessler, Shiva Sharma, Travis Cultreri
