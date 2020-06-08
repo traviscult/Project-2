@@ -116,7 +116,7 @@ $(document).ready(() => {
         // console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
     }
 
-    // getLocation();
+    getLocation();
 
     let modal = document.getElementById("myModal-2");
     let btn = document.getElementById("signUpBtn");
