@@ -45,8 +45,8 @@ $(document).ready(() => {
             let columnOne = $("<div>").addClass("col s6");
             let columnTwo = $("<div>").addClass("col s6");
             // EXS 5th June 2020, logging our latitude and longitude to make sure they're useable
-            console.log("Latitude: ", statepark.latitude);
-            console.log("Longitude: ", statepark.longitude);
+           // console.log("Latitude: ", statepark.latitude);
+           // console.log("Longitude: ", statepark.longitude);
             let ourParkLat = statepark.latitude;
             let ourParkLong = statepark.longitude;
             // getOurWeather(ourParkLat, ourParkLong); EXS Temp removal for testing

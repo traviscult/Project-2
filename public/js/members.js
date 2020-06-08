@@ -128,11 +128,11 @@ $(document).ready(function() {
         const currentWeatherIcon = '<img src="' + ourWeatherData.properties.periods[0].icon + '">';
         //  $('#currentWeather').text(" Our Place Name Goes Here");
         $('#ourWeatherIcon').html(currentWeatherIcon);
-        $("#wd1").text(" " + ourWeatherData.properties.periods[0].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
-        $("#wd2").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
-        $("#wd3").text(" " + ourWeatherData.properties.periods[2].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
-        $("#wd4").text(" " + ourWeatherData.properties.periods[4].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
-        $("#wd5").text(" " + ourWeatherData.properties.periods[6].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
+        $("#wd1").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
+        $("#wd2").text(" " + ourWeatherData.properties.periods[2].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
+        $("#wd3").text(" " + ourWeatherData.properties.periods[4].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
+        $("#wd4").text(" " + ourWeatherData.properties.periods[6].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
+        $("#wd5").text(" " + ourWeatherData.properties.periods[8].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
         return;
     }
 
@@ -147,10 +147,11 @@ $(document).ready(function() {
             const ourLongRangeForecast = response.properties.forecast;
             //console.log("Our Long Range Forecase URL: ", ourLongRangeForecast);
             $.get(ourLongRangeForecast, (response, status) => {
+                console.log (response);
                 displayOurWeather(response);
                 getOurPlaceName(lat, long);
             }).fail(function () {
-                console.log("We have a fail!");
+                //console.log("We have a fail!");
                 // EXS 8th June default to DC if we get a fail result
                 const ourNWSErrorURL = ("https://api.weather.gov/gridpoints/LWX/95,71/forecast");
                 $.get(ourNWSErrorURL, (response, status) => {
