@@ -7,23 +7,12 @@ $(document).ready(function() {
     //  console.log("Calling members.js");
     $.get("/api/user_data").then(function(data) {
         // $(".member-name").text(data.email);
-        console.log("Our get user_data:", data);
+       // console.log("Our get user_data:", data);
         $("#modalUserName").text(data.name);
         $("#modalUserEmail").text(data.email);
         $("#greeting").text(data.name);
         getOurWeather(data.lat, data.long);
-        //userEmailAddress = data.email;
-        //console.log("userEmailAddress: ", userEmailAddress);
-        //  EXS puilling weather api call
-
-        // if (data.ourLat === 0 && data.ourLong === 0) {
-        //     let ourLat = 38.9072;
-        //     let ourLong = -77.0369;
-        //     getOurWeather(ourLat, ourLong);
-        // } else {
-        //     getOurWeather(data.ourLat, data.ourLong);
-        // }
-        console.log("Getting User Data: ", data.lat, data.long);
+        // console.log("Getting User Data: ", data.lat, data.long);
     });
 
     $(".blogBtn").click(() => {
@@ -68,11 +57,11 @@ $(document).ready(function() {
         console.log ("Our Weather Data: ", ourWeatherData);
         const currentWeatherIcon = '<img src="' + ourWeatherData.properties.periods[0].icon + '">';
         $('#ourWeatherIcon').html(currentWeatherIcon);
-        $("#wd1").text(" " + ourWeatherData.properties.periods[0].temperature);
-        $("#wd2").text(" " + ourWeatherData.properties.periods[1].temperature);
-        $("#wd3").text(" " + ourWeatherData.properties.periods[3].temperature);
-        $("#wd4").text(" " + ourWeatherData.properties.periods[5].temperature);
-        $("#wd5").text(" " + ourWeatherData.properties.periods[7].temperature);
+        $("#wd1").text(" " + ourWeatherData.properties.periods[0].name + " " + ourWeatherData.properties.periods[0].detailedForecast);
+        $("#wd2").text(" " + ourWeatherData.properties.periods[1].name + " " + ourWeatherData.properties.periods[1].detailedForecast);
+        $("#wd3").text(" " + ourWeatherData.properties.periods[2].name + " " + ourWeatherData.properties.periods[2].detailedForecast);
+        $("#wd4").text(" " + ourWeatherData.properties.periods[4].name + " " + ourWeatherData.properties.periods[4].detailedForecast);
+        $("#wd5").text(" " + ourWeatherData.properties.periods[6].name + " " + ourWeatherData.properties.periods[6].detailedForecast);
         return;
     }
 
