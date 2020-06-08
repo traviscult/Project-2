@@ -19,14 +19,14 @@ $(document).ready(() => {
 
     // EXS check to see if the login button has been clicked
     // Validate our fields have data, if not, then return out of the function
-    $(':button').click(function(event) {
+    $(':button').click(function (event) {
         event.preventDefault();
         if (this.id === "loginBtn") {
             let userData = {
-                    email: emailInput.val().trim(),
-                    password: passwordInput.val().trim()
-                }
-                // If we have null data return out
+                email: emailInput.val().trim(),
+                password: passwordInput.val().trim()
+            }
+            // If we have null data return out
             if (!userData.email || !userData.password) {
                 return;
             }
@@ -37,12 +37,12 @@ $(document).ready(() => {
             // console.log("Login Button Pressed");
         } else if (this.id === "signUpBtn") {
             let userData = {
-                    email: emailInput.val().trim(),
-                    password: passwordInput.val().trim()
-                }
-                // added this line 
+                email: emailInput.val().trim(),
+                password: passwordInput.val().trim()
+            }
+            // added this line 
             newUser.email = userData.email
-                // If we have null data return out
+            // If we have null data return out
             if (!userData.email || !userData.password) {
                 return;
             }
@@ -55,16 +55,16 @@ $(document).ready(() => {
         // console.log(name, email, password);
         // console.log("Executing Login User");
         $.post("/api/login", {
-                email: email,
-                password: password
-            })
-            .then(function() {
+            email: email,
+            password: password
+        })
+            .then(function () {
                 // EXS 1st June 2020, if we have a successful login, we should try and obtain and save the users location
                 // at this pointfor display on the members page, if the location is not available we default it to Washington DC.
                 window.location.replace("/members");
                 // If there's an error, log the error
             })
-            .catch(function(err) {
+            .catch(function (err) {
                 console.log(err);
             });
 
@@ -73,24 +73,17 @@ $(document).ready(() => {
     // grant them accessLevel 1, If the creation is good, then proceed to the members page
     // EXS Added in test data for name and lat/long
     function signUpUser(email, password) {
-        // EXS 2nd June 2020 - If we have 0 in both ourLat and ourLong, then default to Washington DC coords
-        // if (newUser.ourLat == 0 && newUser.ourLong == 0) {
-        //     console.log("We are at 0,0");
-        //     newUser.ourLat = 38.9072;
-        //     newUser.ourLong = -77.0369;
-        // }
-
-        $.post("/api/signup", {
-                name: newUser.name,
-                email: newUser.email,
-                password: newUser.password,
-                accessLevel: 1,
-                geoLat: newUser.ourLat,
-                geoLong: newUser.ourLong
-            }).then(function(data) {
-                window.location.replace("/members");
-                // If there 's an error, handle it by throwing up a bootstrap alert
-            })
+           $.post("/api/signup", {
+            name: newUser.name,
+            email: newUser.email,
+            password: newUser.password,
+            accessLevel: 1,
+            geoLat: newUser.ourLat,
+            geoLong: newUser.ourLong
+        }).then(function (data) {
+            window.location.replace("/members");
+            // If there 's an error, handle it by throwing up a bootstrap alert
+        })
             .catch(handleLoginErr);
     }
 
@@ -104,6 +97,7 @@ $(document).ready(() => {
     const getLocation = (position) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
+    
         } else {
             console.log("GeoLocation not supported");
         }
@@ -113,26 +107,25 @@ $(document).ready(() => {
         // EXS 30th May 2020 - Copy our geoLocation into newUser lat and long
         newUser.ourLat = position.coords.latitude;
         newUser.ourLong = position.coords.longitude;
-        // console.log ("Inside Show Position: ", newUser.ourLong, newUser.ourLat);
     }
 
-    getLocation();
 
     let modal = document.getElementById("myModal-2");
     let btn = document.getElementById("signUpBtn");
     let span = document.getElementsByClassName("close-2")[0];
 
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = "block";
     }
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
+    getLocation(); // EXS 8th June 2020 - Seems to be the only place this works. Will investigate later
 
     $(".close-2").on("click", () => {
-        getLocation();
-        // console.log("name submit is being clicked", newUser)
+        console.log ("Creating our sign up")
+
         let userData = {
             name: nameInput.val().trim()
         }
@@ -141,10 +134,18 @@ $(document).ready(() => {
         if (!userData.name) {
             return;
         }
+        console.log ("Our newUserData: ", newUser);
+
+        if (newUser.ourLat == 0 && newUser.ourLong == 0) {
+            console.log("We are at 0,0");
+            newUser.ourLat = 38.9072;
+            newUser.ourLong = -77.0369;
+        }
+
         // Here we should parse our object data and send it to user creation
         // Do some data logging first
         newUser.password = passwordInput.val().trim();
-        // console.log(newUser)
+//        console.log(newUser)
         signUpUser(newUser.name, newUser.email, userData.password, newUser.accessLevel, newUser.ourLat, newUser.ourLong);
     });
 });
